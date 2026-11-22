@@ -1,0 +1,2349 @@
+{
+  "runs": [
+    {
+      "utc": "2026-10-25T04:19:22+00:00",
+      "case_id": "ep01_seg_trk_000012_trk_000001_3370",
+      "label": "A",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Follower sustained sub-3s clearance for 5.7 of 6.9s while lead braked repeatedly; clearance hit 0.0s at segment end.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower (car) maintains a tracked gap behind a lead car on a motorway; clearance_s and gap_s both fall persistently below the 3-second sufficiency calibration for good (dry, overcast) conditions, and drop to zero as the lead brakes repeatedly.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Both governing metrics (clearance_s, the stricter clear-road measure) and the bumper-to-bumper gap_s converge: sustained time below the 3s threshold is 5.7 of the 6.9s segment (~83%), well past the 5s transiency cutoff. The segment ends with a cluster of 10 lead_brake events and a final sample showing clearance_s = 0.0 (gap_m 4.28m vs follower length 4.6m), indicating the follower had essentially no clear road ahead to stop in.",
+          "key_statistics": [
+            {
+              "stat": "mean_clearance_s",
+              "value": 1.857,
+              "interpretation": "Average clear-road time well under the 3s good-conditions threshold, indicating general insufficiency, not just a momentary dip."
+            },
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 5.7,
+              "interpretation": "Exceeds the 5s sustained threshold in the transiency doctrine; strongly supports a Rule 126 breach rather than a transient dip."
+            },
+            {
+              "stat": "sustained_below_3s_seconds (gap_s)",
+              "value": 5.7,
+              "interpretation": "Identical value under the alternative rear-to-rear convention; the two measurement conventions converge on the same sustained-breach conclusion."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 3.05,
+              "interpretation": "Meets the >=3s sustained-below-2s threshold, an independent aggravating sustained-closeness signal."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": 1.34,
+              "interpretation": "During active closing (seconds_closing=2.99s) collision would occur in 1.34s if speeds held - a dynamic hazard signal."
+            },
+            {
+              "stat": "min_clearance_s / min_gap_s",
+              "value": "0.0 / 0.422",
+              "interpretation": "At t=6.9s the clear road between vehicles is effectively zero; under the clearance_s convention this is a stopping-distance failure."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 4.35,
+              "frame_id": 363,
+              "claim": "gap_s dips to 1.99s and clearance_s to 1.56s as lead begins braking sequence."
+            },
+            {
+              "sample_t": 5.95,
+              "frame_id": 395,
+              "claim": "ttc_s falls to 3.60s with v_rel +18.6 km/h (follower closing) while lead decelerates sharply (lead_speed 12.25 km/h)."
+            },
+            {
+              "sample_t": 6.2,
+              "frame_id": 400,
+              "claim": "clearance_s 1.21s, gap_s 1.76s, both well under 3s threshold, during continued lead braking."
+            },
+            {
+              "sample_t": 6.9,
+              "frame_id": 414,
+              "claim": "clearance_s reaches 0.0 (gap_m 4.28m vs follower length 4.6m), gap_s 0.42s - critical insufficiency at segment end."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 5.75,
+              "type": "lead_brake",
+              "legal_significance": "Lead decelerates 17.4 km/h while follower clearance is already sub-2s (sample t=5.75 clearance_s=1.81), showing follower had no buffer to absorb lead's braking."
+            },
+            {
+              "event_t": 6.35,
+              "type": "lead_brake",
+              "legal_significance": "Final in a cluster of 10 braking events immediately preceding the near-zero clearance sample at t=6.9, evidencing the follower's distance was insufficient to safely react to a braking lead vehicle - the precise harm Rule 126 targets."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked (not speedometer-derived) and carry a few km/h of noise; follower speeds here range ~5-40 km/h, so relative/closing-speed-derived TTC values carry compounded uncertainty.",
+          "13 of 96 samples (13.5%) were excluded for low confidence (none excluded for out-of-range, all within the 120m reliable range and calibration RMSE is very low at 0.018m), so the sustained-duration statistics are based on 83 usable samples and may slightly over- or under-state true sustained time.",
+          "gap_s_uncertainty_estimate is very small (0.002s), suggesting high internal consistency of the distance/speed pipeline, but this does not capture systematic vision-tracking speed bias.",
+          "Segment duration is only 6.9s - short enough that 'sustained' findings rest on a limited window, though the 5.7s sustained-below-3s figure spans the great majority of it."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Rule 126 is engaged because the follower is tracked travelling behind a lead vehicle on a motorway and must maintain distance sufficient to stop safely.",
+            "evidence_refs": [
+              "segment.follower_vehicle_class",
+              "segment.lead_vehicle_class",
+              "environment.road_class"
+            ],
+            "legal_principle": "Rule 126 applies to any driver following another vehicle, irrespective of vehicle class."
+          },
+          {
+            "step": 2,
+            "claim": "Conditions are good (dry, overcast, sealed motorway), so the 3-second calibration applies rather than the 4+/5+ second poor-condition or heavy-vehicle standards.",
+            "evidence_refs": [
+              "environment.road_surface",
+              "environment.weather"
+            ],
+            "legal_principle": "NSW sufficiency calibration: 3 seconds in good conditions."
+          },
+          {
+            "step": 3,
+            "claim": "clearance_s (the stricter, clear-road measure) is treated as the governing test per the measurement convention; mean_clearance_s=1.857s and median=1.713s are both well under 3s.",
+            "evidence_refs": [
+              "aggregate.mean_clearance_s",
+              "aggregate.median_clearance_s"
+            ],
+            "legal_principle": "Clearance_s better represents the road space available to stop, the substance of the Rule 126 test."
+          },
+          {
+            "step": 4,
+            "claim": "sustained_clearance_below_3s_seconds = 5.7s exceeds the >=5s sustained threshold for good conditions, defeating the transiency doctrine (which would excuse dips under 5s).",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds"
+            ],
+            "legal_principle": "Transiency doctrine: sustained_below_3s_seconds >= 5s in good conditions strongly supports a Rule 126 breach."
+          },
+          {
+            "step": 5,
+            "claim": "The rear-to-rear gap_s convention produces an identical sustained_below_3s_seconds value (5.7s), so the breach finding does not depend on which convention is preferred - both converge.",
+            "evidence_refs": [
+              "aggregate.sustained_below_3s_seconds"
+            ],
+            "legal_principle": "Where both clearance_s and gap_s agree, uncertainty about measurement convention does not change the verdict."
+          },
+          {
+            "step": 6,
+            "claim": "A cluster of 10 lead_brake events between t=3.65s and t=6.35s, concurrent with clearance_s and gap_s already sub-2s, culminates in clearance_s=0.0 at t=6.9s - demonstrating the follower lacked sufficient buffer to respond safely to the lead's deceleration.",
+            "evidence_refs": [
+              "events[lead_brake, multiple]",
+              "representative_samples[t=6.9]"
+            ],
+            "legal_principle": "Rule 126's core concern - ability to stop safely if the lead brakes - is directly evidenced by this sequence."
+          },
+          {
+            "step": 7,
+            "claim": "min_ttc_s=1.34s during an active closing phase (seconds_closing=2.99s) is an aggravating dynamic-hazard signal, though sustained_ttc_below_3s_seconds is brief (0.15s), limiting escalation to dangerous/negligent driving territory.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "aggregate.seconds_closing",
+              "aggregate.sustained_ttc_below_3s_seconds"
+            ],
+            "legal_principle": "Falling TTC while closing aggravates a Rule 126 case but a single brief low-TTC moment alone does not establish dangerous driving."
+          },
+          {
+            "step": 8,
+            "claim": "Rule 127 is not engaged because the follower (4.6m) is not a 'long vehicle' (>7.5m); the lead vehicle's length is irrelevant to Rule 127 applicability.",
+            "evidence_refs": [
+              "segment.follower_length_m"
+            ],
+            "legal_principle": "Rule 127 applies only when the following vehicle itself is a long vehicle outside a built-up area."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Sustained sub-3s clearance for 5.7 of 6.9 seconds (~83% of segment) in good conditions.",
+            "evidence_ref": "aggregate.sustained_clearance_below_3s_seconds"
+          },
+          {
+            "factor": "Clearance degraded to 0.0s and gap_s to 0.42s at the final sample, coincident with repeated lead braking.",
+            "evidence_ref": "representative_samples[t=6.9]"
+          },
+          {
+            "factor": "Cluster of 10 lead_brake events in the final ~2.7s of the segment without the follower regaining a safe buffer.",
+            "evidence_ref": "events[lead_brake]"
+          },
+          {
+            "factor": "min_ttc_s of 1.34s during an active closing phase.",
+            "evidence_ref": "aggregate.min_ttc_s"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Segment is short (6.9s) with some early samples showing large safe clearance (e.g., t=0.65s, clearance_s=9.35s), suggesting the close-following behaviour developed during the segment rather than being constant throughout.",
+            "evidence_ref": "representative_samples[t=0.65]"
+          },
+          {
+            "factor": "13 of 96 samples excluded for low confidence, introducing some uncertainty into the precise sustained-duration figures.",
+            "evidence_ref": "aggregate.excluded_low_confidence"
+          },
+          {
+            "factor": "Speeds are vision-tracked with inherent noise, so TTC and closing-speed-derived aggravating factors carry additional uncertainty.",
+            "evidence_ref": "camera.speed_estimation"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": [
+            "Negligent driving (s117 Road Transport Act 2013 (NSW)) - only if further evidence confirms the near-zero clearance at t=6.9s was not a brief perception artifact"
+          ]
+        },
+        "counterfactual": "If the final low-clearance sample (t=6.9s, clearance_s=0.0) were discounted as a momentary tracking artifact and sustained_clearance_below_3s_seconds fell under the 5s transiency threshold, the verdict would likely downgrade to possible_breach.",
+        "explanation_for_lay_user": "The camera data shows the following car staying closer than the recommended 3-second safety gap for most of the clip (about 5.7 out of 6.9 seconds), and this holds true whether you measure gap from bumper-to-bumper or the actual clear road between the cars. Near the end, the lead car braked ten times in quick succession, and by the final moment the gap had shrunk to almost nothing (0 seconds of clear road), which is exactly the kind of situation Rule 126 is meant to prevent. There's some uncertainty because vehicle speeds come from video tracking rather than a speedometer, and a few data points were dropped for low confidence, but the overall pattern strongly points to a breach of the safe-following-distance rule."
+      }
+    },
+    {
+      "utc": "2026-10-25T04:20:20+00:00",
+      "case_id": "ep02_seg_trk_000004_trk_000003_4795",
+      "label": "C",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Follower closed from 4.4s to 0s clearance in 3.9s on wet motorway; TTC fell to 0.43s.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower (car, 4.6 m) progressively closed on lead vehicle on a wet motorway, with clearance_s and gap_s both falling well below the sufficiency-to-stop calibration for almost the entire observed segment, culminating in near-zero clearance and TTC of 0.43 s.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Across the 3.9 s segment the follower accelerated from ~20 km/h to ~58 km/h while closing on a lead vehicle that was accelerating more slowly, driving clearance_s from 4.42 s down to 0.0 s and gap_s from 5.23 s down to 0.26 s. The road surface is wet (poor-condition threshold of 4+ s applies), and sustained_clearance_below_3s_seconds (3.65 s of the 3.9 s segment) shows the vehicle spent almost the entire window under even the lenient dry-condition 3 s benchmark.",
+          "key_statistics": [
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 3.65,
+              "interpretation": "Nearly the entire 3.9 s segment had clear-road time below the dry-condition 3 s sufficiency benchmark; on wet road the applicable 4+ s benchmark is breached essentially throughout."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 2.7,
+              "interpretation": "Exceeds the 3 s transiency-doctrine threshold's spirit for a 2 s cutoff, indicating sustained, not momentary, close following."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": 0.43,
+              "interpretation": "A time-to-collision this low, while actively closing, is a strong dynamic hazard signal consistent with imminent-collision risk absent driver correction."
+            },
+            {
+              "stat": "seconds_closing",
+              "value": 3.9,
+              "interpretation": "The follower was closing on the lead for the entire observed duration with no recovery, ruling out a brief, self-correcting dip."
+            },
+            {
+              "stat": "mean_clearance_s",
+              "value": 1.447,
+              "interpretation": "Mean clear-road time is well under both the 3 s (dry) and 4 s (wet) sufficiency calibrations."
+            },
+            {
+              "stat": "mean_gap_s",
+              "value": 1.934,
+              "interpretation": "Even under the less-stringent rear-to-rear gap_s convention (which includes the follower's own body length), the mean is still below the applicable wet-road 4 s threshold."
+            },
+            {
+              "stat": "sustained_below_3s_seconds (gap_s)",
+              "value": 3.3,
+              "interpretation": "Confirms the breach persists under the alternative gap_s convention, reducing sensitivity of the verdict to the clearance_s vs gap_s choice."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 0.05,
+              "frame_id": 501,
+              "claim": "Segment begins with an adequate clearance_s of 4.42 s, i.e. compliant at the outset."
+            },
+            {
+              "sample_t": 2.0,
+              "frame_id": 540,
+              "claim": "By mid-segment clearance_s has fallen to 1.51 s, already well below even the dry 3 s benchmark."
+            },
+            {
+              "sample_t": 3.3,
+              "frame_id": 566,
+              "claim": "clearance_s = 0.37 s and ttc_s = 1.41 s, indicating critical closeness and active closing."
+            },
+            {
+              "sample_t": 3.9,
+              "frame_id": 578,
+              "claim": "clearance_s = 0.0 s and ttc_s = 0.43 s at segment end, consistent with near-collision proximity and no safe stopping margin."
+            }
+          ],
+          "event_citations": []
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked estimates (follower reaching up to 58.5 km/h) and carry a few km/h of noise; this affects derived gap_s/clearance_s/ttc_s precision at the margins.",
+          "1 of 79 samples was excluded for low confidence; 78 usable samples remain, which is adequate but the segment itself is short (3.9 s), limiting ability to assess whether this pattern persisted beyond the camera's field of view.",
+          "gap_s_uncertainty_estimate is reported as very low (0.002 s) reflecting homography precision, but this does not capture vision-speed estimation noise, which is the larger source of uncertainty.",
+          "No distances were dropped for exceeding max_reliable_range_m (120 m); all gaps observed (4.27-29.75 m) were well within reliable range.",
+          "Road surface recorded as wet while weather is dry_clear - this discrepancy is noted; the wet-surface figure is used as the governing (stricter) condition per the stated environment fields."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Follower vehicle length (4.6 m) does not exceed 7.5 m, so Rule 127 (long-vehicle minimum distance) is not engaged regardless of lead vehicle length or road class.",
+            "evidence_refs": [
+              "follower_length_m"
+            ],
+            "legal_principle": "Rule 127 applies only when the following vehicle itself is a long vehicle (>7.5 m)."
+          },
+          {
+            "step": 2,
+            "claim": "The governing test is clearance_s (clear road ahead), which fell from 4.42 s to 0.0 s across the segment, with sustained_clearance_below_3s_seconds = 3.65 s of the 3.9 s duration.",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds",
+              "sample_t=0.05",
+              "sample_t=3.9"
+            ],
+            "legal_principle": "Rule 126 requires sufficient distance to stop safely; clearance_s is the stricter and more legally apt reading of 'distance behind' since it excludes the follower's own body length."
+          },
+          {
+            "step": 3,
+            "claim": "Road surface is wet, triggering the poor-conditions calibration of 4+ seconds; mean_clearance_s (1.447 s) and median_clearance_s (1.52 s) fall far short of this benchmark for nearly the whole segment.",
+            "evidence_refs": [
+              "environment.road_surface",
+              "aggregate.mean_clearance_s",
+              "aggregate.median_clearance_s"
+            ],
+            "legal_principle": "NSW sufficiency calibration prescribes 4+ seconds in poor conditions (wet road)."
+          },
+          {
+            "step": 4,
+            "claim": "Under the alternative gap_s convention the verdict does not flip: sustained_below_3s_seconds (gap_s) = 3.3 s and mean_gap_s = 1.934 s, both still below the applicable wet-condition threshold.",
+            "evidence_refs": [
+              "aggregate.sustained_below_3s_seconds",
+              "aggregate.mean_gap_s"
+            ],
+            "legal_principle": "Where both metrics converge on breach, the choice of convention does not materially affect the verdict, though it is disclosed per measurement-convention policy."
+          },
+          {
+            "step": 5,
+            "claim": "The pattern is a sustained, continuous closing (seconds_closing = 3.9, the entire segment) rather than a brief post-cut-in dip, ruling out the transiency doctrine's exception.",
+            "evidence_refs": [
+              "aggregate.seconds_closing",
+              "aggregate.sustained_clearance_below_2s_seconds"
+            ],
+            "legal_principle": "Transiency doctrine excuses brief dips (<5 s); here the sub-3s condition persisted for 3.65 s of a 3.9 s window with no recovery, which is sustained behaviour supporting breach."
+          },
+          {
+            "step": 6,
+            "claim": "min_ttc_s = 0.43 s at segment end is a strong aggravating dynamic signal of active, worsening closure rather than steady-state close-following.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "sample_t=3.9"
+            ],
+            "legal_principle": "A falling/low TTC while closing is treated as an aggravating factor under the stated escalation framework."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Continuous, unrecovered closing throughout the entire 3.9 s segment with no stabilization.",
+            "evidence_ref": "aggregate.seconds_closing=3.9"
+          },
+          {
+            "factor": "min_ttc_s of 0.43 s indicates near-collision dynamics at segment end.",
+            "evidence_ref": "aggregate.min_ttc_s"
+          },
+          {
+            "factor": "Wet road surface increases required stopping distance/time, making the observed sub-2s clearance more dangerous than the same figures would be in dry conditions.",
+            "evidence_ref": "environment.road_surface=wet"
+          },
+          {
+            "factor": "Location is a Safe-T-Cam enforcement zone, relevant to penalty-notice amount for heavy vehicles (not applicable here, both cars) but indicates active enforcement context.",
+            "evidence_ref": "environment.is_safe_t_cam_zone"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Segment is short (3.9 s); the full before/after context of the maneuver (e.g., possible lead braking or lane change) is not captured.",
+            "evidence_ref": "duration_s=3.9"
+          },
+          {
+            "factor": "Segment begins with a compliant clearance_s of 4.42 s, suggesting the follower was initially driving safely before the closing behaviour began.",
+            "evidence_ref": "sample_t=0.05,frame_id=501"
+          },
+          {
+            "factor": "No horn, high-beam, or other menacing-behaviour events recorded, reducing (but not eliminating) support for predatory-driving escalation.",
+            "evidence_ref": "events=[]"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "medium",
+          "escalation_charges_to_consider": [
+            "negligent driving (s117 Road Transport Act 2013 (NSW))",
+            "dangerous driving (s52A Crimes Act 1900 (NSW)) if independently corroborated by additional evidence of risk to others"
+          ]
+        },
+        "counterfactual": "If the follower's speed had tracked the lead's acceleration (instead of outpacing it), keeping clearance_s above ~3-4 s throughout, this would be an unlikely_breach rather than a likely_breach.",
+        "explanation_for_lay_user": "The camera tracked a following car that kept accelerating faster than the car ahead on a wet motorway, shrinking the clear road space between them from over 4 seconds down to essentially zero by the end of the clip. Even allowing for the fact that vehicle speeds are camera-estimated and carry some noise, this pattern persisted for almost the entire 3.9-second clip, not just a brief moment, and the time-to-collision dropped to under half a second near the end. This strongly suggests the follower was not leaving enough distance to stop safely, which is what NSW Rule 126 requires; the heavy-vehicle Rule 127 does not apply here since neither car is a long vehicle."
+      }
+    },
+    {
+      "utc": "2026-10-25T04:21:33+00:00",
+      "case_id": "ep05_seg_trk_000002_trk_000004_9460",
+      "label": "D",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Car sustained ~1.3-1.5s clearance behind articulated truck in heavy rain, far below the 4s wet-weather threshold.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower (car) maintained a gap behind a lead vehicle on a wet motorway that, per clearance_s and gap_s aggregates, was insufficient to stop safely for almost the entire 3.7s observed segment.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Across 55 usable samples, clearance_s (the stricter, body-length-corrected measure) averaged 1.537s and never exceeded ~2.1s, while sustained_clearance_below_3s_seconds (3.65s) covers essentially the entire 3.7s segment. Under rain_heavy/wet conditions the applicable sufficiency threshold is 4+ seconds, which both clearance_s and gap_s fail almost continuously, and a dynamic closing event (min_ttc_s=2.14 at t=3.1) coincides with a cluster of hard lead-vehicle braking events.",
+          "key_statistics": [
+            {
+              "stat": "mean_clearance_s",
+              "value": 1.537,
+              "interpretation": "Well under even the 3s 'good conditions' baseline, let alone the 4s wet-weather threshold."
+            },
+            {
+              "stat": "min_clearance_s",
+              "value": 1.317,
+              "interpretation": "Worst-case clear-road time is less than half the required wet-weather margin."
+            },
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 3.65,
+              "interpretation": "Near-entirety of the 3.7s segment was spent below the 3s threshold on the stricter clearance measure, defeating the transiency doctrine."
+            },
+            {
+              "stat": "sustained_below_4s_seconds",
+              "value": 3.65,
+              "interpretation": "Using the less-strict gap_s convention, almost the whole segment also fails the wet-weather 4s standard."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": 2.14,
+              "interpretation": "A brief but real dynamic collision-risk window during active closing, occurring amid repeated lead braking."
+            },
+            {
+              "stat": "seconds_closing",
+              "value": 3.03,
+              "interpretation": "Follower was closing on the lead for the majority of the segment, consistent with insufficient following distance rather than steady-state gap-holding."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 0.05,
+              "frame_id": 1251,
+              "claim": "Earliest sample already shows clearance_s=1.363, below both 3s and 4s thresholds from the start of the window."
+            },
+            {
+              "sample_t": 2.8,
+              "frame_id": 1306,
+              "claim": "clearance_s drops to 1.317 (segment minimum) coinciding with an 18.5 km/h lead_brake event."
+            },
+            {
+              "sample_t": 3.1,
+              "frame_id": 1312,
+              "claim": "ttc_s falls to 2.14s while lead speed collapses to 2.17 km/h, the closest approach to a dynamic collision risk in the segment."
+            },
+            {
+              "sample_t": 3.6,
+              "frame_id": 1322,
+              "claim": "Final sample shows partial recovery (clearance_s=2.111, gap_s=2.984), suggesting the follower was beginning to open the gap as the segment ends."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 2.8,
+              "type": "lead_brake",
+              "legal_significance": "18.5 km/h speed drop while follower clearance was already at its minimum (1.317s), sharply reducing available reaction margin."
+            },
+            {
+              "event_t": 3.1,
+              "type": "lead_brake",
+              "legal_significance": "Coincides with min_ttc_s=2.14, the most acute dynamic hazard point in the segment."
+            },
+            {
+              "event_t": 0.1,
+              "type": "follower_brake",
+              "legal_significance": "Shows the follower was reactively managing the gap from the very start, indicating awareness of insufficient margin rather than inattention."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked estimates, not speedometer-derived; expect several km/h of noise, which propagates into gap_s/clearance_s/ttc_s.",
+          "Segment duration is only 3.7s - a short window; sustained_* statistics describe this window only and cannot confirm a longer-term pattern beyond it.",
+          "1 of 56 samples excluded for low confidence; 0 excluded for out-of-range (within the 120m reliable limit), so range is not a material limitation here.",
+          "gap_s_uncertainty_estimate is very small (0.002s), indicating high internal consistency of the homography-derived distances, but this does not remove vision-speed noise.",
+          "Multiple overlapping lead_brake events make it difficult to fully separate lead-vehicle erratic braking behaviour from follower following-distance choice."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Rule 127 is not engaged because the FOLLOWER (car, 4.6m) is not a long vehicle (>7.5m); the lead truck's length (16m) is irrelevant to triggering Rule 127.",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 applies only when the following vehicle itself is a long vehicle outside a built-up area."
+          },
+          {
+            "step": 2,
+            "claim": "Conditions are wet/rain_heavy, raising the applicable sufficiency calibration from 3s to 4+ seconds.",
+            "evidence_refs": [
+              "environment.weather",
+              "environment.road_surface"
+            ],
+            "legal_principle": "NSW sufficiency calibration requires 4+ seconds in poor conditions (wet, night, fog)."
+          },
+          {
+            "step": 3,
+            "claim": "Clearance_s (the stricter, legally preferable reading of the clear-road test) averaged 1.537s and was below 3s for 3.65 of 3.7s - i.e., almost the entire observed segment - well short of the 4s wet threshold.",
+            "evidence_refs": [
+              "aggregate.mean_clearance_s",
+              "aggregate.sustained_clearance_below_3s_seconds"
+            ],
+            "legal_principle": "Sustained sub-threshold following (not a brief dip) supports a Rule 126 breach under the transiency doctrine."
+          },
+          {
+            "step": 4,
+            "claim": "Gap_s (the less strict, bumper-inclusive measure) also fails the 4s wet threshold for 3.65 of 3.7s, so the measurement-convention choice does not change the overall verdict, only the severity margin.",
+            "evidence_refs": [
+              "aggregate.sustained_below_4s_seconds",
+              "aggregate.mean_gap_s"
+            ],
+            "legal_principle": "Both candidate interpretations of the '2/3-second rule' point to the same breach conclusion here."
+          },
+          {
+            "step": 5,
+            "claim": "A dynamic closing event (min_ttc_s=2.14 at t=3.1) coincided with repeated hard lead braking (events at t=2.8-3.55), showing the follower was exposed to an active, not merely static, collision risk.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "events.lead_brake@2.8",
+              "events.lead_brake@3.1"
+            ],
+            "legal_principle": "Falling/low TTC while closing is an aggravating dynamic signal under the stated framework."
+          },
+          {
+            "step": 6,
+            "claim": "sustained_ttc_below_3s_seconds=0.0 indicates the dangerous TTC dip was brief/isolated rather than continuously sustained, moderating (but not eliminating) the dynamic-hazard aggravation.",
+            "evidence_refs": [
+              "aggregate.sustained_ttc_below_3s_seconds"
+            ],
+            "legal_principle": "Isolated dynamic spikes are weighted less heavily than sustained static closeness, per the transiency doctrine."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Wet/rain_heavy conditions demand a higher 4s threshold, which was violated almost continuously.",
+            "evidence_ref": "environment.weather; aggregate.sustained_below_4s_seconds"
+          },
+          {
+            "factor": "Lead vehicle is a large articulated truck (16m) with a longer/heavier stopping profile, increasing the real-world risk of insufficient following distance.",
+            "evidence_ref": "lead_vehicle_class; lead_length_m"
+          },
+          {
+            "factor": "Minimum TTC of 2.14s occurred during a cluster of hard lead braking events, indicating real dynamic risk, not just static proximity.",
+            "evidence_ref": "aggregate.min_ttc_s; events.lead_brake@3.1"
+          },
+          {
+            "factor": "Site is flagged as a Safe-T-Cam enforcement zone, relevant to penalty tier consideration.",
+            "evidence_ref": "environment.is_safe_t_cam_zone"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Lead vehicle braked repeatedly and unpredictably (13 lead_brake events in 3.7s), suggesting erratic lead behaviour contributed to the closing dynamics, not solely follower choice.",
+            "evidence_ref": "events.lead_brake (multiple)"
+          },
+          {
+            "factor": "Follower reacted with its own braking early in the segment (t=0.1), showing active gap management rather than inattention.",
+            "evidence_ref": "events.follower_brake@0.1"
+          },
+          {
+            "factor": "Segment is short (3.7s), limiting confidence that this reflects sustained long-duration behaviour rather than a difficult but brief traffic event.",
+            "evidence_ref": "duration_s"
+          },
+          {
+            "factor": "By the final sample the follower appears to be increasing clearance (clearance_s rising to 2.111 at t=3.6), suggesting corrective behaviour.",
+            "evidence_ref": "sample_t=3.6, frame_id=1322"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "medium",
+          "escalation_charges_to_consider": [
+            "Negligent driving (s117 Road Transport Act 2013 (NSW))"
+          ]
+        },
+        "counterfactual": "If the low-clearance readings had been confined to a brief post-cut-in dip (<2s) rather than persisting for 3.65 of the 3.7s segment, the transiency doctrine would likely yield an unlikely_breach verdict instead.",
+        "explanation_for_lay_user": "The camera data shows the car stayed only about 1.3-1.5 seconds of clear road behind a large truck for almost the entire 3.7-second clip, well short of the 4-second gap recommended in heavy rain. The truck also braked hard and repeatedly during this time, briefly bringing the collision-risk time-to-impact down to about 2 seconds. Because the car isn't a long vehicle, the special 60m long-vehicle rule doesn't apply, but the general 'leave enough room to stop safely' rule likely was breached. The short clip length and the truck's own erratic braking are noted as factors that add some uncertainty to how this would play out for a human reviewer."
+      }
+    },
+    {
+      "utc": "2026-10-25T04:22:52+00:00",
+      "case_id": "ep06_seg_trk_000002_trk_000001_11015",
+      "label": "E",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "medium",
+        "headline": "Clearance stayed under 2-3s for nearly whole segment; TTC fell to 1.52s during lead's hard braking, dawn/dusk lighting.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower car persistently close behind lead car on a motorway; both gap_s and clearance_s sit well under the sufficiency calibration for almost the entire 3.3s window, and TTC collapses during lead braking events.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Both following-distance conventions show sustained sub-3s margins across effectively the whole 3.3s segment (sustained_clearance_below_3s_seconds=3.25, sustained_below_3s_seconds(gap)=3.25). Clearance_s, the stricter and governing metric, averages only 1.623s and bottoms at 0.893s at t=3.3, coinciding with repeated lead_brake events and a falling TTC (min 1.52s) during an active closing phase (seconds_closing=2.9s).",
+          "key_statistics": [
+            {
+              "stat": "mean_clearance_s",
+              "value": 1.623,
+              "interpretation": "Well below the 3s good-condition threshold and far below the 4s poor-condition (dawn/dusk) threshold."
+            },
+            {
+              "stat": "min_clearance_s",
+              "value": 0.893,
+              "interpretation": "At worst point, clear road ahead equates to under 1s reaction buffer - highly insufficient to stop safely."
+            },
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 3.25,
+              "interpretation": "Essentially the entire observed duration (3.3s) was below the 3s clearance threshold - not a brief dip."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 1.55,
+              "interpretation": "Nearly half the segment also breached the stricter 2s clearance threshold."
+            },
+            {
+              "stat": "mean_gap_s",
+              "value": 2.111,
+              "interpretation": "Even the less strict rear-to-rear metric sits below the 3s good-condition calibration throughout most of the window."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": 1.52,
+              "interpretation": "During active closing, time-to-collision fell to 1.52s, an acute dynamic hazard coincident with lead braking."
+            },
+            {
+              "stat": "seconds_closing",
+              "value": 2.9,
+              "interpretation": "Follower was closing the gap for ~88% of the segment, indicating insufficient buffer was being actively eroded, not merely static."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 1.7,
+              "frame_id": 1534,
+              "claim": "Clearance_s already at 1.416s (sub-1.5s) before the most severe lead braking occurred, showing an already-insufficient buffer."
+            },
+            {
+              "sample_t": 2.95,
+              "frame_id": 1559,
+              "claim": "Clearance_s drops to 0.999s with ttc_s=1.537s immediately after a 23 km/h lead speed drop, a near-critical following distance."
+            },
+            {
+              "sample_t": 3.3,
+              "frame_id": 1566,
+              "claim": "Worst observed point: clearance_s=0.893s, gap_s=1.416s, well below both conventions' thresholds."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 2.75,
+              "type": "lead_brake",
+              "legal_significance": "23 km/h deceleration by lead while follower's clearance was already under 1.5s - tests whether follower had sufficient buffer to stop safely, core Rule 126 question."
+            },
+            {
+              "event_t": 2.4,
+              "type": "lead_brake",
+              "legal_significance": "12.9 km/h deceleration contributing to the closing phase and falling TTC."
+            },
+            {
+              "event_t": 0.1,
+              "type": "follower_brake",
+              "legal_significance": "Early reactive braking by follower suggests awareness of closeness from the outset, partially mitigating culpability for initial positioning."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Follower and lead speeds are vision-tracked estimates with a few km/h of noise; v_rel and TTC inherit this noise and should be read as indicative, not exact.",
+          "1 sample excluded for low confidence out of 67 total; no samples dropped for range (max_reliable_range_m=120m, well beyond observed gaps).",
+          "Segment duration is only 3.3s, which cannot satisfy the literal 'sustained_below_3s_seconds >= 5s' numeric threshold from the transiency doctrine even though the sub-threshold condition covers ~98% of the available window - this is a structural limitation of segment length, not evidence of a brief/transient dip.",
+          "Dawn/dusk lighting is treated here as a poor-condition factor (4+s calibration) despite the dry road surface; this interpretation affects severity but not the underlying breach finding since even the lenient 3s/gap_s convention is persistently breached.",
+          "gap_s_uncertainty_estimate (0.002s) reflects geometric/homography precision only and does not capture vision-speed estimation noise, which is the dominant uncertainty source for ttc_s and v_rel."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Rule 126 is engaged because the vehicles are in a following relationship on a motorway and distance/speed data permit a sufficiency-to-stop analysis.",
+            "evidence_refs": [
+              "aggregates.usable_samples",
+              "environment.road_class"
+            ],
+            "legal_principle": "Rule 126 requires sufficient distance to stop safely to avoid collision."
+          },
+          {
+            "step": 2,
+            "claim": "Clearance_s is adopted as the governing test per measurement convention; its mean (1.623s) and median (1.651s) are well under the 3s good-condition calibration.",
+            "evidence_refs": [
+              "aggregates.mean_clearance_s",
+              "aggregates.median_clearance_s"
+            ],
+            "legal_principle": "Sufficiency calibration: 3s in good conditions."
+          },
+          {
+            "step": 3,
+            "claim": "Dawn/dusk lighting arguably elevates the required margin to 4+ seconds; no sample in the segment reaches even the lower 3s bar, let alone 4s.",
+            "evidence_refs": [
+              "environment.weather",
+              "aggregates.mean_gap_s"
+            ],
+            "legal_principle": "Sufficiency calibration: 4+ seconds in poor conditions."
+          },
+          {
+            "step": 4,
+            "claim": "sustained_clearance_below_3s_seconds (3.25s) covers nearly the entire 3.3s segment, indicating persistent rather than transient insufficiency.",
+            "evidence_refs": [
+              "aggregates.sustained_clearance_below_3s_seconds"
+            ],
+            "legal_principle": "Transiency doctrine distinguishes brief dips (<5s) from sustained breaches."
+          },
+          {
+            "step": 5,
+            "claim": "An active closing phase (2.9 of 3.3s) with min_ttc_s=1.52s coincided with escalating lead_brake events, showing the follower's margin was dynamically eroding exactly when the lead was decelerating hard.",
+            "evidence_refs": [
+              "aggregates.min_ttc_s",
+              "aggregates.seconds_closing",
+              "events[lead_brake@2.75]"
+            ],
+            "legal_principle": "Falling TTC while closing is an aggravating dynamic hazard signal under the stated framework."
+          },
+          {
+            "step": 6,
+            "claim": "The less-strict gap_s convention tells a qualitatively similar story (mean 2.111s, sustained_below_3s_seconds=3.25s), so the choice of convention does not flip the verdict, only the margin of severity.",
+            "evidence_refs": [
+              "aggregates.mean_gap_s",
+              "aggregates.sustained_below_3s_seconds"
+            ],
+            "legal_principle": "Both conventions must be disclosed per measurement convention requirement; divergence here is modest (~0.5s, consistent with follower_length_m/speed) and not verdict-changing."
+          },
+          {
+            "step": 7,
+            "claim": "Segment brevity (3.3s) prevents literal satisfaction of the 5s sustained-threshold wording, introducing genuine uncertainty that justifies medium rather than high confidence.",
+            "evidence_refs": [
+              "aggregates.usable_samples",
+              "duration_s"
+            ],
+            "legal_principle": "Evidentiary sufficiency must be weighed against observation window limitations."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Falling TTC to 1.52s coincident with a 23 km/h lead deceleration at a point of already-marginal clearance.",
+            "evidence_ref": "aggregates.min_ttc_s / events[lead_brake@2.75]"
+          },
+          {
+            "factor": "Dawn/dusk conditions should have prompted a larger buffer (4+s) than what was maintained (mean ~1.6-2.1s).",
+            "evidence_ref": "environment.weather"
+          },
+          {
+            "factor": "Near-total persistence of sub-3s clearance across the observed window rather than an isolated dip.",
+            "evidence_ref": "aggregates.sustained_clearance_below_3s_seconds"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Lead vehicle's own erratic, repeated hard braking (multiple lead_brake events) actively contributed to the shrinking gap, rather than the closeness being solely the product of follower's chosen distance.",
+            "evidence_ref": "events[lead_brake x6]"
+          },
+          {
+            "factor": "Follower exhibited early reactive braking at t=0.1s, suggesting some situational awareness and responsiveness.",
+            "evidence_ref": "events[follower_brake@0.1]"
+          },
+          {
+            "factor": "Short 3.3s segment limits certainty that the behaviour is 'sustained' in the full legal/doctrinal sense beyond the observed window.",
+            "evidence_ref": "duration_s"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": [
+            "Negligent driving (s117 Road Transport Act 2013 (NSW)) if corroborated by a longer observation window showing repeated near-critical TTC events"
+          ]
+        },
+        "counterfactual": "If the lead vehicle had not executed the escalating hard-braking sequence (especially the 23 km/h drop at t=2.75), clearance_s likely would have stabilised above 2s and the sustained-below-3s duration would shrink toward a transient dip, shifting the verdict toward possible_breach or unlikely_breach.",
+        "explanation_for_lay_user": "The camera data shows the following car stayed closer than the recommended 2-3 second safety gap for almost the entire 3.3-second clip, using the stricter 'clear road ahead' measure. Things got worse near the end: the car in front braked hard several times, and the gap between the cars shrank so much that a collision could have happened in about 1.5 seconds if nothing changed. Because dawn/dusk lighting normally calls for an even bigger safety gap, and because this tight-following pattern covered almost the whole clip rather than being a brief one-off, this looks like a likely breach of the safe-following-distance rule, though the short clip length means we can't be fully certain this was a longer-term pattern."
+      }
+    },
+    {
+      "utc": "2026-10-25T06:56:55+00:00",
+      "case_id": "ep04_seg_trk_000034_trk_000023_8320",
+      "label": "B",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "medium",
+        "headline": "Wet-road following distance sustained near 2s clearance for ~5.2s, below the 4s wet-weather sufficiency benchmark.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower maintained a close, sustained gap behind lead car on a wet motorway for most of the 5.7s segment, engaging the 'sufficient distance to stop safely' test.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Both clearance_s and gap_s metrics show the follower closed to roughly 2-2.5s of separation within the first second and held it there for nearly the entire remaining segment. Under the wet-road 4+ second calibration, both metrics indicate insufficiency, though clearance_s (the stricter, road-ahead reading) shows a slightly worse picture (median 1.96s) than gap_s (median 2.516s). No active closing (TTC null, seconds_closing=0.0) was recorded, indicating steady tailgating rather than an escalating collision-course dynamic.",
+          "key_statistics": [
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 5.2,
+              "interpretation": "Clear road ahead was below the dry-condition 3s benchmark for virtually the entire segment duration (5.7s), exceeding the 5s transiency threshold -> supports sustained breach even before applying the stricter wet-weather standard."
+            },
+            {
+              "stat": "sustained_below_4s_seconds (gap_s convention)",
+              "value": 5.2,
+              "interpretation": "Even the less-strict rear-to-rear gap_s metric fails the applicable wet-weather 4s threshold for ~91% of the segment."
+            },
+            {
+              "stat": "median_clearance_s",
+              "value": 1.96,
+              "interpretation": "Typical clear-road separation was under 2 seconds - well short of both the 3s dry and 4s wet benchmarks."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 1.9,
+              "interpretation": "A substantial portion of the segment had clearance below 2s, though short of the 3s transiency threshold for the stricter 2s test on its own."
+            },
+            {
+              "stat": "seconds_closing / min_ttc_s",
+              "value": "0.0 / null",
+              "interpretation": "No sustained closing dynamic was detected; this is steady close-following, not an active collision-course, which tempers the severity/escalation reading."
+            },
+            {
+              "stat": "mean_gap_s",
+              "value": 2.66,
+              "interpretation": "The looser rear-to-rear metric also sits below the wet-weather 4s benchmark, though further from the dry 3s line than clearance_s is."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 1.25,
+              "frame_id": 1108,
+              "claim": "Clearance_s at 1.455s, the segment minimum, with gap_s at 2.01s - both near or below applicable thresholds shortly after the initial approach."
+            },
+            {
+              "sample_t": 4.9,
+              "frame_id": 1181,
+              "claim": "Clearance_s at 1.947s coincides with the first lead_brake event window, showing thin margin as lead decelerated."
+            },
+            {
+              "sample_t": 5.7,
+              "frame_id": 1197,
+              "claim": "Clearance_s at 1.622s at segment end, still below both dry and wet thresholds after two lead-braking events."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 4.85,
+              "type": "lead_brake",
+              "legal_significance": "Lead vehicle decelerated (7.2 km/h drop) while follower clearance was already under 2s, testing whether the held distance was 'sufficient to stop safely' as Rule 126 requires."
+            },
+            {
+              "event_t": 5.0,
+              "type": "lead_brake",
+              "legal_significance": "A second, larger deceleration (8.0 km/h drop) occurred almost immediately after the first, with follower clearance remaining in the 1.6-2.1s band - no TTC alarm was triggered but the margin for error was thin on a wet surface."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked (not speedometer-derived) and carry several km/h of noise; follower speed fluctuated 5.8-37.9 km/h within 5.7s, partly reflecting this noise and real acceleration.",
+          "4 of 100 samples were excluded for low confidence; none were excluded for exceeding the 120m reliable range, so range-based distance dropout is not a factor here.",
+          "gap_s_uncertainty_estimate is very small (0.002s), suggesting the homography-derived distances themselves are precise, but this does not reduce the larger uncertainty inherent in vision-based speed estimation used to convert gap_m to gap_s/clearance_s.",
+          "TTC is null throughout because the follower was not consistently closing distance (v_rel often negative, i.e., lead pulling away) - this is a steady-state tailgating pattern, not an active collision-approach pattern, and should not be conflated with the latter.",
+          "Segment duration is only 5.7s, at the lower end for confidently establishing 'sustained' behaviour, though the 5.2s sustained-below-3s figure spans nearly the whole window."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Both vehicles are standard cars (4.6m), so Rule 127 (long-vehicle minimum distance) is not engaged regardless of the lead vehicle's length.",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 requires the FOLLOWING vehicle to be a long vehicle (>7.5m) outside a built-up area; a 4.6m follower does not meet this threshold."
+          },
+          {
+            "step": 2,
+            "claim": "Conditions are wet (rain_light, wet road surface) on a motorway outside a built-up area, which under the sufficiency calibration raises the benchmark from 3s to 4+ seconds.",
+            "evidence_refs": [
+              "environment.weather",
+              "environment.road_surface"
+            ],
+            "legal_principle": "Rule 126 prescribes no fixed distance; sufficiency is assessed against conditions, and wet/poor-visibility conditions warrant a larger safety margin per NSW guidance."
+          },
+          {
+            "step": 3,
+            "claim": "Reasoning primarily from clearance_s (clear road ahead), the follower held under 3s of clearance for 5.2 of the 5.7s segment and under 2s for 1.9s, both exceeding the transiency doctrine's 5s/3s sustained thresholds.",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds",
+              "aggregate.sustained_clearance_below_2s_seconds",
+              "aggregate.median_clearance_s"
+            ],
+            "legal_principle": "Sustained sub-threshold following (>=5s below 3s) strongly supports a Rule 126 breach rather than a brief, excusable dip."
+          },
+          {
+            "step": 4,
+            "claim": "The looser gap_s (rear-to-rear, including follower body length) convention shows a similar pattern: sustained_below_3s_seconds is 5.15s and mean/median gap_s (2.66s/2.52s) remain below the wet-weather 4s benchmark, though gap_s never sustains below 2s (0.0s).",
+            "evidence_refs": [
+              "aggregate.sustained_below_3s_seconds",
+              "aggregate.mean_gap_s",
+              "aggregate.sustained_below_2s_seconds"
+            ],
+            "legal_principle": "The two conventions diverge on severity (clearance_s shows a worse picture) but converge on the ultimate conclusion that the wet-weather 4s threshold was not met for most of the segment."
+          },
+          {
+            "step": 5,
+            "claim": "No active closing dynamic was present (TTC null, seconds_closing=0.0), meaning this is steady tailgating rather than an escalating near-miss, which weighs against treating this as dangerous/negligent driving despite the Rule 126 breach.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "aggregate.seconds_closing",
+              "aggregate.sustained_ttc_below_3s_seconds"
+            ],
+            "legal_principle": "Dynamic closing risk (falling TTC) is the aggravating factor distinguishing a simple distance breach from more serious driving offences; its absence here keeps escalation risk low."
+          },
+          {
+            "step": 6,
+            "claim": "Two lead_brake events (t=4.85, t=5.0) occurred while clearance_s was already around 1.9-2.1s, testing the sufficiency of the follower's margin; no TTC spike or near-collision indicator followed, but the margin was objectively thin for wet conditions.",
+            "evidence_refs": [
+              "event.lead_brake@4.85",
+              "event.lead_brake@5.0",
+              "sample.t=4.9.clearance_s"
+            ],
+            "legal_principle": "Rule 126's core test (ability to stop safely if necessary) is most directly probed by the vehicle's response margin at the moment the lead vehicle decelerates."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Wet road surface elevates the required following margin to 4+ seconds, a threshold not met for ~91% of the segment under the gap_s convention and effectively all of it under clearance_s.",
+            "evidence_ref": "environment.road_surface; aggregate.sustained_below_4s_seconds"
+          },
+          {
+            "factor": "Two lead_brake events occurred while clearance_s was near or below 2s, testing the adequacy of the margin in real time.",
+            "evidence_ref": "events[0], events[1]"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "No active closing dynamic was detected (TTC null throughout, seconds_closing=0.0), indicating steady following rather than aggressive or escalating tailgating.",
+            "evidence_ref": "aggregate.min_ttc_s; aggregate.seconds_closing"
+          },
+          {
+            "factor": "gap_s (rear-to-rear) never sustained below 2s, and mean gap_s (2.66s) is closer to, though still under, the dry-condition 3s benchmark, suggesting the breach is marginal rather than extreme depending on which convention is preferred.",
+            "evidence_ref": "aggregate.sustained_below_2s_seconds; aggregate.mean_gap_s"
+          },
+          {
+            "factor": "Short 5.7s segment and 4 excluded low-confidence samples introduce some uncertainty into the sustained-duration figures.",
+            "evidence_ref": "aggregates.excluded_low_confidence; duration_s"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": []
+        },
+        "counterfactual": "If sustained_clearance_below_3s_seconds had been under the 5s transiency threshold (e.g., ~2s instead of 5.2s), this would read as a brief post-cut-in dip rather than sustained close-following, flipping the verdict toward unlikely_breach.",
+        "explanation_for_lay_user": "The camera data shows the following car stayed unusually close behind the lead car - under 2 to 2.5 seconds of following distance - for almost the entire 5.7-second clip, on a wet motorway where a 4-second gap is the recommended safety margin. This pattern held steady rather than worsening (no sign the following car was actively closing in dangerously), but it was sustained long enough that it's not just a brief, excusable dip. Two instances of the lead car braking happened while the gap was already thin, which adds some concern. Overall, this looks like a likely Rule 126 'insufficient following distance' breach, though the exact gap measurement method (bumper-to-bumper vs. clear road space) makes a small difference to just how bad it looks."
+      }
+    },
+    {
+      "utc": "2026-10-25T06:58:14+00:00",
+      "case_id": "ep04_seg_trk_000034_trk_000023_8320",
+      "label": "B",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Wet-road following distance sustained near 2s clearance for ~5.2s of 5.7s segment, well under the 4s wet-weather benchmark.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower maintained a gap equating to roughly 2-2.6s (gap_s) / 1.5-2.3s (clearance_s) behind the lead car on a wet motorway for almost the entire observed segment, well below the applicable sufficiency benchmark for wet conditions.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "After an initial acceleration transient (t=0.2-0.45s, gap_s 9.66 to 4.84, follower accelerating from near-stop), the follower settled into a sustained short following gap for the remainder of the 5.7s segment. Both the stricter clearance_s metric (median 1.96s, min 1.455s) and the looser gap_s metric (median 2.516s, min 2.01s) sit well under the 4s threshold required in wet/rain conditions, and sustained_below_4s_seconds (5.2s) and sustained_clearance_below_3s_seconds (5.2s) indicate this was essentially continuous, not a brief dip.",
+          "key_statistics": [
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 5.2,
+              "interpretation": "Clear road ahead was under 3s for almost the entire 5.7s segment - the stricter clearance reading shows a sustained, not transient, insufficiency."
+            },
+            {
+              "stat": "sustained_below_4s_seconds",
+              "value": 5.2,
+              "interpretation": "Under the wet-conditions 4s benchmark, the gap_s (rear-to-rear) reading was also insufficient for almost the whole segment."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 1.9,
+              "interpretation": "Clearance dropped below 2s for 1.9s, indicating periods of materially inadequate stopping buffer even on the stricter metric."
+            },
+            {
+              "stat": "sustained_below_2s_seconds (gap_s)",
+              "value": 0.0,
+              "interpretation": "On the looser rear-to-rear metric, the gap never sustained below the most severe 2s threshold - this is where the two conventions diverge on severity, though not on overall verdict."
+            },
+            {
+              "stat": "mean_clearance_s",
+              "value": 2.035,
+              "interpretation": "Average clear-road time is roughly half the 4s wet-weather benchmark."
+            },
+            {
+              "stat": "seconds_closing / min_ttc_s",
+              "value": "0.0 / null",
+              "interpretation": "Follower was not actively closing on the lead for most of the window - this is steady close-following rather than an active collision-course, which somewhat tempers severity despite the short gap."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 0.2,
+              "frame_id": 1087,
+              "claim": "Early transient: follower still accelerating from ~5.8 km/h, gap_s 9.66s - excluded from 'sustained' breach claim under transiency doctrine."
+            },
+            {
+              "sample_t": 1.25,
+              "frame_id": 1108,
+              "claim": "clearance_s drops to 1.455s minimum, gap_s 2.01s, both well under any applicable benchmark."
+            },
+            {
+              "sample_t": 4.0,
+              "frame_id": 1163,
+              "claim": "Mid-segment steady state: clearance_s 2.28s, gap_s 2.86s, both below the 4s wet-conditions threshold."
+            },
+            {
+              "sample_t": 5.7,
+              "frame_id": 1197,
+              "claim": "End of segment, after lead braking events, clearance_s 1.62s, gap_s 2.06s - gap tightened again, not resolved."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 4.85,
+              "type": "lead_brake",
+              "legal_significance": "Lead vehicle decelerated (7.2 km/h drop) while follower was already operating with sub-3s clearance - reduces margin for the follower to react safely, going to Rule 126's 'if necessary, stop safely' test."
+            },
+            {
+              "event_t": 5.0,
+              "type": "lead_brake",
+              "legal_significance": "Second braking event (8.0 km/h drop) compounds the reduced safety margin already evident in the sustained low clearance_s readings."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Follower and lead speeds are vision-tracked (not speedometer-derived); typical noise of a few km/h should be assumed, which propagates directly into gap_s and clearance_s (both are speed-divided metrics).",
+          "4 of 100 samples excluded for low confidence; 0 excluded for out-of-range, so the usable 96-sample set is within the camera's max_reliable_range_m (120m) and calibration RMSE is low (0.018m), supporting reasonable trust in distance measurements.",
+          "gap_s_uncertainty_estimate is very small (0.002s), suggesting the measurement pipeline itself is precise, but this does not capture upstream vision-speed estimation noise.",
+          "Segment duration is short (5.7s) - a single continuous following episode; broader conclusions about habitual behaviour cannot be drawn from one segment.",
+          "ttc_s and seconds_closing fields are null/zero for almost the whole segment, meaning the hazard captured here is 'sustained close following' rather than 'active closing/collision course' - these are legally distinct fact patterns under Rule 126 even though both can breach the rule."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "The initial large gap_s values (9.66s, 4.84s) at t=0.2-0.45s reflect the follower accelerating from near-stationary and are a transient artefact, not indicative of a safe sustained distance being abandoned.",
+            "evidence_refs": [
+              "sample_citations[0]"
+            ],
+            "legal_principle": "Transiency doctrine: brief dips/spikes immediately after a speed-change event should not be read as the governing following behaviour."
+          },
+          {
+            "step": 2,
+            "claim": "From approximately t=1.0s onward, clearance_s and gap_s both settle into a sustained low range (clearance_s ~1.45-2.3s, gap_s ~2.0-2.9s) for the remaining ~4.6s of the 5.7s segment.",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds",
+              "aggregate.sustained_below_4s_seconds",
+              "sample_citations[1]",
+              "sample_citations[2]"
+            ],
+            "legal_principle": "Sustained behaviour (not a brief dip) supports a Rule 126 breach finding under the calibration doctrine."
+          },
+          {
+            "step": 3,
+            "claim": "Conditions are wet/rain_light on a motorway, triggering the 4+ second sufficiency benchmark rather than the 3-second dry benchmark.",
+            "evidence_refs": [
+              "environment.weather",
+              "environment.road_surface"
+            ],
+            "legal_principle": "NSW sufficiency calibration requires greater margin (4+s) in poor conditions due to longer stopping distances."
+          },
+          {
+            "step": 4,
+            "claim": "Under the stricter clearance_s reading, the follower was below the applicable 4s (and even the dry 3s) benchmark for essentially the whole segment; under the looser gap_s reading, the same conclusion holds (sustained_below_4s_seconds = 5.2 of 5.7s).",
+            "evidence_refs": [
+              "aggregate.mean_clearance_s",
+              "aggregate.sustained_below_4s_seconds"
+            ],
+            "legal_principle": "Rule 126 breach does not hinge on which convention (gap_s vs clearance_s) is applied here because both point to the same sustained insufficiency - the choice of metric does not change the verdict, though it changes the perceived severity."
+          },
+          {
+            "step": 5,
+            "claim": "The absence of a falling/active TTC (min_ttc_s null, seconds_closing 0.0) indicates this is steady close-following rather than an aggressive closing manoeuvre, which is relevant to penalty severity but does not negate the underlying Rule 126 breach.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "aggregate.seconds_closing"
+            ],
+            "legal_principle": "Rule 126 is concerned with sufficiency of distance to stop safely 'if necessary', irrespective of whether the follower is actively closing - steady close-following at sub-benchmark distance is itself sufficient for a breach finding."
+          },
+          {
+            "step": 6,
+            "claim": "Both lead and follower vehicles are standard cars (4.6m each), not long vehicles (>7.5m), so Rule 127 is not engaged regardless of the outside-built-up-area, motorway setting.",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 requires the FOLLOWING vehicle to be a long vehicle; vehicle lengths here are well under the 7.5m threshold."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Wet road surface with light rain increases required stopping buffer, yet observed gap was consistent with dry-condition thresholds at best and below even those for much of the segment.",
+            "evidence_ref": "environment.road_surface, aggregate.sustained_below_4s_seconds"
+          },
+          {
+            "factor": "Lead vehicle braking twice near the end of the segment while follower clearance was already sub-2.3s, reducing available reaction margin.",
+            "evidence_ref": "events[0], events[1]"
+          },
+          {
+            "factor": "Site is flagged as a Safe-T-Cam enforcement zone, indicating elevated regulatory scrutiny for this type of following behaviour.",
+            "evidence_ref": "environment.is_safe_t_cam_zone"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "No active closing/collision-course dynamic was detected (ttc_s null, seconds_closing 0.0) - the follower was not accelerating into the lead at the time of lowest clearance.",
+            "evidence_ref": "aggregate.min_ttc_s, aggregate.seconds_closing"
+          },
+          {
+            "factor": "Initial very large gap_s values suggest the follower was not habitually tailgating but merging into traffic from a slower speed, with the short gap emerging as a byproduct of acceleration.",
+            "evidence_ref": "sample_citations[0]"
+          },
+          {
+            "factor": "No evidence of horn use, high-beam flashing, or other predatory/aggressive signalling.",
+            "evidence_ref": "events (absence of such event types)"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": [
+            "negligent driving (s117 Road Transport Act 2013 (NSW)) - only if a collision or near-miss had resulted from the t=4.85-5.0s lead braking events"
+          ]
+        },
+        "counterfactual": "If the follower's vision-estimated speed were overestimated by even 3-5 km/h (plausible given vision-tracked noise), recomputed gap_s/clearance_s would likely rise above the 3s (and possibly 4s) benchmark for a majority of the segment, downgrading the verdict to possible_breach.",
+        "explanation_for_lay_user": "The camera data shows this driver followed the car in front with only about 1.5 to 2.3 seconds of clear road between them for nearly the entire 5.7-second clip, well short of the roughly 4-second gap recommended on a wet road. After a brief initial period where the following car was still speeding up, the short gap was maintained consistently rather than being a one-off dip, which is what pushes this toward a likely breach of the safe-following-distance rule. The car wasn't actively accelerating into the lead vehicle, so this looks like steady close-following rather than aggressive tailgating, which is reflected in a standard rather than escalated penalty."
+      }
+    },
+    {
+      "utc": "2026-10-25T06:59:22+00:00",
+      "case_id": "ep04_seg_trk_000034_trk_000023_8320",
+      "label": "B",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "medium",
+        "headline": "Wet-road following distance sustained near 2s (clearance) for most of segment, below 4s wet-conditions benchmark.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower car maintained a persistently short gap behind a lead car on a wet motorway for nearly the entire 5.7s observation window, engaging the 'sufficient distance to stop safely' test.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Both the stricter clearance_s and the looser gap_s metrics show the follower under the applicable wet-weather 4-second benchmark for almost the full 5.7s segment (sustained_below_4s_seconds=5.2s). Clearance_s even dipped under 2s for 1.9s cumulatively, including a tightening phase immediately after two lead-brake events near the end of the segment, which is aggravating despite the lead mostly pulling away earlier.",
+          "key_statistics": [
+            {
+              "stat": "mean_clearance_s",
+              "value": 2.035,
+              "interpretation": "Average clear-road time is roughly half the 4s wet-weather calibration, indicating a structurally insufficient buffer."
+            },
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 5.2,
+              "interpretation": "Exceeds the 5s sustained-breach threshold under the transiency doctrine; this was not a brief dip."
+            },
+            {
+              "stat": "sustained_below_4s_seconds",
+              "value": 5.2,
+              "interpretation": "Even on the looser gap_s convention, the follower failed to meet the wet-conditions 4s benchmark for virtually the entire segment."
+            },
+            {
+              "stat": "min_clearance_s",
+              "value": 1.455,
+              "interpretation": "At its worst, clear road space equated to under 1.5 seconds of stopping buffer, well below even the dry-condition 3s standard."
+            },
+            {
+              "stat": "seconds_closing",
+              "value": 0.0,
+              "interpretation": "No sustained active closing/TTC hazard was recorded, moderating (but not eliminating) the dynamic danger."
+            },
+            {
+              "stat": "gap_s_uncertainty_estimate",
+              "value": 0.002,
+              "interpretation": "Geometric measurement uncertainty is negligible; the primary uncertainty source is vision-estimated speed noise, not ranging error."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 1.25,
+              "frame_id": 1108,
+              "claim": "clearance_s = 1.455s, the segment minimum, well below both 3s dry and 4s wet thresholds."
+            },
+            {
+              "sample_t": 5.7,
+              "frame_id": 1197,
+              "claim": "clearance_s = 1.622s at segment end, after two lead-brake events, showing the buffer had not recovered."
+            },
+            {
+              "sample_t": 0.2,
+              "frame_id": 1087,
+              "claim": "Early low-speed sample (follower 5.8 km/h) yields an inflated gap_s=9.66s; likely a startup/acceleration artefact, not representative of steady-state following."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 4.85,
+              "type": "lead_brake",
+              "legal_significance": "Lead vehicle decelerated by 7.2 km/h while follower's clearance was already near 1.9-2.0s, testing the adequacy of the follower's buffer."
+            },
+            {
+              "event_t": 5.0,
+              "type": "lead_brake",
+              "legal_significance": "A second, larger lead deceleration (8.0 km/h) occurred while clearance remained under 2s, correlating with the minimum end-of-segment clearance readings."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked (not speedometer-derived); a few km/h of noise propagates into gap_s, clearance_s and TTC calculations.",
+          "4 of 100 samples were excluded for low confidence; none were excluded for out-of-range, so the reliable-range ceiling (120m) was never a binding constraint here.",
+          "ttc_s is null throughout because the follower was not in a sustained closing state (seconds_closing=0.0); absence of TTC should not be read as 'no risk', only as 'no active closing dynamic'.",
+          "The t=0.2 sample reflects a very low follower speed (5.8 km/h) and produces a gap_s outlier (9.66s) that is not representative of the cruising-speed following behaviour analysed for the breach finding.",
+          "Short 5.7s segment duration limits confidence that this pattern is representative of the driver's behaviour beyond the observed window."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Rule 126 is engaged because a car was travelling behind another car on a public motorway with a continuously measured gap.",
+            "evidence_refs": [
+              "aggregates.usable_samples",
+              "environment.road_class"
+            ],
+            "legal_principle": "Rule 126 applies to any vehicle following another, requiring a distance sufficient to stop safely if necessary."
+          },
+          {
+            "step": 2,
+            "claim": "Conditions were wet (rain_light, wet road surface), engaging the stricter 4+ second sufficiency calibration rather than the 3s dry-condition benchmark.",
+            "evidence_refs": [
+              "environment.weather",
+              "environment.road_surface"
+            ],
+            "legal_principle": "NSW sufficiency calibration requires 4+ seconds in poor conditions such as wet roads."
+          },
+          {
+            "step": 3,
+            "claim": "Clearance_s (the stricter, clear-road reading) averaged 2.035s and was below 3s for 5.2 of 5.7 seconds \u2014 i.e. almost the entire segment, exceeding the 5s sustained-breach threshold.",
+            "evidence_refs": [
+              "aggregates.sustained_clearance_below_3s_seconds",
+              "aggregates.mean_clearance_s"
+            ],
+            "legal_principle": "Under the transiency doctrine, sustained_below_3s_seconds >= 5s in otherwise-good conditions strongly supports a Rule 126 breach; here conditions were worse than good, reinforcing the finding."
+          },
+          {
+            "step": 4,
+            "claim": "Even using the looser gap_s convention, sustained_below_4s_seconds = 5.2s shows the follower failed the applicable wet-weather 4s benchmark for virtually the whole segment, so the verdict does not depend on which convention is preferred.",
+            "evidence_refs": [
+              "aggregates.sustained_below_4s_seconds",
+              "aggregates.mean_gap_s"
+            ],
+            "legal_principle": "Where both clearance_s and gap_s readings point the same direction relative to the legally relevant threshold, the measurement-convention uncertainty does not materially affect the verdict."
+          },
+          {
+            "step": 5,
+            "claim": "No sustained active-closing hazard (TTC) was present for most of the segment, as the lead vehicle was frequently pulling away (negative v_rel), which tempers but does not negate the static distance breach.",
+            "evidence_refs": [
+              "aggregates.seconds_closing",
+              "aggregates.min_ttc_s"
+            ],
+            "legal_principle": "Rule 126 concerns sufficiency to stop, which is a static/positional test independent of whether a closing event is currently underway."
+          },
+          {
+            "step": 6,
+            "claim": "Following two lead-brake events late in the segment, clearance_s tightened again to 1.62-1.90s rather than recovering, indicating the follower's buffer was inadequate to absorb the lead's deceleration.",
+            "evidence_refs": [
+              "events[0]",
+              "events[1]",
+              "representative_samples[-1].clearance_s"
+            ],
+            "legal_principle": "A driver's following distance must remain sufficient to safely respond to foreseeable lead-vehicle braking; failure to maintain or restore buffer after braking is aggravating evidence under Rule 126."
+          },
+          {
+            "step": 7,
+            "claim": "Rule 127 does not apply because both vehicles are cars (4.6m), well under the 7.5m 'long vehicle' threshold that would trigger the minimum 60m separation rule.",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 is triggered only when the FOLLOWING vehicle is a long vehicle (>7.5m) outside a built-up area; vehicle class here precludes its application."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Wet road surface demands a 4s benchmark, yet the follower sustained well under 3s for 5.2 of 5.7 seconds.",
+            "evidence_ref": "aggregates.sustained_clearance_below_3s_seconds"
+          },
+          {
+            "factor": "Clearance tightened rather than recovered immediately after two lead-brake events near the end of the segment.",
+            "evidence_ref": "events[0], events[1], representative_samples (t=5.45, t=5.7)"
+          },
+          {
+            "factor": "Location is a Safe-T-Cam enforcement zone, relevant to penalty severity for heavy vehicles (not applicable here as both are cars) but indicates active regulatory monitoring.",
+            "evidence_ref": "environment.is_safe_t_cam_zone"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "No sustained active closing/TTC hazard was recorded; the lead vehicle was frequently increasing its lead for much of the segment.",
+            "evidence_ref": "aggregates.seconds_closing, aggregates.min_ttc_s"
+          },
+          {
+            "factor": "The earliest sample (t=0.2s) shows a very low-speed, likely non-representative startup phase that inflates apparent following distance and should not be weighted toward either verdict.",
+            "evidence_ref": "representative_samples[0]"
+          },
+          {
+            "factor": "On the gap_s (rear-to-rear) convention, the follower never sustained below 2s (sustained_below_2s_seconds=0.0), indicating the breach severity is sensitive to which measurement convention is adopted.",
+            "evidence_ref": "aggregates.sustained_below_2s_seconds"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": [
+            "Negligent driving (s117 Road Transport Act 2013 (NSW)) - only if pattern recurs or results in an actual incident"
+          ]
+        },
+        "counterfactual": "If the follower had sustained clearance_s at or above the 4-second wet-weather benchmark (rather than a ~2.0s median) for the observed segment, this would be an unlikely_breach rather than likely_breach.",
+        "explanation_for_lay_user": "The camera measured the gap between these two cars on a wet road for about 5.7 seconds, and for almost all of that time the clear road space between them corresponded to roughly 2 seconds of travel time - well under the 4-second buffer NSW guidance recommends for wet conditions. This happened even though the lead car was often pulling further ahead, so there wasn't an active 'about to crash' situation, but two braking events by the lead car near the end show the follower's buffer was still too thin to comfortably absorb sudden slowing. Because both vehicles are ordinary cars, the stricter 60m rule for long vehicles doesn't apply here - only the general safe-following-distance rule does. Overall this looks like a probable but not extreme breach of the safe-following-distance rule, with a standard penalty notice as the likely outcome rather than a more serious charge."
+      }
+    },
+    {
+      "utc": "2026-10-25T07:21:44+00:00",
+      "case_id": "ep01_seg_trk_000012_trk_000001_3370",
+      "label": "A",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Sustained sub-3s clearance for 5.7 of 6.9s, ending in near-zero clearance despite repeated lead braking.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower car maintained insufficient following distance to stop safely behind lead car on a dry motorway; clearance_s and gap_s both show sustained sub-threshold gaps culminating in a near-contact event.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Both vehicles are cars (4.6 m), so Rule 127 (long-vehicle minimum distance) is not engaged. Under the stricter clearance_s convention, mean clearance is 1.857 s and the follower spent 5.7 of 6.9 s below the 3 s dry-conditions threshold and 3.05 s below 2 s - both exceeding the transiency-doctrine sustained thresholds. The segment ends with gap_m collapsing to 4.28 m (clearance_s = 0.0) while the lead vehicle brakes repeatedly, indicating the follower did not maintain a margin proportionate to the lead's observed braking behaviour.",
+          "key_statistics": [
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 5.7,
+              "interpretation": "Clear-road time below the 3s good-conditions sufficiency benchmark for 5.7s of a 6.9s segment (~83%) - well past the >=5s sustained-breach threshold."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 3.05,
+              "interpretation": "Clear-road time below 2s for 3.05s, meeting the >=3s sustained-below-2s threshold, independently supporting breach under the clearance convention."
+            },
+            {
+              "stat": "sustained_below_3s_seconds (gap_s)",
+              "value": 5.7,
+              "interpretation": "The less-strict rear-to-rear gap convention agrees: 5.7s below 3s - both conventions converge here, reducing measurement-convention uncertainty for this finding."
+            },
+            {
+              "stat": "sustained_below_2s_seconds (gap_s)",
+              "value": 0.7,
+              "interpretation": "Under the looser gap_s convention, sub-2s time is only 0.7s - brief/transient, and would NOT independently support breach at the 2s level. This is the key divergence point between the two conventions."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": 1.34,
+              "interpretation": "A time-to-collision this low indicates an acute, dynamic closing hazard at some point in the segment, aggravating the static distance deficiency."
+            },
+            {
+              "stat": "min_clearance_s / min_gap_m (final sample)",
+              "value": "0.0 / 4.28m",
+              "interpretation": "Clear road distance collapses to effectively zero at t=6.9s, consistent with a near-collision or contact event."
+            },
+            {
+              "stat": "gap_s_uncertainty_estimate",
+              "value": 0.002,
+              "interpretation": "Homography-derived gap measurement is very precise; uncertainty does not materially threaten the sustained-breach finding."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 4.35,
+              "frame_id": 363,
+              "claim": "gap_s drops to 1.99s with ttc_s 7.75s while lead is mid-braking sequence, showing follower closing on a decelerating lead."
+            },
+            {
+              "sample_t": 6.2,
+              "frame_id": 400,
+              "claim": "clearance_s 1.21s and ttc_s 6.62s shortly before near-contact, showing continued insufficient buffer despite ongoing lead braking."
+            },
+            {
+              "sample_t": 6.9,
+              "frame_id": 414,
+              "claim": "gap_m collapses to 4.28m (clearance_s 0.0), the most severe sample in the segment, indicating near-collision proximity."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 3.65,
+              "type": "lead_brake",
+              "legal_significance": "First of ten lead-brake events; establishes lead was decelerating repeatedly, raising the required following distance the follower failed to provide."
+            },
+            {
+              "event_t": 5.75,
+              "type": "lead_brake",
+              "legal_significance": "Lead speed drop of 17.4 km/h, the largest single braking event, occurring while follower clearance was already sub-2s - a materially aggravating sequence."
+            },
+            {
+              "event_t": 6.35,
+              "type": "lead_brake",
+              "legal_significance": "Final recorded brake event immediately preceding the near-zero-clearance sample at t=6.9s, supporting a causal link between insufficient following distance and the near-collision outcome."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "13 of 96 samples (13.5%) excluded for low confidence; remaining 83 are used for aggregates, which may slightly bias sustained-duration figures if exclusions cluster near the critical final seconds.",
+          "Speeds are vision-tracked (not speedometer-derived) and carry several km/h of noise; follower_speed_kmh fluctuations (e.g. 5.4 km/h at t=0.65 vs 36-39 km/h later) suggest some early-frame tracking instability.",
+          "Segment duration is short (6.9s), limiting statistical power for 'sustained' aggregates, though the 5.7s sustained-below-3s figure already spans the majority of the available window.",
+          "The final sample's clearance_m is computed as a negative value (gap_m 4.28m minus follower_length 4.6m) and clipped to 0.0, so the true severity of the near-contact event may be understated.",
+          "gap_s and clearance_s diverge at the 2-second sustained threshold (3.05s vs 0.7s) - this is a genuine convention-dependent uncertainty, not resolved by the data alone."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Rule 126 is engaged because the follower is driving behind the lead vehicle on a motorway and must maintain distance sufficient to stop safely.",
+            "evidence_refs": [
+              "environment.road_class",
+              "follower_track_id/lead_track_id pairing"
+            ],
+            "legal_principle": "Rule 126 applies generally to any following vehicle, irrespective of length classification."
+          },
+          {
+            "step": 2,
+            "claim": "Rule 127 does not apply because neither vehicle is a long vehicle (both 4.6m, below the 7.5m threshold).",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 is limited to long vehicles (>=7.5m); shorter vehicles fall solely under Rule 126."
+          },
+          {
+            "step": 3,
+            "claim": "Under the stricter clearance_s (clear-road) convention, the follower spent 5.7 of 6.9 seconds below the 3-second dry-conditions sufficiency benchmark, exceeding the sustained_below_3s_seconds >= 5s threshold used to distinguish breach from mere brief dips.",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds"
+            ],
+            "legal_principle": "Transiency doctrine: sustained sub-3s following (>=5s in good conditions) supports a Rule 126 breach finding rather than a momentary, excusable dip."
+          },
+          {
+            "step": 4,
+            "claim": "The looser gap_s (rear-to-rear) convention independently confirms sustained sub-3s following of 5.7s, so the two measurement conventions agree at the 3-second threshold, reducing convention-dependent uncertainty for the headline breach finding.",
+            "evidence_refs": [
+              "aggregate.sustained_below_3s_seconds"
+            ],
+            "legal_principle": "Where clearance_s and gap_s converge on the same sustained-breach conclusion, the choice of convention does not change the verdict at this threshold."
+          },
+          {
+            "step": 5,
+            "claim": "At the stricter 2-second threshold the conventions diverge: clearance_s shows 3.05s sustained (meeting the >=3s sustained-below-2s trigger) while gap_s shows only 0.7s (transient). This divergence should be disclosed rather than silently resolved.",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_2s_seconds",
+              "aggregate.sustained_below_2s_seconds"
+            ],
+            "legal_principle": "Clearance_s is the more legally defensible reading of the '2-second rule' as concerning clear road ahead, not bumper position; a human adjudicator is entitled to see both readings."
+          },
+          {
+            "step": 6,
+            "claim": "The segment terminates with gap_m of 4.28m and clearance_s of 0.0 at t=6.9s, immediately following a dense cluster of lead-braking events, indicating the follower's distance was not sufficient to absorb the lead's observed deceleration pattern.",
+            "evidence_refs": [
+              "sample_t=6.9/frame_id=414",
+              "event_t=6.35/type=lead_brake"
+            ],
+            "legal_principle": "Rule 126's sufficiency test is directly about the ability to stop safely; a near-zero clearance outcome following repeated lead braking is strong direct evidence the distance kept was insufficient."
+          },
+          {
+            "step": 7,
+            "claim": "min_ttc_s of 1.34s and seconds_closing of 2.99s indicate an acute dynamic closing phase, though sustained_ttc_below_3s_seconds (0.15s) is brief, so this is treated as an aggravating dynamic signal rather than an independent breach trigger.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "aggregate.sustained_ttc_below_3s_seconds"
+            ],
+            "legal_principle": "A falling/low TTC while closing is an aggravating factor under the stated escalation criteria, strengthening but not alone establishing the Rule 126 case."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Ten lead_brake events within a 6.9s window show a decelerating lead that the follower failed to create adequate buffer against.",
+            "evidence_ref": "events[]: lead_brake x10, t=3.65-6.35"
+          },
+          {
+            "factor": "Near-zero clearance (0.0s) and minimal gap (4.28m) at the final sample suggest a near-collision outcome.",
+            "evidence_ref": "representative_samples t=6.9, frame_id=414"
+          },
+          {
+            "factor": "Low min_ttc_s (1.34s) indicates a genuinely dangerous closing moment, not merely steady close-following.",
+            "evidence_ref": "aggregate.min_ttc_s"
+          },
+          {
+            "factor": "Safe-T-Cam enforcement zone increases regulatory seriousness of the location.",
+            "evidence_ref": "environment.is_safe_t_cam_zone"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Dry, daytime (overcast but not low-light/fog), sealed motorway conditions mean the lower 3s (not 4-5s) benchmark applies, somewhat reducing severity relative to poor-condition cases.",
+            "evidence_ref": "environment.weather/road_surface/road_class"
+          },
+          {
+            "factor": "Under the gap_s convention, sustained sub-2s time is only 0.7s, which alone would be classed as transient rather than sustained.",
+            "evidence_ref": "aggregate.sustained_below_2s_seconds"
+          },
+          {
+            "factor": "13 of 96 samples excluded for low confidence introduces some measurement uncertainty that could marginally overstate or understate sustained durations.",
+            "evidence_ref": "aggregate.excluded_low_confidence"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "medium",
+          "escalation_charges_to_consider": [
+            "Negligent driving (s117 Road Transport Act 2013 (NSW))"
+          ]
+        },
+        "counterfactual": "If sustained_clearance_below_3s_seconds had been materially lower (e.g. under ~2-3s, consistent with only a brief post-cut-in dip) and the final sample had not collapsed to near-zero clearance, the verdict would fall to possible_breach or unlikely_breach under the transiency doctrine.",
+        "explanation_for_lay_user": "The camera data shows the following car stayed too close to the car ahead for most of the almost 7-second clip - specifically, the clear road space between them was below the recommended 3-second safety margin for 5.7 of those seconds. The car in front braked repeatedly near the end, and the gap between the vehicles shrank to almost nothing (about 4 metres) by the final moment captured. This pattern - sustained closeness plus a near-collision ending - supports a likely breach of the 'safe following distance' road rule, though we note the maths differs slightly depending on whether you count the follower's own length as part of the gap, and some data points were excluded for low confidence."
+      }
+    },
+    {
+      "utc": "2026-10-25T07:23:17+00:00",
+      "case_id": "ep04_seg_trk_000034_trk_000023_8320",
+      "label": "B",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Follower sustained sub-4s (wet-condition) and sub-3s clearance for ~5.2s of 5.7s segment on wet motorway",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower maintained a gap insufficient to stop safely behind lead on a wet motorway for almost the entire observed segment, engaging the general safe-following-distance duty.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "After an initial acquisition/cut-in phase (t=0.2-0.45s, gap_s 9.66 and 4.84), the follower settled into a steady-state follow with clearance_s mostly 1.45-2.3s and gap_s mostly 2.0-2.9s for the remainder of the 5.7s segment. In wet conditions the applicable sufficiency threshold is 4+ seconds, and both the stricter clearance_s and the looser gap_s metrics show the follower below this threshold for ~5.15-5.2s - essentially the whole usable segment after acquisition - which exceeds the transiency doctrine's 5s sustained-breach guideline.",
+          "key_statistics": [
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 5.2,
+              "interpretation": "Clear-road time (stricter metric) was below the good-conditions 3s benchmark for 5.2 of 5.7s - sustained, not a brief dip, well past the 5s transiency threshold."
+            },
+            {
+              "stat": "sustained_below_4s_seconds",
+              "value": 5.2,
+              "interpretation": "Even under the looser rear-to-rear gap_s metric, follower stayed below the wet-conditions 4s sufficiency threshold for 5.2s - convergent with the clearance_s finding."
+            },
+            {
+              "stat": "sustained_below_2s_seconds (gap_s)",
+              "value": 0.0,
+              "interpretation": "Under the gap_s convention the follower never sustained below 2s, implying no sustained critical-emergency closeness on that reading."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 1.9,
+              "interpretation": "Under the stricter clearance_s convention the follower spent 1.9s below the 2s emergency threshold - a material divergence from the gap_s reading that a human adjudicator should weigh."
+            },
+            {
+              "stat": "min_clearance_s",
+              "value": 1.455,
+              "interpretation": "Worst-case clear-road time of 1.455s is well under even the 3s dry-condition minimum, let alone the 4s wet-condition minimum."
+            },
+            {
+              "stat": "min_ttc_s / seconds_closing",
+              "value": "null / 0.0",
+              "interpretation": "No active closing dynamic was captured - this is steady close-following rather than an accelerating collision-course, which is relevant to escalation assessment."
+            },
+            {
+              "stat": "gap_s_uncertainty_estimate",
+              "value": 0.002,
+              "interpretation": "Ranging precision uncertainty is negligible; the conclusion is not an artifact of homography noise."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 0.2,
+              "frame_id": 1087,
+              "claim": "Early acquisition/cut-in phase with gap_s=9.66s - transient and not part of the sustained-breach finding."
+            },
+            {
+              "sample_t": 1.25,
+              "frame_id": 1108,
+              "claim": "Minimum clearance_s=1.455s recorded, well below both good- and wet-condition sufficiency thresholds."
+            },
+            {
+              "sample_t": 5.7,
+              "frame_id": 1197,
+              "claim": "At segment end, clearance_s=1.62s, showing the close-following condition persisted through to the final sample, after two lead-braking events."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 4.85,
+              "type": "lead_brake",
+              "legal_significance": "Lead decelerated by 7.2 km/h while follower was still accelerating; this is the kind of scenario Rule 126 exists to guard against."
+            },
+            {
+              "event_t": 5.0,
+              "type": "lead_brake",
+              "legal_significance": "Second lead deceleration (8.0 km/h); clearance_s subsequently fell from ~2.15s (t=5.2) to 1.62s (t=5.7) rather than recovering, indicating the follower did not restore a safe buffer despite warning signals - aggravating."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Follower and lead speeds are vision-tracked estimates with a few km/h of noise; small v_rel values (e.g. -0.25 km/h at t=1.25) make instantaneous closing/opening state uncertain.",
+          "4 of 100 samples (4%) excluded for low perception confidence; 0 excluded for out-of-range (mean gap ~20m is well within the 120m reliable range), so range-dropout is not a factor here.",
+          "ttc_s is null throughout and seconds_closing=0.0, so no dynamic (closing-rate) hazard signal is available - conclusions rest on steady-state gap/clearance aggregates, not TTC.",
+          "gap_s and clearance_s diverge on the <2s sustained-duration question (0.0s vs 1.9s); this divergence is a genuine source of uncertainty in how 'sufficient distance' should be read, not silently resolved here.",
+          "Segment duration is only 5.7s, near the lower bound for assessing 'sustained' behaviour; longer observation would increase confidence."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Wet road surface and light rain trigger the 4+ second sufficiency calibration rather than the 3-second dry-conditions benchmark.",
+            "evidence_refs": [
+              "environment.weather",
+              "environment.road_surface"
+            ],
+            "legal_principle": "NSW sufficiency calibration for Rule 126 requires 4+ seconds in poor conditions."
+          },
+          {
+            "step": 2,
+            "claim": "Clearance_s, the governing (stricter) metric, stayed below 3s for 5.2 of 5.7 usable seconds - this exceeds the transiency doctrine's 5s sustained-breach guideline even against the lower good-conditions threshold.",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds",
+              "aggregate.min_clearance_s"
+            ],
+            "legal_principle": "Transiency doctrine: sustained_below_3s_seconds >= 5s in good conditions strongly supports Rule 126; a fortiori under the stricter wet-conditions 4s benchmark."
+          },
+          {
+            "step": 3,
+            "claim": "Cross-checking with gap_s (rear-to-rear, looser convention), sustained_below_4s_seconds is also 5.2s - the two conventions converge on the same conclusion, reducing (but not eliminating) the measurement-convention uncertainty.",
+            "evidence_refs": [
+              "aggregate.sustained_below_4s_seconds",
+              "aggregate.mean_gap_s"
+            ],
+            "legal_principle": "Rule 126 sufficiency test is agnostic to measurement convention provided the underlying stopping-distance need is shown; convergence across both strengthens the finding."
+          },
+          {
+            "step": 4,
+            "claim": "The two metrics diverge on the <2s emergency threshold (0.0s under gap_s vs 1.9s under clearance_s), meaning whether the follower entered emergency-level closeness depends on which convention is adopted.",
+            "evidence_refs": [
+              "aggregate.sustained_below_2s_seconds",
+              "aggregate.sustained_clearance_below_2s_seconds"
+            ],
+            "legal_principle": "This divergence should be presented to a human adjudicator rather than resolved silently, per measurement-convention guidance."
+          },
+          {
+            "step": 5,
+            "claim": "No TTC data and zero seconds_closing indicate steady close-following rather than an actively dangerous closing trajectory, tempering escalation beyond Rule 126.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "aggregate.seconds_closing"
+            ],
+            "legal_principle": "Falling TTC while closing is the aggravating dynamic signal for escalation; its absence here argues against dangerous/negligent driving escalation."
+          },
+          {
+            "step": 6,
+            "claim": "After two lead-braking events near the end of the segment, the follower's clearance_s shrank further rather than recovering, showing a failure to restore buffer despite an observable hazard cue.",
+            "evidence_refs": [
+              "event.lead_brake@4.85",
+              "event.lead_brake@5.0",
+              "sample.t=5.7.clearance_s"
+            ],
+            "legal_principle": "Failure to respond to a lead vehicle's braking by maintaining or increasing following distance is probative of insufficiency under Rule 126."
+          },
+          {
+            "step": 7,
+            "claim": "The initial high gap_s samples (t=0.2-0.45) reflect an acquisition/cut-in phase and are excluded from the sustained-breach characterisation under the transiency doctrine.",
+            "evidence_refs": [
+              "sample.t=0.2",
+              "sample.t=0.45"
+            ],
+            "legal_principle": "A brief period outside the threshold (here, above threshold) at segment start is not determinative; sustained mid-to-late segment behaviour governs."
+          },
+          {
+            "step": 8,
+            "claim": "Rule 127 is not engaged because both vehicles are 4.6m cars, below the 7.5m long-vehicle threshold.",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 applies only to long vehicles (>=7.5m); not triggered here."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Wet road surface raises the required sufficiency threshold to 4+ seconds, and the follower was below this for almost the entire segment.",
+            "evidence_ref": "environment.road_surface; aggregate.sustained_below_4s_seconds"
+          },
+          {
+            "factor": "Follower did not restore buffer after lead braked twice late in the segment; clearance_s continued to shrink.",
+            "evidence_ref": "events.lead_brake@4.85/5.0; sample.t=5.7"
+          },
+          {
+            "factor": "This occurred in a designated Safe-T-Cam enforcement zone.",
+            "evidence_ref": "environment.is_safe_t_cam_zone"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "No active closing dynamic (TTC null, seconds_closing=0.0) - this is steady close-following, not an aggressive high-speed-closure tailgating event.",
+            "evidence_ref": "aggregate.min_ttc_s; aggregate.seconds_closing"
+          },
+          {
+            "factor": "Under the gap_s convention the follower never sustained below the 2s emergency threshold, suggesting the severity may be at the lower end of a Rule 126 breach.",
+            "evidence_ref": "aggregate.sustained_below_2s_seconds"
+          },
+          {
+            "factor": "No horn, high-beam, or other menacing signals present - no basis for predatory driving escalation.",
+            "evidence_ref": "events (none of type horn/high_beam_flash)"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": [
+            "negligent driving (s117 Road Transport Act 2013 (NSW)) - low likelihood given steady-state following and absence of closing/TTC hazard signal"
+          ]
+        },
+        "counterfactual": "If sustained_clearance_below_3s_seconds had been under the 5s transiency threshold (e.g., only 3-4s of the 5.7s segment showed sub-3s clearance, with clearance recovering above 3s after the lead-brake events), the verdict would soften from likely_breach to possible_breach.",
+        "explanation_for_lay_user": "The camera data shows the following car stayed too close to the car ahead on a wet road for almost the whole 5.7-second clip, well under the 4-second gap that wet, poor-grip conditions require. This wasn't just a brief flash of closeness - it lasted about 5.2 seconds, which counts as sustained under the applicable guidance, not a one-off dip. There's no sign the driver was aggressively closing in (no rising collision risk detected), so this looks like an ordinary Rule 126 'not enough following distance' case rather than anything more serious, but it still likely breaches the law given the sustained, wet-condition shortfall."
+      }
+    },
+    {
+      "utc": "2026-10-25T07:24:29+00:00",
+      "case_id": "ep02_seg_trk_000004_trk_000003_4795",
+      "label": "C",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Follower closed continuously for full 3.9s segment; clearance_s fell to 0.0s with min TTC 0.43s on wet road.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower car maintained insufficient distance behind lead car, with clearance_s and gap_s both collapsing toward zero over a continuously-closing 3.9s window on a wet road surface.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Both vehicles are 4.6 m cars, so Rule 127 (long-vehicle minimum distance) is not engaged. Under the stricter clearance_s convention, the follower spent 3.65 of 3.9 seconds (93%) below the 3-second threshold and 2.7 s below 2 seconds, while continuously closing (seconds_closing = 3.9 s) with min_ttc_s dropping to 0.43 s, ending at near-zero clear road space (clearance_s = 0.0, gap_m 4.27 m < follower length 4.6 m) at the final sample.",
+          "key_statistics": [
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": "3.65 s / 3.9 s segment",
+              "interpretation": "Clear-road time was below the baseline 3-second rule for almost the entire observed segment, not a brief dip."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": "2.7 s",
+              "interpretation": "Approaches the transiency-doctrine threshold (>=3s) for strong Rule 126 support under the stricter clearance convention."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": "0.43 s",
+              "interpretation": "Indicates an actively dangerous closing dynamic near segment end, not steady-state close following."
+            },
+            {
+              "stat": "seconds_closing",
+              "value": "3.9 s (entire segment)",
+              "interpretation": "Follower never ceased closing on lead throughout the observed window; no corrective braking response evident in the data."
+            },
+            {
+              "stat": "mean_gap_s / mean_clearance_s",
+              "value": "1.934 s / 1.447 s",
+              "interpretation": "Even under the looser rear-to-rear gap_s convention, average following time is well under the 3s dry-conditions benchmark."
+            },
+            {
+              "stat": "gap_s_uncertainty_estimate",
+              "value": "0.002 s",
+              "interpretation": "Timing conversion uncertainty is negligible; the trend is not an artifact of measurement noise."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 0.05,
+              "frame_id": 501,
+              "claim": "Segment opens with clearance_s=4.42s, a safe margin, establishing the follower began at an adequate distance before closing commenced."
+            },
+            {
+              "sample_t": 2.0,
+              "frame_id": 540,
+              "claim": "By mid-segment clearance_s has fallen to 1.51s, below even the stricter 2/3-second clearance reading and below the 3s baseline."
+            },
+            {
+              "sample_t": 3.9,
+              "frame_id": 578,
+              "claim": "Final sample: gap_m=4.27m is less than follower_length (4.6m), yielding clearance_s=0.0 \u2014 effectively zero clear road space, i.e. near-contact proximity, with ttc_s=0.43s."
+            }
+          ],
+          "event_citations": []
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked (not speedometer-derived); expect several km/h of noise, which affects gap_s/clearance_s/ttc_s precision though the overall closing trend is consistent and large relative to likely noise.",
+          "1 of 79 samples excluded for low confidence (excluded_low_confidence=1); remaining 78 are usable and within max_reliable_range_m=120 (all gaps <=30m, excluded_out_of_range=0).",
+          "Environment fields show an internal inconsistency: weather='dry_clear' but road_surface='wet' \u2014 this changes which sufficiency calibration (3s vs 4+s) should govern; the stricter wet-road 4+s benchmark is used here as the conservative reading, which only strengthens the breach finding.",
+          "gap_s and clearance_s diverge meaningfully (e.g. sustained_below_2s_seconds: 1.75s via gap_s vs 2.7s via clearance_s) \u2014 the clearance_s (clear-road) reading is used as the governing test per instructions, but a human adjudicator should know the gap_s reading is somewhat more lenient though still indicates a likely breach trajectory.",
+          "Segment duration is only 3.9s; this is short relative to a full driving episode, so the data shows a closing event within this window but does not establish behaviour before or after it."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Both vehicles are 4.6 m cars (below the 7.5 m threshold), so Rule 127 does not apply; Rule 126 is the sole governing rule.",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 only applies to 'long vehicles' (>=7.5 m)."
+          },
+          {
+            "step": 2,
+            "claim": "The follower was closing on the lead for the entire observed segment (100% of duration), not merely maintaining a steady short gap.",
+            "evidence_refs": [
+              "aggregate.seconds_closing"
+            ],
+            "legal_principle": "An actively closing gap (vs steady following) is a more dangerous dynamic signal relevant to whether the driver could 'stop safely if necessary' under Rule 126."
+          },
+          {
+            "step": 3,
+            "claim": "Under the governing clearance_s (clear-road) metric, the follower spent 3.65 of 3.9 seconds below the 3-second baseline sufficiency threshold \u2014 this is sustained, not transient (transiency doctrine requires <5s dips to be excused; this is effectively the whole segment).",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds"
+            ],
+            "legal_principle": "Sustained sub-threshold following time supports a Rule 126 breach finding rather than a momentary, excusable dip."
+          },
+          {
+            "step": 4,
+            "claim": "Road surface is wet, triggering the stricter poor-conditions calibration of 4+ seconds; the follower never came close to satisfying this stricter benchmark for the majority of the segment.",
+            "evidence_refs": [
+              "environment.road_surface",
+              "aggregate.mean_clearance_s"
+            ],
+            "legal_principle": "NSW sufficiency calibration requires 4+ seconds in poor/wet conditions; failure against the 3s baseline is a fortiori failure against the 4s wet-road standard."
+          },
+          {
+            "step": 5,
+            "claim": "min_ttc_s of 0.43s and the terminal clearance_s=0.0 sample (gap_m 4.27m < follower length 4.6m) indicate the encounter approached or reached actual contact-level proximity by the end of the window.",
+            "evidence_refs": [
+              "aggregate.min_ttc_s",
+              "sample_citations[t=3.9]"
+            ],
+            "legal_principle": "A driver unable to avoid closing to near-zero clearance has manifestly failed the 'stop safely if necessary' test in Rule 126."
+          },
+          {
+            "step": 6,
+            "claim": "Under the alternative gap_s (rear-to-rear) convention the picture is marginally less severe (sustained_below_2s_seconds=1.75s vs 2.7s under clearance_s) but still shows the same deteriorating trend toward min_gap_s=0.263s, so the verdict is robust to convention choice though confidence in the exact severity varies.",
+            "evidence_refs": [
+              "aggregate.sustained_below_2s_seconds",
+              "aggregate.min_gap_s"
+            ],
+            "legal_principle": "Measurement convention (gap_s vs clearance_s) is a genuine source of uncertainty that must be disclosed rather than silently resolved."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Continuous closing for the entire 3.9s segment with no evidence of corrective deceleration by the follower",
+            "evidence_ref": "aggregate.seconds_closing=3.9"
+          },
+          {
+            "factor": "Terminal near-zero/negative clearance (effectively contact-level proximity) with min_ttc_s=0.43s",
+            "evidence_ref": "sample t=3.9, frame_id=578; aggregate.min_ttc_s"
+          },
+          {
+            "factor": "Wet road surface increases the required safe-following margin, which was breached far more severely than on dry roads",
+            "evidence_ref": "environment.road_surface=wet"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Segment opens with a safe clearance_s of 4.42s, indicating the follower did not start the encounter tailgating but closed in progressively",
+            "evidence_ref": "sample t=0.05, frame_id=501"
+          },
+          {
+            "factor": "Lead vehicle itself was near-stationary and accelerating from ~0.5 km/h at segment start, consistent with a stop-start/congested traffic context that can make gap management harder",
+            "evidence_ref": "sample t=0.05 lead_speed_kmh=0.47"
+          },
+          {
+            "factor": "No horn, high-beam, or pursuit-type events recorded",
+            "evidence_ref": "events=[]"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "medium",
+          "escalation_charges_to_consider": [
+            "Negligent driving (s117 Road Transport Act 2013 (NSW))"
+          ]
+        },
+        "counterfactual": "If the follower's acceleration had tracked the lead's acceleration (keeping v_rel near zero so clearance_s stayed above ~2-3s throughout, e.g. min_ttc_s staying above 3s instead of falling to 0.43s), the verdict would flip to unlikely_breach.",
+        "explanation_for_lay_user": "The following car started at a safe distance but kept closing in on the car ahead for the entire 3.9-second clip, ending almost bumper-to-bumper with virtually no safety gap left. Even using the more lenient way of measuring the gap, the car was too close for most of the time, and on a wet road the law expects an even bigger safety margin than on dry roads. This pattern - sustained closeness plus a rapidly shrinking time-to-collision - supports a Rule 126 'following too closely' breach, though the vision-based speed estimates carry some noise and a human reviewer should weigh the two different gap-measurement conventions presented."
+      }
+    },
+    {
+      "utc": "2026-10-25T07:25:41+00:00",
+      "case_id": "ep05_seg_trk_000002_trk_000004_9460",
+      "label": "D",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "high",
+        "headline": "Car sustained ~1.3-2.1s clearance behind braking articulated truck in heavy rain, well under the 4s wet-weather benchmark.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower car maintained a following gap/clearance far below the sufficiency-to-stop benchmark for nearly the entire observed segment, on a wet motorway while the lead vehicle braked repeatedly and erratically.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Across 55 usable samples over 3.7s, clearance_s (the stricter clear-road metric) averaged 1.537s and never exceeded ~2.98s even by the looser gap_s measure, while sustained_clearance_below_2s_seconds (3.4s) and sustained_below_4s_seconds (3.65s) span almost the entire segment duration. The lead vehicle braked 13 times, including a hard 18.5 km/h drop at t=2.8s and near-stop (2.17 km/h) at t=3.1s, while the follower's clearance stayed near 1.3-1.5s throughout, well short of the 4s wet-road benchmark.",
+          "key_statistics": [
+            {
+              "stat": "mean_clearance_s",
+              "value": 1.537,
+              "interpretation": "Average clear-road time is under half the 4s wet-weather benchmark required under Rule 126."
+            },
+            {
+              "stat": "min_clearance_s",
+              "value": 1.317,
+              "interpretation": "Worst-case clear-road time shows almost no stopping buffer against a decelerating lead vehicle."
+            },
+            {
+              "stat": "sustained_clearance_below_2s_seconds",
+              "value": 3.4,
+              "interpretation": "Clearance stayed below 2s for 3.4 of 3.7s - this is sustained, not transient, behaviour under the stated doctrine (>=3s threshold)."
+            },
+            {
+              "stat": "sustained_below_4s_seconds",
+              "value": 3.65,
+              "interpretation": "Even using the looser gap_s metric, the follower was below the wet-conditions 4s threshold for nearly the whole segment."
+            },
+            {
+              "stat": "mean_gap_s",
+              "value": 2.171,
+              "interpretation": "Even the less-strict rear-to-rear metric sits below the 3s dry benchmark, and far below the 4s wet benchmark."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": 2.14,
+              "interpretation": "One instance of active closing to a dangerously low 2.14s TTC, correlating with a lead braking event at t~3.1s."
+            },
+            {
+              "stat": "sustained_ttc_below_3s_seconds",
+              "value": 0.0,
+              "interpretation": "The dangerous TTC dip was momentary, not sustained, tempering (but not negating) the dynamic hazard signal."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 0.05,
+              "frame_id": 1251,
+              "claim": "Segment opens with clearance_s=1.363s, already below any applicable benchmark."
+            },
+            {
+              "sample_t": 2.95,
+              "frame_id": 1309,
+              "claim": "clearance_s=1.399s while lead decelerating hard (speed 12.6 km/h), minimal stopping buffer."
+            },
+            {
+              "sample_t": 3.1,
+              "frame_id": 1312,
+              "claim": "Lead speed collapses to 2.17 km/h with ttc_s=2.20s and clearance_s=1.372s, the most acute close-following moment."
+            },
+            {
+              "sample_t": 3.6,
+              "frame_id": 1322,
+              "claim": "Best observed sample, gap_s=2.984s/clearance_s=2.111s, still below 3s good-weather and 4s wet-weather thresholds."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 2.8,
+              "type": "lead_brake",
+              "legal_significance": "18.5 km/h speed drop by lead vehicle while follower clearance was only ~1.3-1.5s, demonstrating inadequate stopping buffer."
+            },
+            {
+              "event_t": 3.1,
+              "type": "lead_brake",
+              "legal_significance": "Compounding brake event as lead nearly stops (2.17 km/h), coinciding with the segment's lowest TTC (2.14-2.20s)."
+            },
+            {
+              "event_t": 0.1,
+              "type": "follower_brake",
+              "legal_significance": "Follower reacted to lead braking almost immediately, indicating the close gap required active intervention rather than passive safety margin."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked estimates, not speedometer-sourced; several km/h of noise is expected, though gap_s_uncertainty_estimate (0.002) suggests high relative precision for the gap/clearance ratio itself.",
+          "1 of 56 samples excluded for low confidence; no samples excluded for exceeding the 120m reliable range, so range-based distortion is not a concern here.",
+          "Segment duration is only 3.7s - short enough that 'sustained' findings, while they span nearly the whole window, cannot be extrapolated to behaviour outside the observed interval.",
+          "Heavy rain (rain_heavy, wet road) may degrade YOLO detection quality in ways not fully captured by the stated calibration_rmse_m (0.018m), which reflects geometric calibration, not weather-induced detection noise."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Clearance_s (the stricter, legally preferable 'clear road ahead' reading of the 2/3-second rule) averaged 1.537s and never reached 3s.",
+            "evidence_refs": [
+              "aggregate.mean_clearance_s",
+              "aggregate.min_clearance_s"
+            ],
+            "legal_principle": "Rule 126 requires sufficient distance to stop safely; clearance_s best represents the clear road available to do so."
+          },
+          {
+            "step": 2,
+            "claim": "Wet road and heavy rain trigger the 4+ second NSW calibration benchmark rather than the 3s dry-conditions figure.",
+            "evidence_refs": [
+              "environment.weather",
+              "environment.road_surface"
+            ],
+            "legal_principle": "Sufficiency calibration scales with conditions; poor conditions require greater margin."
+          },
+          {
+            "step": 3,
+            "claim": "Sustained_clearance_below_2s_seconds (3.4s) and sustained_below_4s_seconds (3.65s) occupy nearly the entire 3.7s segment, satisfying the transiency doctrine's sustained-breach threshold (>=3s below 2s).",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_2s_seconds",
+              "aggregate.sustained_below_4s_seconds"
+            ],
+            "legal_principle": "Transiency doctrine: sustained sub-threshold following (not a brief dip) supports a Rule 126 breach finding."
+          },
+          {
+            "step": 4,
+            "claim": "Using the looser gap_s convention does not change the outcome: mean/median gap_s (2.171/2.076) remain below the 3s dry baseline and well below the 4s wet baseline.",
+            "evidence_refs": [
+              "aggregate.mean_gap_s",
+              "aggregate.median_gap_s"
+            ],
+            "legal_principle": "Measurement convention transparency: both gap_s and clearance_s support breach, though clearance_s is more severe - this convergence strengthens confidence."
+          },
+          {
+            "step": 5,
+            "claim": "Repeated lead_brake events (13 across 3.7s) culminating in a near-stop at t=3.1s, combined with min_ttc_s=2.14s, show the short following distance created real (if brief) collision risk.",
+            "evidence_refs": [
+              "events[lead_brake]",
+              "aggregate.min_ttc_s"
+            ],
+            "legal_principle": "A falling/low TTC while closing is an aggravating dynamic signal under Rule 126 sufficiency analysis."
+          },
+          {
+            "step": 6,
+            "claim": "Rule 127 is not engaged because the follower (car, 4.6m) does not meet the 'long vehicle' (>=7.5m) threshold, regardless of the lead truck's length.",
+            "evidence_refs": [
+              "follower_length_m",
+              "lead_length_m"
+            ],
+            "legal_principle": "Rule 127 requires BOTH vehicles to be long vehicles; only one party qualifying is insufficient to trigger it."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Wet, heavy-rain motorway conditions demand a 4+ second margin, yet observed clearance_s never approached even the lower 3s dry threshold.",
+            "evidence_ref": "environment.weather; aggregate.mean_clearance_s"
+          },
+          {
+            "factor": "Lead vehicle braked repeatedly and unpredictably (13 events), including a near-complete stop, while follower's buffer remained minimal.",
+            "evidence_ref": "events[lead_brake] at t=2.8, t=3.1"
+          },
+          {
+            "factor": "Sustained close-following for nearly the full observed duration (3.4-3.65s of 3.7s) rather than a brief, excusable dip.",
+            "evidence_ref": "aggregate.sustained_clearance_below_2s_seconds"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Low absolute speeds (mean follower speed 26.9 km/h, well under the 100 km/h limit) reduce the kinetic severity of any potential collision, even though the time-based rule already accounts for speed.",
+            "evidence_ref": "aggregate.mean_follower_speed_kmh"
+          },
+          {
+            "factor": "The dangerously low TTC (2.14s) was a single momentary dip, not sustained (sustained_ttc_below_3s_seconds = 0.0), suggesting the follower was generally not in an actively escalating closing trajectory.",
+            "evidence_ref": "aggregate.sustained_ttc_below_3s_seconds"
+          },
+          {
+            "factor": "Motorway, multi-lane road class could support a Rule 127 exemption argument if that rule were otherwise engaged (it is not here, but relevant to overall context).",
+            "evidence_ref": "environment.road_class"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": [
+            "Negligent driving (s117 Road Transport Act 2013 (NSW)) if real-world collision evidence emerged"
+          ]
+        },
+        "counterfactual": "If the convention were shifted to gap_s under a dry-weather (3s) benchmark instead of clearance_s under the wet-weather (4s) benchmark, the borderline sample at t=3.6s (gap_s=2.98s) would approach compliance, weakening the sustained-breach finding to possible_breach.",
+        "explanation_for_lay_user": "The car behind the truck kept a gap that gave it only about 1.3-2.1 seconds of clear road to react and stop - well short of the roughly 4 seconds recommended in heavy rain on a wet motorway. This wasn't a brief one-off; it persisted for almost the entire 3.7-second clip, while the truck ahead braked repeatedly, including one near-complete stop. Both ways of measuring the gap (strict 'clear road' and looser 'bumper-to-bumper') point to the same conclusion: the following distance was insufficient under Rule 126. The truck's length doesn't trigger the separate 60m rule (Rule 127) because the car itself isn't a 'long vehicle'."
+      }
+    },
+    {
+      "utc": "2026-10-25T07:26:46+00:00",
+      "case_id": "ep06_seg_trk_000002_trk_000001_11015",
+      "label": "E",
+      "model": "claude-sonnet-5",
+      "verdict": {
+        "verdict": "likely_breach",
+        "confidence": "medium",
+        "headline": "Clearance time stayed below 3s nearly the whole segment, collapsing toward 1s as lead braked repeatedly and TTC fell to 1.52s.",
+        "applicable_rules": [
+          {
+            "rule": "Rule 126",
+            "reason": "Follower car maintained clearance_s well below the 3-second sufficiency benchmark for almost the entire 3.3s observation window, including during multiple lead-braking events, with TTC falling to 1.52s.",
+            "text": "A driver must drive a sufficient distance behind a vehicle travelling in front of the driver so the driver can, if necessary, stop safely to avoid a collision with the vehicle."
+          }
+        ],
+        "evidence_assessment": {
+          "summary": "Across 66 usable samples, clearance_s (the stricter clear-road metric) averaged 1.623s and never exceeded ~2.2s, with sustained_clearance_below_3s_seconds (3.25s) spanning virtually the entire recorded segment. The gap_s convention is less severe (mean 2.111s) but still sits below the 3s benchmark for most of the window, and both metrics deteriorate sharply after t=2.2s as the lead vehicle brakes repeatedly while the follower closes, pushing min_ttc_s to 1.52s.",
+          "key_statistics": [
+            {
+              "stat": "mean_clearance_s",
+              "value": 1.623,
+              "interpretation": "Well below the 3s dry-day sufficiency benchmark under Rule 126, using clear-road-ahead convention."
+            },
+            {
+              "stat": "min_clearance_s",
+              "value": 0.893,
+              "interpretation": "At worst point, less than 1 second of clear road existed between vehicles - a severe margin given 100km/h motorway context."
+            },
+            {
+              "stat": "sustained_clearance_below_3s_seconds",
+              "value": 3.25,
+              "interpretation": "Clearance stayed under the 3s threshold for essentially the full 3.3s segment, not a brief dip."
+            },
+            {
+              "stat": "mean_gap_s",
+              "value": 2.111,
+              "interpretation": "Under the less strict rear-to-rear convention, gap is still consistently under 3s, though above the clearance figure - shows convention choice matters but does not flip the basic finding."
+            },
+            {
+              "stat": "min_ttc_s",
+              "value": 1.52,
+              "interpretation": "Falling time-to-collision during active closing indicates a real, not merely steady-state, hazard as the lead decelerated."
+            },
+            {
+              "stat": "seconds_closing",
+              "value": 2.9,
+              "interpretation": "Follower was closing on the lead for 2.9 of 3.3s - the gap was not merely static but actively shrinking most of the time."
+            }
+          ],
+          "sample_citations": [
+            {
+              "sample_t": 0.05,
+              "frame_id": 1501,
+              "claim": "Early in the segment clearance_s was 1.78s, already below the 3s sufficiency benchmark even before lead braking intensified."
+            },
+            {
+              "sample_t": 2.75,
+              "frame_id": 1555,
+              "claim": "Coinciding with a 23.0 km/h lead-speed drop event, clearance_s fell to 1.237s and ttc_s to 1.835s."
+            },
+            {
+              "sample_t": 3.3,
+              "frame_id": 1566,
+              "claim": "At the final sample, clearance_s reached its segment minimum of 0.893s and gap_s its minimum of 1.416s, with ttc_s of 1.946s, showing continued deterioration to the end of the clip."
+            }
+          ],
+          "event_citations": [
+            {
+              "event_t": 2.4,
+              "type": "lead_brake",
+              "legal_significance": "A 12.9 km/h lead speed drop reduced clearance further, testing whether the follower's distance was sufficient to stop safely - a core Rule 126 question."
+            },
+            {
+              "event_t": 2.75,
+              "type": "lead_brake",
+              "legal_significance": "The largest braking event (23.0 km/h drop) drove ttc_s down to 1.835s, the clearest dynamic hazard signal in the segment."
+            },
+            {
+              "event_t": 0.1,
+              "type": "follower_brake",
+              "legal_significance": "An early follower reactive brake (7.5 km/h drop) shows the follower was already compensating for close following at the very start of the window."
+            }
+          ]
+        },
+        "perception_caveats": [
+          "Speeds are vision-tracked estimates, not speedometer-derived; expect several km/h of noise, which propagates into gap_s, clearance_s, and ttc_s, especially the v_rel-based ttc_s values.",
+          "1 of 67 samples was excluded for low confidence; no samples were excluded for range (max_reliable_range_m=120m, well above observed gaps ~12-24m), so range truncation is not a concern here.",
+          "The segment is only 3.3s long, which is close to the minimum viable window; this constrains the ability to apply the 5s 'sustained_below_3s' transiency benchmark literally, even though the below-3s condition persists for nearly the full observed duration.",
+          "gap_s_uncertainty_estimate (0.002s) is very small and reflects homography/timing precision only, not the larger uncertainty introduced by vision-based speed estimation feeding the denominator.",
+          "Weather is dawn_dusk (reduced light), which arguably warrants treating this closer to the 4s 'poor conditions' benchmark rather than the 3s dry-day benchmark, strengthening rather than weakening the breach finding."
+        ],
+        "reasoning_chain": [
+          {
+            "step": 1,
+            "claim": "Clearance_s, the governing stricter metric, averaged 1.623s and bottomed at 0.893s, both far below the 3s dry/day sufficiency benchmark for Rule 126.",
+            "evidence_refs": [
+              "aggregate.mean_clearance_s",
+              "aggregate.min_clearance_s"
+            ],
+            "legal_principle": "Rule 126 requires a distance sufficient to stop safely; clearance_s (clear road, excluding follower body length) is the more legally faithful operationalisation of this test."
+          },
+          {
+            "step": 2,
+            "claim": "sustained_clearance_below_3s_seconds (3.25s) covers almost the entire 3.3s segment, meaning the sub-threshold condition was not a brief, isolated dip.",
+            "evidence_refs": [
+              "aggregate.sustained_clearance_below_3s_seconds",
+              "duration_s"
+            ],
+            "legal_principle": "Transiency doctrine excuses brief (<5s) dips but treats persistent sub-threshold following as supportive of a breach; here the entire observable window is sub-threshold."
+          },
+          {
+            "step": 3,
+            "claim": "Under the alternative gap_s convention, the picture is less severe (mean 2.111s, min 1.416s) but still consistently under 3s, so the choice of convention does not change the basic conclusion, only its severity.",
+            "evidence_refs": [
+              "aggregate.mean_gap_s",
+              "aggregate.min_gap_s",
+              "aggregate.sustained_below_3s_seconds"
+            ],
+            "legal_principle": "Both readings of the '2/3-second rule' point to insufficient distance; a human adjudicator should see both figures rather than have the convention silently resolved."
+          },
+          {
+            "step": 4,
+            "claim": "Multiple lead_brake events (t=2.2, 2.3, 2.4, 2.75) caused active closing (seconds_closing=2.9/3.3) and drove min_ttc_s to 1.52s, an acute dynamic hazard layered on top of the already-thin static gap.",
+            "evidence_refs": [
+              "event.lead_brake@2.75",
+              "aggregate.min_ttc_s",
+              "aggregate.seconds_closing"
+            ],
+            "legal_principle": "A falling TTC while closing is an aggravating dynamic signal beyond steady close-following, indicating the follower's distance was inadequate to respond to the lead's braking."
+          },
+          {
+            "step": 5,
+            "claim": "The segment's short duration (3.3s) limits literal application of the 5s sustained-below-3s benchmark, introducing genuine uncertainty about whether this would be classified 'sustained' in a longer observation window, though the available evidence trends uniformly toward breach.",
+            "evidence_refs": [
+              "duration_s",
+              "aggregate.usable_samples"
+            ],
+            "legal_principle": "Short segments cannot definitively prove sustained breach per the stated doctrine threshold, warranting medium rather than high confidence."
+          }
+        ],
+        "aggravating_factors": [
+          {
+            "factor": "Clearance_s remained below 3s for nearly the full observed duration, not a momentary dip.",
+            "evidence_ref": "aggregate.sustained_clearance_below_3s_seconds"
+          },
+          {
+            "factor": "Four distinct lead_brake events occurred in rapid succession (t=2.2-2.75) while the follower continued closing, culminating in min_ttc_s=1.52s.",
+            "evidence_ref": "events.lead_brake; aggregate.min_ttc_s"
+          },
+          {
+            "factor": "Dawn/dusk lighting conditions arguably demand a higher (4s) safety margin, which the follower did not meet even under the lower 3s benchmark.",
+            "evidence_ref": "environment.weather"
+          }
+        ],
+        "mitigating_factors": [
+          {
+            "factor": "Segment duration (3.3s) is short, limiting confidence that the condition would qualify as 'sustained' under the full 5s benchmark used in the transiency doctrine.",
+            "evidence_ref": "duration_s"
+          },
+          {
+            "factor": "Follower showed a reactive brake early in the segment, indicating some driver attentiveness to the gap.",
+            "evidence_ref": "event.follower_brake@0.1"
+          },
+          {
+            "factor": "Vision-based speed estimation introduces several km/h of noise that could modestly overstate closing severity and understate true clearance.",
+            "evidence_ref": "camera.speed_estimation=vision_tracked"
+          }
+        ],
+        "likely_outcome": {
+          "primary_charge": "Rule 126",
+          "penalty_notice_estimate_aud": 464,
+          "demerit_points": 3,
+          "court_max_aud": 2200,
+          "escalation_risk": "low",
+          "escalation_charges_to_consider": [
+            "s117 negligent driving (Road Transport Act 2013 (NSW)) - only if corroborated by a longer sustained record of repeated close-following during lead braking"
+          ]
+        },
+        "counterfactual": "If clearance_s had stayed above 3s for the majority of the segment (e.g., follower held an extra ~8-10m gap instead of closing to ~12-20m), particularly during the t=2.2-3.3 lead-braking sequence, the verdict would flip to unlikely_breach.",
+        "explanation_for_lay_user": "The camera data shows the following car stayed too close to the car in front for almost the entire 3.3-second clip, with less than 3 seconds - and at times under 1 second - of clear road between them. This got worse right when the lead car braked hard several times in a row, causing the time-to-collision to drop to about 1.5 seconds, which is a real safety concern. The clip is quite short, so we can't be fully certain this pattern would count as 'sustained' under the strictest legal test, but everything observed points toward an insufficient following distance under Rule 126."
+      }
+    }
+  ]
+}

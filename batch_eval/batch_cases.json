@@ -1,0 +1,5042 @@
+{
+  "generated_utc": "2026-10-25T04:09:34+00:00",
+  "site_id": "TOWN04_HW_01",
+  "model": null,
+  "temperature": null,
+  "reproducible": false,
+  "batch_summary": {
+    "frames_processed": 3000,
+    "frame_range": [
+      0,
+      2999
+    ],
+    "conf_threshold": 0.4,
+    "pair_episodes": 205,
+    "outcomes": {
+      "failed_duration_gate": 173,
+      "too_few_obs": 14,
+      "failed_persistence_gate": 12,
+      "passed": 5,
+      "force_flushed_end_of_stream": 1
+    },
+    "plausibility_rejected_observations": 674,
+    "plausibility_rejected_pairs": 105,
+    "segments_emitted": 6,
+    "cases_written": 5,
+    "convention_disagreements": 0,
+    "usage": "no API calls (dry run)",
+    "episodes": [
+      {
+        "key": [
+          "trk_000007",
+          "trk_000011"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.4,
+        "t0": 17.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000007"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.45,
+        "t0": 18.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000007",
+          "trk_000006"
+        ],
+        "n_obs": 44,
+        "duration_s": 2.55,
+        "t0": 16.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000018",
+          "trk_000007"
+        ],
+        "n_obs": 20,
+        "duration_s": 0.95,
+        "t0": 18.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000018",
+          "trk_000006"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 19.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000006"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 19.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000021"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.25,
+        "t0": 19.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000018",
+          "trk_000021"
+        ],
+        "n_obs": 23,
+        "duration_s": 1.1,
+        "t0": 19.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000021",
+          "trk_000006"
+        ],
+        "n_obs": 23,
+        "duration_s": 1.1,
+        "t0": 19.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000018",
+          "trk_000006"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.3,
+        "t0": 20.75,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000027",
+          "trk_000018"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 23.3,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000028"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 23.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000018",
+          "trk_000028"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 23.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000018"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 23.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 0
+      },
+      {
+        "key": [
+          "trk_000011",
+          "trk_000005"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 33.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000013",
+          "trk_000001"
+        ],
+        "n_obs": 11,
+        "duration_s": 0.5,
+        "t0": 33.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000002"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.5,
+        "t0": 33.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000021",
+          "trk_000014"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 34.45,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000014"
+        ],
+        "n_obs": 13,
+        "duration_s": 0.7,
+        "t0": 33.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000021"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 34.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000025",
+          "trk_000002"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 34.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000026",
+          "trk_000001"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 35.1,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000005",
+          "trk_000002"
+        ],
+        "n_obs": 60,
+        "duration_s": 2.95,
+        "t0": 32.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000027",
+          "trk_000025"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 35.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000025"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 35.1,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000005",
+          "trk_000029"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 35.45,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000027"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 35.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000005"
+        ],
+        "n_obs": 47,
+        "duration_s": 3.35,
+        "t0": 32.4,
+        "longest_deficit_s": 0.65,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000002",
+          "trk_000029"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 35.45,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000033",
+          "trk_000035"
+        ],
+        "n_obs": 6,
+        "duration_s": 0.35,
+        "t0": 36.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000035"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 36.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000035",
+          "trk_000002"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 36.75,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000033",
+          "trk_000002"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.65,
+        "t0": 36.3,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000033"
+        ],
+        "n_obs": 16,
+        "duration_s": 0.9,
+        "t0": 36.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000002"
+        ],
+        "n_obs": 50,
+        "duration_s": 2.85,
+        "t0": 35.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000046",
+          "trk_000001"
+        ],
+        "n_obs": 13,
+        "duration_s": 0.9,
+        "t0": 38.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000051",
+          "trk_000001"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 39.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000053"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 40.2,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000001"
+        ],
+        "n_obs": 96,
+        "duration_s": 6.9,
+        "t0": 33.7,
+        "longest_deficit_s": 5.7,
+        "outcome": "passed",
+        "segment_id": "ep01_seg_trk_000012_trk_000001_3370",
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000053"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 40.2,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 1
+      },
+      {
+        "key": [
+          "trk_000011",
+          "trk_000003"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 48.45,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000009"
+        ],
+        "n_obs": 13,
+        "duration_s": 0.6,
+        "t0": 48.1,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000016",
+          "trk_000003"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 49.45,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000016"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 49.45,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000017"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 50.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000030",
+          "trk_000004"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 51.1,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000027",
+          "trk_000003"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 51.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000030",
+          "trk_000027"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.2,
+        "t0": 51.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000027"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.45,
+        "t0": 51.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000027",
+          "trk_000004"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 51.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000030",
+          "trk_000015"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 51.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000001"
+        ],
+        "n_obs": 57,
+        "duration_s": 3.85,
+        "t0": 47.95,
+        "longest_deficit_s": 0.0,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000004",
+          "trk_000003"
+        ],
+        "n_obs": 79,
+        "duration_s": 3.9,
+        "t0": 47.95,
+        "longest_deficit_s": 3.3,
+        "outcome": "passed",
+        "segment_id": "ep02_seg_trk_000004_trk_000003_4795",
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000035",
+          "trk_000004"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 51.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000035",
+          "trk_000015"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 52.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000039"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 52.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000039",
+          "trk_000004"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 52.65,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000004"
+        ],
+        "n_obs": 99,
+        "duration_s": 6.2,
+        "t0": 49.2,
+        "longest_deficit_s": 0.75,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000059",
+          "trk_000020"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 58.4,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 2
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000007"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 65.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000008",
+          "trk_000014"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.3,
+        "t0": 65.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000018",
+          "trk_000014"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 65.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000018",
+          "trk_000002"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 65.5,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000002",
+          "trk_000007"
+        ],
+        "n_obs": 47,
+        "duration_s": 2.3,
+        "t0": 63.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000008",
+          "trk_000002"
+        ],
+        "n_obs": 46,
+        "duration_s": 2.9,
+        "t0": 63.55,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000008",
+          "trk_000021"
+        ],
+        "n_obs": 13,
+        "duration_s": 0.75,
+        "t0": 66.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000025",
+          "trk_000021"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 66.75,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000025",
+          "trk_000008"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.6,
+        "t0": 67.1,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000036",
+          "trk_000008"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.5,
+        "t0": 68.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 3
+      },
+      {
+        "key": [
+          "trk_000000",
+          "trk_000013"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.45,
+        "t0": 79.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000013"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.2,
+        "t0": 79.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000004"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.25,
+        "t0": 80.1,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000000"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 80.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000004"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.65,
+        "t0": 80.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000023",
+          "trk_000020"
+        ],
+        "n_obs": 13,
+        "duration_s": 0.6,
+        "t0": 81.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000000"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.5,
+        "t0": 81.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000000",
+          "trk_000004"
+        ],
+        "n_obs": 52,
+        "duration_s": 3.0,
+        "t0": 79.05,
+        "longest_deficit_s": 1.95,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000023",
+          "trk_000030"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 82.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000035",
+          "trk_000000"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 83.7,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000034",
+          "trk_000035"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.3,
+        "t0": 83.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000023",
+          "trk_000038"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 84.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000023",
+          "trk_000000"
+        ],
+        "n_obs": 40,
+        "duration_s": 2.85,
+        "t0": 81.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000041",
+          "trk_000023"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 85.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000034",
+          "trk_000045"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 87.65,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000047",
+          "trk_000023"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.2,
+        "t0": 88.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000047",
+          "trk_000034"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 88.45,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000034",
+          "trk_000023"
+        ],
+        "n_obs": 100,
+        "duration_s": 5.7,
+        "t0": 83.2,
+        "longest_deficit_s": 5.15,
+        "outcome": "passed",
+        "segment_id": "ep04_seg_trk_000034_trk_000023_8320",
+        "ep": 4
+      },
+      {
+        "key": [
+          "trk_000007",
+          "trk_000002"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 94.75,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000002",
+          "trk_000011"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 95.75,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000013",
+          "trk_000004"
+        ],
+        "n_obs": 6,
+        "duration_s": 0.35,
+        "t0": 96.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000006",
+          "trk_000013"
+        ],
+        "n_obs": 12,
+        "duration_s": 0.6,
+        "t0": 96.2,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000002",
+          "trk_000016"
+        ],
+        "n_obs": 11,
+        "duration_s": 0.5,
+        "t0": 96.65,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000002",
+          "trk_000004"
+        ],
+        "n_obs": 56,
+        "duration_s": 3.7,
+        "t0": 94.6,
+        "longest_deficit_s": 3.65,
+        "outcome": "passed",
+        "segment_id": "ep05_seg_trk_000002_trk_000004_9460",
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000006",
+          "trk_000004"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.55,
+        "t0": 98.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000006",
+          "trk_000002"
+        ],
+        "n_obs": 96,
+        "duration_s": 5.8,
+        "t0": 94.65,
+        "longest_deficit_s": 1.5,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 5
+      },
+      {
+        "key": [
+          "trk_000016",
+          "trk_000001"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.3,
+        "t0": 111.2,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000023",
+          "trk_000001"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 112.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000023"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.3,
+        "t0": 112.1,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000002",
+          "trk_000001"
+        ],
+        "n_obs": 67,
+        "duration_s": 3.3,
+        "t0": 110.15,
+        "longest_deficit_s": 3.25,
+        "outcome": "passed",
+        "segment_id": "ep06_seg_trk_000002_trk_000001_11015",
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000028",
+          "trk_000002"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 113.65,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000002"
+        ],
+        "n_obs": 29,
+        "duration_s": 1.4,
+        "t0": 112.45,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000001"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.3,
+        "t0": 113.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000001"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 114.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000030"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 114.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000030"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.2,
+        "t0": 114.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000006"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 114.55,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000031"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 114.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000031",
+          "trk_000030"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 114.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000006",
+          "trk_000030"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.2,
+        "t0": 114.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000032",
+          "trk_000029"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 114.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000031"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 114.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000035",
+          "trk_000001"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 115.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000034",
+          "trk_000024"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 115.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000035"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 115.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000006",
+          "trk_000037"
+        ],
+        "n_obs": 12,
+        "duration_s": 0.55,
+        "t0": 115.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000006",
+          "trk_000001"
+        ],
+        "n_obs": 18,
+        "duration_s": 1.45,
+        "t0": 114.75,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000038",
+          "trk_000024"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 116.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000006"
+        ],
+        "n_obs": 21,
+        "duration_s": 1.85,
+        "t0": 114.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000040",
+          "trk_000024"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 116.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000040",
+          "trk_000041"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 117.0,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000041",
+          "trk_000001"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.45,
+        "t0": 116.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000032",
+          "trk_000041"
+        ],
+        "n_obs": 14,
+        "duration_s": 0.75,
+        "t0": 117.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000041",
+          "trk_000024"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 117.7,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000042",
+          "trk_000024"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 117.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000044",
+          "trk_000024"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 118.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000032",
+          "trk_000024"
+        ],
+        "n_obs": 70,
+        "duration_s": 4.15,
+        "t0": 115.0,
+        "longest_deficit_s": 0.55,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000001"
+        ],
+        "n_obs": 49,
+        "duration_s": 2.75,
+        "t0": 116.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000045"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 119.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000046",
+          "trk_000001"
+        ],
+        "n_obs": 10,
+        "duration_s": 0.85,
+        "t0": 119.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000046",
+          "trk_000032"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 120.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000032",
+          "trk_000001"
+        ],
+        "n_obs": 41,
+        "duration_s": 2.0,
+        "t0": 119.2,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 6
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000011"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.5,
+        "t0": 126.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000017",
+          "trk_000003"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 127.7,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000016",
+          "trk_000000"
+        ],
+        "n_obs": 6,
+        "duration_s": 0.3,
+        "t0": 127.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000017",
+          "trk_000016"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.2,
+        "t0": 127.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000016"
+        ],
+        "n_obs": 10,
+        "duration_s": 0.55,
+        "t0": 127.55,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000019",
+          "trk_000016"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 128.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000018"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.3,
+        "t0": 128.05,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000019",
+          "trk_000003"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.2,
+        "t0": 128.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000025",
+          "trk_000000"
+        ],
+        "n_obs": 7,
+        "duration_s": 0.4,
+        "t0": 129.2,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000025"
+        ],
+        "n_obs": 13,
+        "duration_s": 0.7,
+        "t0": 129.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000030",
+          "trk_000025"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 129.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000025",
+          "trk_000003"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 129.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000030",
+          "trk_000003"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 130.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000035",
+          "trk_000000"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 130.25,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000035"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 130.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000035",
+          "trk_000003"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 130.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000038",
+          "trk_000000"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 130.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000038"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 130.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000000"
+        ],
+        "n_obs": 108,
+        "duration_s": 6.25,
+        "t0": 125.7,
+        "longest_deficit_s": 2.95,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000044",
+          "trk_000003"
+        ],
+        "n_obs": 6,
+        "duration_s": 0.5,
+        "t0": 131.55,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000003"
+        ],
+        "n_obs": 60,
+        "duration_s": 4.95,
+        "t0": 127.15,
+        "longest_deficit_s": 1.7,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000046"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.25,
+        "t0": 131.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000046"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 132.15,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000044",
+          "trk_000014"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 132.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000050",
+          "trk_000049"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 132.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000049"
+        ],
+        "n_obs": 14,
+        "duration_s": 0.65,
+        "t0": 132.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000050",
+          "trk_000014"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 132.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000014",
+          "trk_000057"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 133.65,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000042",
+          "trk_000057"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 134.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000057",
+          "trk_000014"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 134.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000060",
+          "trk_000014"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 135.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000042",
+          "trk_000014"
+        ],
+        "n_obs": 38,
+        "duration_s": 1.85,
+        "t0": 134.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000062",
+          "trk_000014"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 136.15,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000042",
+          "trk_000062"
+        ],
+        "n_obs": 25,
+        "duration_s": 1.2,
+        "t0": 136.15,
+        "outcome": "force_flushed_end_of_stream",
+        "segment_id": "ep07_seg_trk_000042_trk_000062_13615",
+        "ep": 7
+      },
+      {
+        "key": [
+          "trk_000000",
+          "trk_000003"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 141.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000016",
+          "trk_000014"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 143.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000013",
+          "trk_000014"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 143.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000016",
+          "trk_000003"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 143.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000016",
+          "trk_000018"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 143.55,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000013",
+          "trk_000018"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 143.55,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000022",
+          "trk_000003"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 144.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000013",
+          "trk_000003"
+        ],
+        "n_obs": 32,
+        "duration_s": 3.2,
+        "t0": 142.8,
+        "longest_deficit_s": 0.0,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000003"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 146.0,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000029",
+          "trk_000026"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.15,
+        "t0": 145.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000013",
+          "trk_000026"
+        ],
+        "n_obs": 25,
+        "duration_s": 1.5,
+        "t0": 144.9,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000034",
+          "trk_000013"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 148.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000036",
+          "trk_000013"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 148.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 8
+      },
+      {
+        "key": [
+          "trk_000005",
+          "trk_000000"
+        ],
+        "n_obs": 28,
+        "duration_s": 1.35,
+        "t0": 156.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000011"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.2,
+        "t0": 158.55,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000014"
+        ],
+        "n_obs": 6,
+        "duration_s": 0.25,
+        "t0": 158.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000014"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 158.95,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000016",
+          "trk_000005"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 159.75,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000012",
+          "trk_000005"
+        ],
+        "n_obs": 38,
+        "duration_s": 2.25,
+        "t0": 158.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000023",
+          "trk_000012"
+        ],
+        "n_obs": 5,
+        "duration_s": 0.2,
+        "t0": 161.6,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000012"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 163.25,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000026"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 164.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000026",
+          "trk_000012"
+        ],
+        "n_obs": 4,
+        "duration_s": 0.15,
+        "t0": 164.2,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000012"
+        ],
+        "n_obs": 95,
+        "duration_s": 5.1,
+        "t0": 160.5,
+        "longest_deficit_s": 2.8,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000027",
+          "trk_000020"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 167.7,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 9
+      },
+      {
+        "key": [
+          "trk_000001",
+          "trk_000008"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 172.4,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000019",
+          "trk_000001"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 174.65,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000019"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 174.65,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000019"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 174.7,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000020",
+          "trk_000006"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 175.1,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000026",
+          "trk_000001"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 175.3,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000026"
+        ],
+        "n_obs": 8,
+        "duration_s": 0.35,
+        "t0": 175.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000006",
+          "trk_000001"
+        ],
+        "n_obs": 75,
+        "duration_s": 3.7,
+        "t0": 172.4,
+        "longest_deficit_s": 0.0,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000032",
+          "trk_000006"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 176.85,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000036",
+          "trk_000006"
+        ],
+        "n_obs": 2,
+        "duration_s": 0.05,
+        "t0": 178.5,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000036",
+          "trk_000015"
+        ],
+        "n_obs": 3,
+        "duration_s": 0.1,
+        "t0": 178.8,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000015",
+          "trk_000006"
+        ],
+        "n_obs": 92,
+        "duration_s": 5.4,
+        "t0": 173.75,
+        "longest_deficit_s": 1.75,
+        "outcome": "failed_persistence_gate",
+        "segment_id": null,
+        "ep": 10
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000011"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.45,
+        "t0": 188.35,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 11
+      },
+      {
+        "key": [
+          "trk_000003",
+          "trk_000012"
+        ],
+        "n_obs": 9,
+        "duration_s": 0.4,
+        "t0": 189.0,
+        "outcome": "failed_duration_gate",
+        "segment_id": null,
+        "ep": 11
+      },
+      {
+        "key": [
+          "trk_000024",
+          "trk_000003"
+        ],
+        "n_obs": 1,
+        "duration_s": 0.0,
+        "t0": 191.6,
+        "outcome": "too_few_obs",
+        "segment_id": null,
+        "ep": 11
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "ep01_seg_trk_000012_trk_000001_3370",
+      "label": "A",
+      "status": "pending_review",
+      "carla_preset": "CloudyNoon",
+      "start_frame": 276,
+      "flags": [],
+      "evidence": {
+        "segment_id": "ep01_seg_trk_000012_trk_000001_3370",
+        "follower_vehicle_class": "car",
+        "lead_vehicle_class": "car",
+        "follower_length_m": 4.6,
+        "lead_length_m": 4.6,
+        "duration_s": 6.9,
+        "environment": {
+          "weather": "overcast",
+          "road_surface": "dry",
+          "road_class": "motorway",
+          "speed_limit_kmh": 100,
+          "is_built_up_area": false,
+          "is_safe_t_cam_zone": true
+        },
+        "camera": {
+          "site_id": "TOWN04_HW_01",
+          "calibration_rmse_m": 0.018,
+          "max_reliable_range_m": 120.0,
+          "speed_estimation": "vision_tracked",
+          "warnings": []
+        },
+        "aggregates": {
+          "usable_samples": 83,
+          "total_samples": 96,
+          "excluded_low_confidence": 13,
+          "excluded_out_of_range": 0,
+          "mean_gap_s": 2.414,
+          "median_gap_s": 2.215,
+          "min_gap_s": 0.422,
+          "p10_gap_s": 1.951,
+          "mean_clearance_s": 1.857,
+          "median_clearance_s": 1.713,
+          "min_clearance_s": 0.0,
+          "sustained_clearance_below_2s_seconds": 3.05,
+          "sustained_clearance_below_3s_seconds": 5.7,
+          "mean_gap_m": 20.1,
+          "min_gap_m": 4.28,
+          "mean_follower_speed_kmh": 32.8,
+          "max_follower_speed_kmh": 39.8,
+          "sustained_below_2s_seconds": 0.7,
+          "sustained_below_3s_seconds": 5.7,
+          "sustained_below_4s_seconds": 5.7,
+          "min_ttc_s": 1.34,
+          "mean_ttc_s": 18.81,
+          "seconds_closing": 2.99,
+          "sustained_ttc_below_3s_seconds": 0.15,
+          "sustained_below_60m_seconds": null,
+          "gap_s_uncertainty_estimate": 0.002
+        },
+        "representative_samples": [
+          {
+            "t": 0.6499999999999986,
+            "frame_id": 289,
+            "follower_speed_kmh": 5.385865750428891,
+            "lead_speed_kmh": 29.78317602940811,
+            "gap_m": 18.581500730513397,
+            "gap_s": 12.42017638938017,
+            "v_rel_kmh": -24.39731027897922,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 13.981500730513398,
+            "clearance_s": 9.345461799867559
+          },
+          {
+            "t": 1.25,
+            "frame_id": 301,
+            "follower_speed_kmh": 31.132045635781267,
+            "lead_speed_kmh": 29.360382419653448,
+            "gap_m": 18.691410525633657,
+            "gap_s": 2.161408815839047,
+            "v_rel_kmh": 1.7716632161278199,
+            "ttc_s": 37.98073882199204,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 14.091410525633657,
+            "clearance_s": 1.6294810333303724
+          },
+          {
+            "t": 1.5,
+            "frame_id": 306,
+            "follower_speed_kmh": 28.682382332413507,
+            "lead_speed_kmh": 30.477637053063113,
+            "gap_m": 19.03554592830707,
+            "gap_s": 2.389200609199853,
+            "v_rel_kmh": -1.7952547206496057,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 14.43554592830707,
+            "clearance_s": 1.8118427102611097
+          },
+          {
+            "t": 2.1499999999999986,
+            "frame_id": 319,
+            "follower_speed_kmh": 30.759457688245853,
+            "lead_speed_kmh": 35.78676580597169,
+            "gap_m": 19.663463457639587,
+            "gap_s": 2.3013561931084694,
+            "v_rel_kmh": -5.027308117725838,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.063463457639587,
+            "clearance_s": 1.7629851929484732
+          },
+          {
+            "t": 2.3999999999999986,
+            "frame_id": 324,
+            "follower_speed_kmh": 31.069309137903833,
+            "lead_speed_kmh": 39.96575460265361,
+            "gap_m": 20.361169785066764,
+            "gap_s": 2.359248186076201,
+            "v_rel_kmh": -8.896445464749778,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.761169785066764,
+            "clearance_s": 1.8262463118955747
+          },
+          {
+            "t": 2.6499999999999986,
+            "frame_id": 329,
+            "follower_speed_kmh": 31.875524244254393,
+            "lead_speed_kmh": 38.44018102314853,
+            "gap_m": 20.613343131516157,
+            "gap_s": 2.3280569349956424,
+            "v_rel_kmh": -6.56465677889414,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.01334313151616,
+            "clearance_s": 1.8085360677275546
+          },
+          {
+            "t": 3.6499999999999986,
+            "frame_id": 349,
+            "follower_speed_kmh": 31.045294638178273,
+            "lead_speed_kmh": 33.364554552016216,
+            "gap_m": 22.47175861278647,
+            "gap_s": 2.605816177584146,
+            "v_rel_kmh": -2.319259913837943,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 17.871758612786472,
+            "clearance_s": 2.07240200989784
+          },
+          {
+            "t": 3.8999999999999986,
+            "frame_id": 354,
+            "follower_speed_kmh": 33.63855961091847,
+            "lead_speed_kmh": 34.94529580456551,
+            "gap_m": 22.65242250505112,
+            "gap_s": 2.4242631658852236,
+            "v_rel_kmh": -1.3067361936470405,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 18.05242250505112,
+            "clearance_s": 1.931970981215553
+          },
+          {
+            "t": 4.100000000000001,
+            "frame_id": 358,
+            "follower_speed_kmh": 36.34202784746502,
+            "lead_speed_kmh": 34.122902184748156,
+            "gap_m": 22.488605588247232,
+            "gap_s": 2.227695726212405,
+            "v_rel_kmh": 2.2191256627168627,
+            "ttc_s": 36.48237748671359,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 17.88860558824723,
+            "clearance_s": 1.7720249510562762
+          },
+          {
+            "t": 4.350000000000001,
+            "frame_id": 363,
+            "follower_speed_kmh": 38.760034380119514,
+            "lead_speed_kmh": 28.79965999531468,
+            "gap_m": 21.430010920037112,
+            "gap_s": 1.9904017255388131,
+            "v_rel_kmh": 9.960374384804833,
+            "ttc_s": 7.745495935356377,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.83001092003711,
+            "clearance_s": 1.563157522461072
+          },
+          {
+            "t": 4.600000000000001,
+            "frame_id": 368,
+            "follower_speed_kmh": 39.51279414485869,
+            "lead_speed_kmh": 28.815369955930013,
+            "gap_m": 20.995456245451095,
+            "gap_s": 1.9128903465172613,
+            "v_rel_kmh": 10.697424188928675,
+            "ttc_s": 7.065592721082278,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.395456245451093,
+            "clearance_s": 1.493785589225508
+          },
+          {
+            "t": 4.800000000000004,
+            "frame_id": 372,
+            "follower_speed_kmh": 37.092404307018874,
+            "lead_speed_kmh": 35.47792961580717,
+            "gap_m": 21.466909750570448,
+            "gap_s": 2.0834690159847633,
+            "v_rel_kmh": 1.6144746912117043,
+            "ttc_s": 47.867504843976434,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.86690975057045,
+            "clearance_s": 1.6370164252351689
+          },
+          {
+            "t": 5.050000000000004,
+            "frame_id": 377,
+            "follower_speed_kmh": 32.13347778927272,
+            "lead_speed_kmh": 22.190755296117494,
+            "gap_m": 19.72433323111502,
+            "gap_s": 2.2097701374769616,
+            "v_rel_kmh": 9.942722493155223,
+            "ttc_s": 7.141665643479155,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.124333231115019,
+            "clearance_s": 1.6944197571478115
+          },
+          {
+            "t": 5.25,
+            "frame_id": 381,
+            "follower_speed_kmh": 35.08221210103374,
+            "lead_speed_kmh": 38.70975353952379,
+            "gap_m": 21.92043271831948,
+            "gap_s": 2.2493894500918556,
+            "v_rel_kmh": -3.6275414384900486,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 17.32043271831948,
+            "clearance_s": 1.7773553619246492
+          },
+          {
+            "t": 5.5,
+            "frame_id": 386,
+            "follower_speed_kmh": 35.60691748377478,
+            "lead_speed_kmh": 40.325233183589624,
+            "gap_m": 20.93239264445652,
+            "gap_s": 2.1163475764051096,
+            "v_rel_kmh": -4.718315699814845,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.33239264445652,
+            "clearance_s": 1.651269407042485
+          },
+          {
+            "t": 5.75,
+            "frame_id": 391,
+            "follower_speed_kmh": 34.69521580687222,
+            "lead_speed_kmh": 27.489087364319815,
+            "gap_m": 22.056788160064794,
+            "gap_s": 2.2886278563082265,
+            "v_rel_kmh": 7.206128442552405,
+            "ttc_s": 11.019014996644755,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 17.456788160064797,
+            "clearance_s": 1.811328620235457
+          },
+          {
+            "t": 5.950000000000003,
+            "frame_id": 395,
+            "follower_speed_kmh": 30.89134362657891,
+            "lead_speed_kmh": 12.251447488646924,
+            "gap_m": 18.640805640737874,
+            "gap_s": 2.172352912772547,
+            "v_rel_kmh": 18.639896137931984,
+            "ttc_s": 3.6001756560271034,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 14.040805640737874,
+            "clearance_s": 1.636280406500862
+          },
+          {
+            "t": 6.200000000000003,
+            "frame_id": 400,
+            "follower_speed_kmh": 29.908915705259894,
+            "lead_speed_kmh": 21.94889323058699,
+            "gap_m": 14.643326737731408,
+            "gap_s": 1.7625505643643993,
+            "v_rel_kmh": 7.960022474672904,
+            "ttc_s": 6.622591383826375,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 10.043326737731409,
+            "clearance_s": 1.2088695094177067
+          },
+          {
+            "t": 6.899999999999999,
+            "frame_id": 414,
+            "follower_speed_kmh": 36.49267923922199,
+            "lead_speed_kmh": 38.03357540311792,
+            "gap_m": 4.277402889219405,
+            "gap_s": 0.421965466011592,
+            "v_rel_kmh": -1.5408961638959298,
+            "ttc_s": null,
+            "follower_track_id": "trk_000012",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 0.0,
+            "clearance_s": 0.0
+          }
+        ],
+        "events": [
+          {
+            "t": 3.6499999999999986,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 5.0
+            }
+          },
+          {
+            "t": 4.950000000000003,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 8.0
+            }
+          },
+          {
+            "t": 5.149999999999999,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 12.2
+            }
+          },
+          {
+            "t": 5.600000000000001,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 10.3
+            }
+          },
+          {
+            "t": 5.700000000000003,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 7.8
+            }
+          },
+          {
+            "t": 5.75,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 17.4
+            }
+          },
+          {
+            "t": 5.850000000000001,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 11.9
+            }
+          },
+          {
+            "t": 6.0,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 11.0
+            }
+          },
+          {
+            "t": 6.300000000000004,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 8.6
+            }
+          },
+          {
+            "t": 6.350000000000001,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 9.3
+            }
+          }
+        ]
+      },
+      "frames": [
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000276.jpg",
+          "frame_id": 276,
+          "t": 0.0,
+          "gap_m": 14.52,
+          "gap_s": 145.224
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000284.jpg",
+          "frame_id": 284,
+          "t": 0.4,
+          "gap_m": 17.82,
+          "gap_s": 102.188
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000300.jpg",
+          "frame_id": 300,
+          "t": 1.2,
+          "gap_m": 19.08,
+          "gap_s": 2.242
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000317.jpg",
+          "frame_id": 317,
+          "t": 2.05,
+          "gap_m": 19.49,
+          "gap_s": 2.285
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000325.jpg",
+          "frame_id": 325,
+          "t": 2.45,
+          "gap_m": 20.61,
+          "gap_s": 2.461
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000349.jpg",
+          "frame_id": 349,
+          "t": 3.65,
+          "gap_m": 22.47,
+          "gap_s": 2.606
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000357.jpg",
+          "frame_id": 357,
+          "t": 4.05,
+          "gap_m": 21.53,
+          "gap_s": 2.151
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000365.jpg",
+          "frame_id": 365,
+          "t": 4.45,
+          "gap_m": 21.86,
+          "gap_s": 2.0
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000373.jpg",
+          "frame_id": 373,
+          "t": 4.85,
+          "gap_m": 21.25,
+          "gap_s": 2.041
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000381.jpg",
+          "frame_id": 381,
+          "t": 5.25,
+          "gap_m": 21.92,
+          "gap_s": 2.249
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000389.jpg",
+          "frame_id": 389,
+          "t": 5.65,
+          "gap_m": 21.89,
+          "gap_s": 2.272
+        },
+        {
+          "file": "case_frames/ep01_seg_trk_000012_trk_000001_3370_f00000397.jpg",
+          "frame_id": 397,
+          "t": 6.05,
+          "gap_m": 17.68,
+          "gap_s": 1.98
+        }
+      ],
+      "verdict": null
+    },
+    {
+      "case_id": "ep04_seg_trk_000034_trk_000023_8320",
+      "label": "B",
+      "status": "pending_review",
+      "carla_preset": "MidRainyNoon",
+      "start_frame": 1083,
+      "flags": [],
+      "evidence": {
+        "segment_id": "ep04_seg_trk_000034_trk_000023_8320",
+        "follower_vehicle_class": "car",
+        "lead_vehicle_class": "car",
+        "follower_length_m": 4.6,
+        "lead_length_m": 4.6,
+        "duration_s": 5.7,
+        "environment": {
+          "weather": "rain_light",
+          "road_surface": "wet",
+          "road_class": "motorway",
+          "speed_limit_kmh": 100,
+          "is_built_up_area": false,
+          "is_safe_t_cam_zone": true
+        },
+        "camera": {
+          "site_id": "TOWN04_HW_01",
+          "calibration_rmse_m": 0.018,
+          "max_reliable_range_m": 120.0,
+          "speed_estimation": "vision_tracked",
+          "warnings": []
+        },
+        "aggregates": {
+          "usable_samples": 96,
+          "total_samples": 100,
+          "excluded_low_confidence": 4,
+          "excluded_out_of_range": 0,
+          "mean_gap_s": 2.66,
+          "median_gap_s": 2.516,
+          "min_gap_s": 2.01,
+          "p10_gap_s": 2.121,
+          "mean_clearance_s": 2.035,
+          "median_clearance_s": 1.96,
+          "min_clearance_s": 1.455,
+          "sustained_clearance_below_2s_seconds": 1.9,
+          "sustained_clearance_below_3s_seconds": 5.2,
+          "mean_gap_m": 20.17,
+          "min_gap_m": 15.64,
+          "mean_follower_speed_kmh": 28.8,
+          "max_follower_speed_kmh": 37.9,
+          "sustained_below_2s_seconds": 0.0,
+          "sustained_below_3s_seconds": 5.15,
+          "sustained_below_4s_seconds": 5.2,
+          "min_ttc_s": null,
+          "mean_ttc_s": null,
+          "seconds_closing": 0.0,
+          "sustained_ttc_below_3s_seconds": 0.0,
+          "sustained_below_60m_seconds": null,
+          "gap_s_uncertainty_estimate": 0.002
+        },
+        "representative_samples": [
+          {
+            "t": 0.20000000000000284,
+            "frame_id": 1087,
+            "follower_speed_kmh": 5.83061159396097,
+            "lead_speed_kmh": 29.155614784631204,
+            "gap_m": 15.644256555868465,
+            "gap_s": 9.65924803831196,
+            "v_rel_kmh": -23.325003190670234,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 11.044256555868465,
+            "clearance_s": 6.819065712129927
+          },
+          {
+            "t": 0.45000000000000284,
+            "frame_id": 1092,
+            "follower_speed_kmh": 13.049826009267054,
+            "lead_speed_kmh": 30.39331789594438,
+            "gap_m": 17.560043366337275,
+            "gap_s": 4.844214480248441,
+            "v_rel_kmh": -17.343491886677327,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.960043366337276,
+            "clearance_s": 3.5752320441423757
+          },
+          {
+            "t": 1.0499999999999972,
+            "frame_id": 1104,
+            "follower_speed_kmh": 28.80491764788144,
+            "lead_speed_kmh": 30.7941329277124,
+            "gap_m": 16.70572590933798,
+            "gap_s": 2.0878592332320025,
+            "v_rel_kmh": -1.9892152798309617,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.105725909337979,
+            "clearance_s": 1.512957398676056
+          },
+          {
+            "t": 1.25,
+            "frame_id": 1108,
+            "follower_speed_kmh": 29.862525466124794,
+            "lead_speed_kmh": 30.1093355313694,
+            "gap_m": 16.669327717870267,
+            "gap_s": 2.009527956783365,
+            "v_rel_kmh": -0.24681006524460614,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.069327717870268,
+            "clearance_s": 1.4549867804590386
+          },
+          {
+            "t": 1.3500000000000085,
+            "frame_id": 1110,
+            "follower_speed_kmh": 28.127833579156263,
+            "lead_speed_kmh": 30.863673502569057,
+            "gap_m": 16.924593916232123,
+            "gap_s": 2.1661297848258703,
+            "v_rel_kmh": -2.7358399234127937,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.324593916232123,
+            "clearance_s": 1.5773891001443612
+          },
+          {
+            "t": 1.6000000000000085,
+            "frame_id": 1115,
+            "follower_speed_kmh": 27.50867568869076,
+            "lead_speed_kmh": 33.5622854364452,
+            "gap_m": 17.413719983785118,
+            "gap_s": 2.278895307468363,
+            "v_rel_kmh": -6.0536097477544395,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.813719983785118,
+            "clearance_s": 1.6769034054442296
+          },
+          {
+            "t": 1.8500000000000085,
+            "frame_id": 1120,
+            "follower_speed_kmh": 28.85290049396229,
+            "lead_speed_kmh": 33.447777878640665,
+            "gap_m": 17.582810583117773,
+            "gap_s": 2.193821661446815,
+            "v_rel_kmh": -4.594877384678373,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.982810583117773,
+            "clearance_s": 1.6198758980576085
+          },
+          {
+            "t": 2.1000000000000085,
+            "frame_id": 1125,
+            "follower_speed_kmh": 28.852900616746975,
+            "lead_speed_kmh": 33.597217867777175,
+            "gap_m": 18.32576039238327,
+            "gap_s": 2.2865201072465995,
+            "v_rel_kmh": -4.7443172510302,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 13.72576039238327,
+            "clearance_s": 1.7125743462998426
+          },
+          {
+            "t": 2.4000000000000057,
+            "frame_id": 1131,
+            "follower_speed_kmh": 29.671774757298827,
+            "lead_speed_kmh": 34.57175629134191,
+            "gap_m": 18.331537771548955,
+            "gap_s": 2.224118257750753,
+            "v_rel_kmh": -4.899981534043086,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 13.731537771548956,
+            "clearance_s": 1.6660121068564093
+          },
+          {
+            "t": 2.6500000000000057,
+            "frame_id": 1136,
+            "follower_speed_kmh": 28.555418225294375,
+            "lead_speed_kmh": 37.584388005810965,
+            "gap_m": 19.334254264242198,
+            "gap_s": 2.4374819098120346,
+            "v_rel_kmh": -9.02896978051659,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 14.734254264242198,
+            "clearance_s": 1.857556941830611
+          },
+          {
+            "t": 2.950000000000003,
+            "frame_id": 1142,
+            "follower_speed_kmh": 26.241204495800858,
+            "lead_speed_kmh": 39.244914388129565,
+            "gap_m": 20.588205173300434,
+            "gap_s": 2.8244716676683774,
+            "v_rel_kmh": -13.003709892328708,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.988205173300434,
+            "clearance_s": 2.1934030746603868
+          },
+          {
+            "t": 3.200000000000003,
+            "frame_id": 1147,
+            "follower_speed_kmh": 26.771771581328544,
+            "lead_speed_kmh": 36.170870760290796,
+            "gap_m": 20.549584720747774,
+            "gap_s": 2.7633025618030773,
+            "v_rel_kmh": -9.399099178962253,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.949584720747774,
+            "clearance_s": 2.1447405832021
+          },
+          {
+            "t": 3.450000000000003,
+            "frame_id": 1152,
+            "follower_speed_kmh": 27.511605383896544,
+            "lead_speed_kmh": 37.05134689845771,
+            "gap_m": 21.02330409430584,
+            "gap_s": 2.7509806746429026,
+            "v_rel_kmh": -9.539741514561165,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.42330409430584,
+            "clearance_s": 2.149052878393938
+          },
+          {
+            "t": 3.75,
+            "frame_id": 1158,
+            "follower_speed_kmh": 31.164683722151523,
+            "lead_speed_kmh": 40.516752471652396,
+            "gap_m": 21.97834675223485,
+            "gap_s": 2.538836877455822,
+            "v_rel_kmh": -9.352068749500873,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 17.378346752234847,
+            "clearance_s": 2.007466171189699
+          },
+          {
+            "t": 4.0,
+            "frame_id": 1163,
+            "follower_speed_kmh": 28.891400640597254,
+            "lead_speed_kmh": 39.55325692706193,
+            "gap_m": 22.926470927947395,
+            "gap_s": 2.8567426123548585,
+            "v_rel_kmh": -10.661856286464676,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 18.326470927947398,
+            "clearance_s": 2.2835616784845074
+          },
+          {
+            "t": 4.25,
+            "frame_id": 1168,
+            "follower_speed_kmh": 29.702406389846256,
+            "lead_speed_kmh": 40.75574364303174,
+            "gap_m": 23.731727080055624,
+            "gap_s": 2.876339929057259,
+            "v_rel_kmh": -11.053337253185486,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 19.131727080055626,
+            "clearance_s": 2.318809344408703
+          },
+          {
+            "t": 4.900000000000006,
+            "frame_id": 1181,
+            "follower_speed_kmh": 34.903547118320986,
+            "lead_speed_kmh": 34.79598318472337,
+            "gap_m": 23.472360820719118,
+            "gap_s": 2.4209716756906414,
+            "v_rel_kmh": 0.10756393359761773,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 18.872360820719116,
+            "clearance_s": 1.94652132988875
+          },
+          {
+            "t": 5.200000000000003,
+            "frame_id": 1187,
+            "follower_speed_kmh": 35.10880166607118,
+            "lead_speed_kmh": 38.6273709206829,
+            "gap_m": 25.54776223786417,
+            "gap_s": 2.6196264096701385,
+            "v_rel_kmh": -3.5185692546117195,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 20.94776223786417,
+            "clearance_s": 2.14794981536463
+          },
+          {
+            "t": 5.450000000000003,
+            "frame_id": 1192,
+            "follower_speed_kmh": 36.56053693014851,
+            "lead_speed_kmh": 45.10892881757503,
+            "gap_m": 23.92503497907576,
+            "gap_s": 2.3558222377650098,
+            "v_rel_kmh": -8.548391887426519,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 19.32503497907576,
+            "clearance_s": 1.9028748417341732
+          },
+          {
+            "t": 5.700000000000003,
+            "frame_id": 1197,
+            "follower_speed_kmh": 37.40543540673175,
+            "lead_speed_kmh": 45.10892881757503,
+            "gap_m": 21.453131256856985,
+            "gap_s": 2.064707219282523,
+            "v_rel_kmh": -7.703493410843279,
+            "ttc_s": null,
+            "follower_track_id": "trk_000034",
+            "lead_track_id": "trk_000023",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.853131256856983,
+            "clearance_s": 1.621990811361236
+          }
+        ],
+        "events": [
+          {
+            "t": 4.8500000000000085,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 7.2
+            }
+          },
+          {
+            "t": 5.0,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 8.0
+            }
+          }
+        ]
+      },
+      "frames": [
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001083.jpg",
+          "frame_id": 1083,
+          "t": 0.0,
+          "gap_m": 14.84,
+          "gap_s": 148.382
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001091.jpg",
+          "frame_id": 1091,
+          "t": 0.4,
+          "gap_m": 16.78,
+          "gap_s": 4.63
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001106.jpg",
+          "frame_id": 1106,
+          "t": 1.15,
+          "gap_m": 17.09,
+          "gap_s": 2.082
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001114.jpg",
+          "frame_id": 1114,
+          "t": 1.55,
+          "gap_m": 17.15,
+          "gap_s": 2.19
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001122.jpg",
+          "frame_id": 1122,
+          "t": 1.95,
+          "gap_m": 17.17,
+          "gap_s": 2.183
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001130.jpg",
+          "frame_id": 1130,
+          "t": 2.35,
+          "gap_m": 18.12,
+          "gap_s": 2.174
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001138.jpg",
+          "frame_id": 1138,
+          "t": 2.75,
+          "gap_m": 19.15,
+          "gap_s": 2.606
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001146.jpg",
+          "frame_id": 1146,
+          "t": 3.15,
+          "gap_m": 19.96,
+          "gap_s": 2.732
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001154.jpg",
+          "frame_id": 1154,
+          "t": 3.55,
+          "gap_m": 20.17,
+          "gap_s": 2.495
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001162.jpg",
+          "frame_id": 1162,
+          "t": 3.95,
+          "gap_m": 21.61,
+          "gap_s": 2.585
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001170.jpg",
+          "frame_id": 1170,
+          "t": 4.35,
+          "gap_m": 23.32,
+          "gap_s": 2.714
+        },
+        {
+          "file": "case_frames/ep04_seg_trk_000034_trk_000023_8320_f00001186.jpg",
+          "frame_id": 1186,
+          "t": 5.15,
+          "gap_m": 24.87,
+          "gap_s": 2.55
+        }
+      ],
+      "verdict": null
+    },
+    {
+      "case_id": "ep02_seg_trk_000004_trk_000003_4795",
+      "label": "C",
+      "status": "pending_review",
+      "carla_preset": "WetNoon",
+      "start_frame": 500,
+      "flags": [],
+      "evidence": {
+        "segment_id": "ep02_seg_trk_000004_trk_000003_4795",
+        "follower_vehicle_class": "car",
+        "lead_vehicle_class": "car",
+        "follower_length_m": 4.6,
+        "lead_length_m": 4.6,
+        "duration_s": 3.9,
+        "environment": {
+          "weather": "dry_clear",
+          "road_surface": "wet",
+          "road_class": "motorway",
+          "speed_limit_kmh": 100,
+          "is_built_up_area": false,
+          "is_safe_t_cam_zone": true
+        },
+        "camera": {
+          "site_id": "TOWN04_HW_01",
+          "calibration_rmse_m": 0.018,
+          "max_reliable_range_m": 120.0,
+          "speed_estimation": "vision_tracked",
+          "warnings": []
+        },
+        "aggregates": {
+          "usable_samples": 78,
+          "total_samples": 79,
+          "excluded_low_confidence": 1,
+          "excluded_out_of_range": 0,
+          "mean_gap_s": 1.934,
+          "median_gap_s": 2.086,
+          "min_gap_s": 0.263,
+          "p10_gap_s": 0.516,
+          "mean_clearance_s": 1.447,
+          "median_clearance_s": 1.52,
+          "min_clearance_s": 0.0,
+          "sustained_clearance_below_2s_seconds": 2.7,
+          "sustained_clearance_below_3s_seconds": 3.65,
+          "mean_gap_m": 16.91,
+          "min_gap_m": 4.27,
+          "mean_follower_speed_kmh": 36.0,
+          "max_follower_speed_kmh": 58.5,
+          "sustained_below_2s_seconds": 1.75,
+          "sustained_below_3s_seconds": 3.3,
+          "sustained_below_4s_seconds": 3.8,
+          "min_ttc_s": 0.43,
+          "mean_ttc_s": 2.61,
+          "seconds_closing": 3.9,
+          "sustained_ttc_below_3s_seconds": 1.6,
+          "sustained_below_60m_seconds": null,
+          "gap_s_uncertainty_estimate": 0.002
+        },
+        "representative_samples": [
+          {
+            "t": 0.05000000000000426,
+            "frame_id": 501,
+            "follower_speed_kmh": 20.467387707229996,
+            "lead_speed_kmh": 0.46978086315054185,
+            "gap_m": 29.748065828831212,
+            "gap_s": 5.232374473756723,
+            "v_rel_kmh": 19.997606844079453,
+            "ttc_s": 5.355292651705403,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 25.148065828831214,
+            "clearance_s": 4.423282456891753
+          },
+          {
+            "t": 0.25,
+            "frame_id": 505,
+            "follower_speed_kmh": 29.349495420517936,
+            "lead_speed_kmh": 1.1364890507107075,
+            "gap_m": 27.908799847799738,
+            "gap_s": 3.423284728153804,
+            "v_rel_kmh": 28.21300636980723,
+            "ttc_s": 3.561183027966883,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 23.30879984779974,
+            "clearance_s": 2.859050155711272
+          },
+          {
+            "t": 0.45000000000000284,
+            "frame_id": 509,
+            "follower_speed_kmh": 29.14449034373711,
+            "lead_speed_kmh": 0.7717030090842467,
+            "gap_m": 26.286514569320907,
+            "gap_s": 3.2469757176553515,
+            "v_rel_kmh": 28.372787334652863,
+            "ttc_s": 3.3352892450569334,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 21.686514569320906,
+            "clearance_s": 2.678772266344747
+          },
+          {
+            "t": 0.7000000000000028,
+            "frame_id": 514,
+            "follower_speed_kmh": 30.5168187392459,
+            "lead_speed_kmh": 0.8884878669708177,
+            "gap_m": 24.070016489513996,
+            "gap_s": 2.8394853376643825,
+            "v_rel_kmh": 29.628330872275082,
+            "ttc_s": 2.9246351991882085,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 19.470016489513995,
+            "clearance_s": 2.2968337545652844
+          },
+          {
+            "t": 0.8999999999999986,
+            "frame_id": 518,
+            "follower_speed_kmh": 29.08126988089031,
+            "lead_speed_kmh": 1.9842345235899725,
+            "gap_m": 23.090140066006406,
+            "gap_s": 2.858351941922773,
+            "v_rel_kmh": 27.09703535730034,
+            "ttc_s": 3.0676604706583928,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 18.490140066006404,
+            "clearance_s": 2.2889132596428836
+          },
+          {
+            "t": 1.1000000000000014,
+            "frame_id": 522,
+            "follower_speed_kmh": 30.09491972600143,
+            "lead_speed_kmh": 4.851285479560859,
+            "gap_m": 21.80731833419286,
+            "gap_s": 2.6086245358968787,
+            "v_rel_kmh": 25.24363424644057,
+            "ttc_s": 3.1099462635481627,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 17.207318334192863,
+            "clearance_s": 2.05836555030163
+          },
+          {
+            "t": 1.3000000000000043,
+            "frame_id": 526,
+            "follower_speed_kmh": 29.986283472110944,
+            "lead_speed_kmh": 6.6247438134933665,
+            "gap_m": 20.49634982413599,
+            "gap_s": 2.4606870483138,
+            "v_rel_kmh": 23.361539658617577,
+            "ttc_s": 3.1584758729577636,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.89634982413599,
+            "clearance_s": 1.9084345487533994
+          },
+          {
+            "t": 1.5500000000000043,
+            "frame_id": 531,
+            "follower_speed_kmh": 29.871441611679078,
+            "lead_speed_kmh": 7.510677289606107,
+            "gap_m": 18.997111661245697,
+            "gap_s": 2.2894643944383883,
+            "v_rel_kmh": 22.36076432207297,
+            "ttc_s": 3.0584644154124514,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 14.397111661245697,
+            "clearance_s": 1.7350887397486794
+          },
+          {
+            "t": 1.75,
+            "frame_id": 535,
+            "follower_speed_kmh": 28.01331419297382,
+            "lead_speed_kmh": 10.397309728888217,
+            "gap_m": 18.15899791676068,
+            "gap_s": 2.333618651831452,
+            "v_rel_kmh": 17.616004464085602,
+            "ttc_s": 3.7109659363231633,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 13.55899791676068,
+            "clearance_s": 1.7424711751022077
+          },
+          {
+            "t": 2.0,
+            "frame_id": 540,
+            "follower_speed_kmh": 29.196572871741587,
+            "lead_speed_kmh": 11.47721711472968,
+            "gap_m": 16.824473905049775,
+            "gap_s": 2.0744936854147387,
+            "v_rel_kmh": 17.719355757011908,
+            "ttc_s": 3.4181889504764396,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.224473905049775,
+            "clearance_s": 1.507303828141186
+          },
+          {
+            "t": 2.200000000000003,
+            "frame_id": 544,
+            "follower_speed_kmh": 32.12855182437007,
+            "lead_speed_kmh": 14.072607066212484,
+            "gap_m": 15.88258574051804,
+            "gap_s": 1.7796416401966475,
+            "v_rel_kmh": 18.055944758157587,
+            "ttc_s": 3.1666749888583103,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 11.28258574051804,
+            "clearance_s": 1.2642122461011767
+          },
+          {
+            "t": 2.3999999999999986,
+            "frame_id": 548,
+            "follower_speed_kmh": 34.454823458476376,
+            "lead_speed_kmh": 16.138465359563007,
+            "gap_m": 14.960886745276209,
+            "gap_s": 1.5631829415089986,
+            "v_rel_kmh": 18.31635809891337,
+            "ttc_s": 2.9404967948398864,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 10.36088674527621,
+            "clearance_s": 1.082553574188122
+          },
+          {
+            "t": 2.6499999999999986,
+            "frame_id": 553,
+            "follower_speed_kmh": 38.17947062778141,
+            "lead_speed_kmh": 18.451109605570977,
+            "gap_m": 13.04156497096927,
+            "gap_s": 1.2297088755684928,
+            "v_rel_kmh": 19.728361022210436,
+            "ttc_s": 2.379804072047997,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 8.44156497096927,
+            "clearance_s": 0.7959679219170803
+          },
+          {
+            "t": 2.8500000000000014,
+            "frame_id": 557,
+            "follower_speed_kmh": 40.50021269999087,
+            "lead_speed_kmh": 18.451109605570977,
+            "gap_m": 10.715616789165708,
+            "gap_s": 0.9524942677894935,
+            "v_rel_kmh": 22.04910309441989,
+            "ttc_s": 1.749559620443667,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 6.115616789165708,
+            "clearance_s": 0.5436075263131028
+          },
+          {
+            "t": 3.0500000000000043,
+            "frame_id": 561,
+            "follower_speed_kmh": 44.62177422351382,
+            "lead_speed_kmh": 21.165059225175792,
+            "gap_m": 11.206529746668553,
+            "gap_s": 0.9041215368515635,
+            "v_rel_kmh": 23.456714998338025,
+            "ttc_s": 1.7199129158053565,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 6.606529746668553,
+            "clearance_s": 0.5330022730354338
+          },
+          {
+            "t": 3.3000000000000043,
+            "frame_id": 566,
+            "follower_speed_kmh": 47.30711802978909,
+            "lead_speed_kmh": 23.18064033702735,
+            "gap_m": 9.462739947575113,
+            "gap_s": 0.7201001716024907,
+            "v_rel_kmh": 24.12647769276174,
+            "ttc_s": 1.411970045734882,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 4.862739947575113,
+            "clearance_s": 0.3700471417482469
+          },
+          {
+            "t": 3.5,
+            "frame_id": 570,
+            "follower_speed_kmh": 52.425077722593976,
+            "lead_speed_kmh": 24.9266644126746,
+            "gap_m": 7.706673709796156,
+            "gap_s": 0.5292128607242702,
+            "v_rel_kmh": 27.498413309919375,
+            "ttc_s": 1.0089318624525216,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 3.1066737097961568,
+            "clearance_s": 0.2133335007044942
+          },
+          {
+            "t": 3.700000000000003,
+            "frame_id": 574,
+            "follower_speed_kmh": 54.24614633570972,
+            "lead_speed_kmh": 24.604180442537174,
+            "gap_m": 6.233451056578242,
+            "gap_s": 0.4136777507623497,
+            "v_rel_kmh": 29.641965893172543,
+            "ttc_s": 0.7570491068154961,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 1.6334510565782425,
+            "clearance_s": 0.10840260923402492
+          },
+          {
+            "t": 3.8999999999999986,
+            "frame_id": 578,
+            "follower_speed_kmh": 58.48287450857737,
+            "lead_speed_kmh": 23.070103406476083,
+            "gap_m": 4.272358781043888,
+            "gap_s": 0.26299137552656077,
+            "v_rel_kmh": 35.41277110210129,
+            "ttc_s": 0.4343204762884361,
+            "follower_track_id": "trk_000004",
+            "lead_track_id": "trk_000003",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 0.0,
+            "clearance_s": 0.0
+          }
+        ],
+        "events": []
+      },
+      "frames": [
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000500.jpg",
+          "frame_id": 500,
+          "t": 0.0,
+          "gap_m": 30.03,
+          "gap_s": 300.258
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000506.jpg",
+          "frame_id": 506,
+          "t": 0.3,
+          "gap_m": 27.52,
+          "gap_s": 3.368
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000512.jpg",
+          "frame_id": 512,
+          "t": 0.6,
+          "gap_m": 25.0,
+          "gap_s": 2.974
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000518.jpg",
+          "frame_id": 518,
+          "t": 0.9,
+          "gap_m": 23.09,
+          "gap_s": 2.858
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000524.jpg",
+          "frame_id": 524,
+          "t": 1.2,
+          "gap_m": 20.84,
+          "gap_s": 2.447
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000530.jpg",
+          "frame_id": 530,
+          "t": 1.5,
+          "gap_m": 19.21,
+          "gap_s": 2.312
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000536.jpg",
+          "frame_id": 536,
+          "t": 1.8,
+          "gap_m": 17.94,
+          "gap_s": 2.275
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000542.jpg",
+          "frame_id": 542,
+          "t": 2.1,
+          "gap_m": 16.42,
+          "gap_s": 2.038
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000548.jpg",
+          "frame_id": 548,
+          "t": 2.4,
+          "gap_m": 14.96,
+          "gap_s": 1.563
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000554.jpg",
+          "frame_id": 554,
+          "t": 2.7,
+          "gap_m": 12.45,
+          "gap_s": 1.175
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000560.jpg",
+          "frame_id": 560,
+          "t": 3.0,
+          "gap_m": 11.58,
+          "gap_s": 0.958
+        },
+        {
+          "file": "case_frames/ep02_seg_trk_000004_trk_000003_4795_f00000566.jpg",
+          "frame_id": 566,
+          "t": 3.3,
+          "gap_m": 9.46,
+          "gap_s": 0.72
+        }
+      ],
+      "verdict": null
+    },
+    {
+      "case_id": "ep05_seg_trk_000002_trk_000004_9460",
+      "label": "D",
+      "status": "pending_review",
+      "carla_preset": "HardRainNoon",
+      "start_frame": 1250,
+      "flags": [],
+      "evidence": {
+        "segment_id": "ep05_seg_trk_000002_trk_000004_9460",
+        "follower_vehicle_class": "car",
+        "lead_vehicle_class": "truck_articulated",
+        "follower_length_m": 4.6,
+        "lead_length_m": 16.0,
+        "duration_s": 3.7,
+        "environment": {
+          "weather": "rain_heavy",
+          "road_surface": "wet",
+          "road_class": "motorway",
+          "speed_limit_kmh": 100,
+          "is_built_up_area": false,
+          "is_safe_t_cam_zone": true
+        },
+        "camera": {
+          "site_id": "TOWN04_HW_01",
+          "calibration_rmse_m": 0.018,
+          "max_reliable_range_m": 120.0,
+          "speed_estimation": "vision_tracked",
+          "warnings": []
+        },
+        "aggregates": {
+          "usable_samples": 55,
+          "total_samples": 56,
+          "excluded_low_confidence": 1,
+          "excluded_out_of_range": 0,
+          "mean_gap_s": 2.171,
+          "median_gap_s": 2.076,
+          "min_gap_s": 1.794,
+          "p10_gap_s": 1.938,
+          "mean_clearance_s": 1.537,
+          "median_clearance_s": 1.471,
+          "min_clearance_s": 1.317,
+          "sustained_clearance_below_2s_seconds": 3.4,
+          "sustained_clearance_below_3s_seconds": 3.65,
+          "mean_gap_m": 15.96,
+          "min_gap_m": 11.78,
+          "mean_follower_speed_kmh": 26.9,
+          "max_follower_speed_kmh": 38.4,
+          "sustained_below_2s_seconds": 0.15,
+          "sustained_below_3s_seconds": 3.65,
+          "sustained_below_4s_seconds": 3.65,
+          "min_ttc_s": 2.14,
+          "mean_ttc_s": 8.02,
+          "seconds_closing": 3.03,
+          "sustained_ttc_below_3s_seconds": 0.0,
+          "sustained_below_60m_seconds": null,
+          "gap_s_uncertainty_estimate": 0.002
+        },
+        "representative_samples": [
+          {
+            "t": 0.04999999999999716,
+            "frame_id": 1251,
+            "follower_speed_kmh": 38.363478594952404,
+            "lead_speed_kmh": 35.623416352300815,
+            "gap_m": 19.11976754490342,
+            "gap_s": 1.7941846173122744,
+            "v_rel_kmh": 2.7400622426515895,
+            "ttc_s": 25.120291827766515,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 14.519767544903422,
+            "clearance_s": 1.362524074355702
+          },
+          {
+            "t": 0.20000000000000284,
+            "frame_id": 1254,
+            "follower_speed_kmh": 31.48031598306148,
+            "lead_speed_kmh": 21.17480027508055,
+            "gap_m": 18.585466260167397,
+            "gap_s": 2.1253814152501977,
+            "v_rel_kmh": 10.30551570798093,
+            "ttc_s": 6.492414395602457,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 13.985466260167398,
+            "clearance_s": 1.5993384108244992
+          },
+          {
+            "t": 0.3499999999999943,
+            "frame_id": 1257,
+            "follower_speed_kmh": 32.785738318580464,
+            "lead_speed_kmh": 19.06047568439346,
+            "gap_m": 17.82345699720054,
+            "gap_s": 1.9570840396038427,
+            "v_rel_kmh": 13.725262634187004,
+            "ttc_s": 4.674915657358759,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 13.223456997200541,
+            "clearance_s": 1.4519863706391927
+          },
+          {
+            "t": 0.5,
+            "frame_id": 1260,
+            "follower_speed_kmh": 30.800209636029088,
+            "lead_speed_kmh": 13.826300289668069,
+            "gap_m": 16.997835612476177,
+            "gap_s": 1.9867464841321592,
+            "v_rel_kmh": 16.97390934636102,
+            "ttc_s": 3.605074526807994,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.397835612476177,
+            "clearance_s": 1.449087805970805
+          },
+          {
+            "t": 0.6499999999999915,
+            "frame_id": 1263,
+            "follower_speed_kmh": 31.0384834886729,
+            "lead_speed_kmh": 19.086379663274226,
+            "gap_m": 17.091453914096576,
+            "gap_s": 1.9823531041135432,
+            "v_rel_kmh": 11.952103825398673,
+            "ttc_s": 5.147983567545299,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.491453914096576,
+            "clearance_s": 1.448821882910569
+          },
+          {
+            "t": 0.7999999999999972,
+            "frame_id": 1266,
+            "follower_speed_kmh": 29.264288604797905,
+            "lead_speed_kmh": 20.044001353314183,
+            "gap_m": 16.670756439694937,
+            "gap_s": 2.050783601589492,
+            "v_rel_kmh": 9.220287251483722,
+            "ttc_s": 6.508986276240391,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.070756439694938,
+            "clearance_s": 1.4849061861622475
+          },
+          {
+            "t": 0.9500000000000028,
+            "frame_id": 1269,
+            "follower_speed_kmh": 29.76570929269564,
+            "lead_speed_kmh": 22.27516000769794,
+            "gap_m": 16.061451094115135,
+            "gap_s": 1.9425448045010485,
+            "v_rel_kmh": 7.490549284997698,
+            "ttc_s": 7.719223482665098,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 11.461451094115136,
+            "clearance_s": 1.3861999233104045
+          },
+          {
+            "t": 1.0999999999999943,
+            "frame_id": 1272,
+            "follower_speed_kmh": 27.663503520916915,
+            "lead_speed_kmh": 18.68357255368839,
+            "gap_m": 15.905182472098206,
+            "gap_s": 2.069826652877108,
+            "v_rel_kmh": 8.979930967228526,
+            "ttc_s": 6.37629143347694,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 11.305182472098206,
+            "clearance_s": 1.471203995140402
+          },
+          {
+            "t": 1.6499999999999915,
+            "frame_id": 1283,
+            "follower_speed_kmh": 30.37063333630464,
+            "lead_speed_kmh": 27.383842565031323,
+            "gap_m": 16.063207933979264,
+            "gap_s": 1.9040613319446023,
+            "v_rel_kmh": 2.9867907712733164,
+            "ttc_s": 19.361097911010535,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 11.463207933979264,
+            "clearance_s": 1.3587977604996038
+          },
+          {
+            "t": 1.7999999999999972,
+            "frame_id": 1286,
+            "follower_speed_kmh": 25.69644174178874,
+            "lead_speed_kmh": 29.18189534113991,
+            "gap_m": 16.60269147029963,
+            "gap_s": 2.3259908859629554,
+            "v_rel_kmh": -3.485453599351171,
+            "ttc_s": null,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.002691470299629,
+            "clearance_s": 1.6815436832567006
+          },
+          {
+            "t": 1.9500000000000028,
+            "frame_id": 1289,
+            "follower_speed_kmh": 26.819413340860226,
+            "lead_speed_kmh": 18.78410370692642,
+            "gap_m": 15.300092576022736,
+            "gap_s": 2.0537486250590433,
+            "v_rel_kmh": 8.035309633933807,
+            "ttc_s": 6.854786658260542,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 10.700092576022737,
+            "clearance_s": 1.4362854542755754
+          },
+          {
+            "t": 2.6499999999999915,
+            "frame_id": 1303,
+            "follower_speed_kmh": 23.83711733466908,
+            "lead_speed_kmh": 38.899733345746874,
+            "gap_m": 17.16964305796099,
+            "gap_s": 2.593044877903969,
+            "v_rel_kmh": -15.062616011077793,
+            "ttc_s": null,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.56964305796099,
+            "clearance_s": 1.898330002464107
+          },
+          {
+            "t": 2.799999999999997,
+            "frame_id": 1306,
+            "follower_speed_kmh": 26.603500213555638,
+            "lead_speed_kmh": 16.891456376458944,
+            "gap_m": 14.333016008165574,
+            "gap_s": 1.9395514580861133,
+            "v_rel_kmh": 9.712043837096694,
+            "ttc_s": 5.312873221628803,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 9.733016008165574,
+            "clearance_s": 1.3170769766431805
+          },
+          {
+            "t": 2.950000000000003,
+            "frame_id": 1309,
+            "follower_speed_kmh": 24.176938027679274,
+            "lead_speed_kmh": 12.620841617618662,
+            "gap_m": 13.993340998036865,
+            "gap_s": 2.083639687344158,
+            "v_rel_kmh": 11.556096410060611,
+            "ttc_s": 4.359259892386835,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 9.393340998036866,
+            "clearance_s": 1.3986894268504146
+          },
+          {
+            "t": 3.0999999999999943,
+            "frame_id": 1312,
+            "follower_speed_kmh": 25.764793663764838,
+            "lead_speed_kmh": 2.171949009536952,
+            "gap_m": 14.417756520838937,
+            "gap_s": 2.0145289790547385,
+            "v_rel_kmh": 23.592844654227886,
+            "ttc_s": 2.1999858107707624,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 9.817756520838937,
+            "clearance_s": 1.3717914428605442
+          },
+          {
+            "t": 3.25,
+            "frame_id": 1315,
+            "follower_speed_kmh": 21.38906701501054,
+            "lead_speed_kmh": 26.271369685931198,
+            "gap_m": 14.781844707530162,
+            "gap_s": 2.4879365196136565,
+            "v_rel_kmh": -4.882302670920659,
+            "ttc_s": null,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 10.181844707530162,
+            "clearance_s": 1.7137092011252706
+          },
+          {
+            "t": 3.3999999999999915,
+            "frame_id": 1318,
+            "follower_speed_kmh": 18.976318378846923,
+            "lead_speed_kmh": 6.556756831982607,
+            "gap_m": 12.387901518132468,
+            "gap_s": 2.35011052064709,
+            "v_rel_kmh": 12.419561546864315,
+            "ttc_s": 3.5908228561044955,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 7.787901518132468,
+            "clearance_s": 1.4774438806069659
+          },
+          {
+            "t": 3.549999999999997,
+            "frame_id": 1321,
+            "follower_speed_kmh": 18.976318378846923,
+            "lead_speed_kmh": 8.758068223414014,
+            "gap_m": 12.047870443978553,
+            "gap_s": 2.2856031782577135,
+            "v_rel_kmh": 10.218250155432909,
+            "ttc_s": 4.244595007811811,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 7.4478704439785535,
+            "clearance_s": 1.4129365382175896
+          },
+          {
+            "t": 3.5999999999999943,
+            "frame_id": 1322,
+            "follower_speed_kmh": 18.976318378846923,
+            "lead_speed_kmh": 10.241654940264842,
+            "gap_m": 15.72872529959758,
+            "gap_s": 2.983898665068242,
+            "v_rel_kmh": 8.73466343858208,
+            "ttc_s": 6.482609373183028,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000004",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 11.12872529959758,
+            "clearance_s": 2.111232025028118
+          }
+        ],
+        "events": [
+          {
+            "t": 0.09999999999999432,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 8.1
+            }
+          },
+          {
+            "t": 0.20000000000000284,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 8.1
+            }
+          },
+          {
+            "t": 0.29999999999999716,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 5.2
+            }
+          },
+          {
+            "t": 0.5999999999999943,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 5.5
+            }
+          },
+          {
+            "t": 1.5999999999999943,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 10.0
+            }
+          },
+          {
+            "t": 1.8499999999999943,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 8.4
+            }
+          },
+          {
+            "t": 2.0,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 6.0
+            }
+          },
+          {
+            "t": 2.799999999999997,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 18.5
+            }
+          },
+          {
+            "t": 3.049999999999997,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 9.2
+            }
+          },
+          {
+            "t": 3.0999999999999943,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 6.9
+            }
+          },
+          {
+            "t": 3.200000000000003,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 12.7
+            }
+          },
+          {
+            "t": 3.3999999999999915,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 13.6
+            }
+          },
+          {
+            "t": 3.549999999999997,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 11.7
+            }
+          },
+          {
+            "t": 0.09999999999999432,
+            "type": "follower_brake",
+            "details": {
+              "speed_drop_kmh": 6.3
+            }
+          }
+        ]
+      },
+      "frames": [
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001250.jpg",
+          "frame_id": 1250,
+          "t": 0.0,
+          "gap_m": 19.16,
+          "gap_s": 191.58
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001254.jpg",
+          "frame_id": 1254,
+          "t": 0.2,
+          "gap_m": 18.59,
+          "gap_s": 2.125
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001258.jpg",
+          "frame_id": 1258,
+          "t": 0.4,
+          "gap_m": 17.31,
+          "gap_s": 1.953
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001262.jpg",
+          "frame_id": 1262,
+          "t": 0.6,
+          "gap_m": 16.94,
+          "gap_s": 1.91
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001266.jpg",
+          "frame_id": 1266,
+          "t": 0.8,
+          "gap_m": 16.67,
+          "gap_s": 2.051
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001270.jpg",
+          "frame_id": 1270,
+          "t": 1.0,
+          "gap_m": 16.46,
+          "gap_s": 2.101
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001282.jpg",
+          "frame_id": 1282,
+          "t": 1.6,
+          "gap_m": 15.81,
+          "gap_s": 2.032
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001286.jpg",
+          "frame_id": 1286,
+          "t": 1.8,
+          "gap_m": 16.6,
+          "gap_s": 2.326
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001290.jpg",
+          "frame_id": 1290,
+          "t": 2.0,
+          "gap_m": 15.1,
+          "gap_s": 2.089
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001305.jpg",
+          "frame_id": 1305,
+          "t": 2.75,
+          "gap_m": 16.68,
+          "gap_s": 2.257
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001309.jpg",
+          "frame_id": 1309,
+          "t": 2.95,
+          "gap_m": 13.99,
+          "gap_s": 2.084
+        },
+        {
+          "file": "case_frames/ep05_seg_trk_000002_trk_000004_9460_f00001313.jpg",
+          "frame_id": 1313,
+          "t": 3.15,
+          "gap_m": 15.37,
+          "gap_s": 2.18
+        }
+      ],
+      "verdict": null
+    },
+    {
+      "case_id": "ep06_seg_trk_000002_trk_000001_11015",
+      "label": "E",
+      "status": "pending_review",
+      "carla_preset": "ClearSunset",
+      "start_frame": 1500,
+      "flags": [],
+      "evidence": {
+        "segment_id": "ep06_seg_trk_000002_trk_000001_11015",
+        "follower_vehicle_class": "car",
+        "lead_vehicle_class": "car",
+        "follower_length_m": 4.6,
+        "lead_length_m": 4.6,
+        "duration_s": 3.3,
+        "environment": {
+          "weather": "dawn_dusk",
+          "road_surface": "dry",
+          "road_class": "motorway",
+          "speed_limit_kmh": 100,
+          "is_built_up_area": false,
+          "is_safe_t_cam_zone": true
+        },
+        "camera": {
+          "site_id": "TOWN04_HW_01",
+          "calibration_rmse_m": 0.018,
+          "max_reliable_range_m": 120.0,
+          "speed_estimation": "vision_tracked",
+          "warnings": []
+        },
+        "aggregates": {
+          "usable_samples": 66,
+          "total_samples": 67,
+          "excluded_low_confidence": 1,
+          "excluded_out_of_range": 0,
+          "mean_gap_s": 2.111,
+          "median_gap_s": 2.13,
+          "min_gap_s": 1.416,
+          "p10_gap_s": 1.62,
+          "mean_clearance_s": 1.623,
+          "median_clearance_s": 1.651,
+          "min_clearance_s": 0.893,
+          "sustained_clearance_below_2s_seconds": 1.55,
+          "sustained_clearance_below_3s_seconds": 3.25,
+          "mean_gap_m": 19.98,
+          "min_gap_m": 12.45,
+          "mean_follower_speed_kmh": 34.2,
+          "max_follower_speed_kmh": 39.1,
+          "sustained_below_2s_seconds": 0.55,
+          "sustained_below_3s_seconds": 3.25,
+          "sustained_below_4s_seconds": 3.25,
+          "min_ttc_s": 1.52,
+          "mean_ttc_s": 9.44,
+          "seconds_closing": 2.9,
+          "sustained_ttc_below_3s_seconds": 0.55,
+          "sustained_below_60m_seconds": null,
+          "gap_s_uncertainty_estimate": 0.002
+        },
+        "representative_samples": [
+          {
+            "t": 0.04999999999999716,
+            "frame_id": 1501,
+            "follower_speed_kmh": 39.12385710575085,
+            "lead_speed_kmh": 17.248879744066958,
+            "gap_m": 23.982699296959474,
+            "gap_s": 2.2067792865024867,
+            "v_rel_kmh": 21.874977361683893,
+            "ttc_s": 3.946871168894686,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 19.382699296959473,
+            "clearance_s": 1.7835081362363274
+          },
+          {
+            "t": 0.09999999999999432,
+            "frame_id": 1502,
+            "follower_speed_kmh": 31.600855496464845,
+            "lead_speed_kmh": 30.36297546865738,
+            "gap_m": 24.25200153706837,
+            "gap_s": 2.762811454367528,
+            "v_rel_kmh": 1.237880027807467,
+            "ttc_s": 70.52961803421665,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 19.652001537068372,
+            "clearance_s": 2.238775008523442
+          },
+          {
+            "t": 0.20000000000000284,
+            "frame_id": 1504,
+            "follower_speed_kmh": 33.59793597909079,
+            "lead_speed_kmh": 26.75593812932569,
+            "gap_m": 23.90678544756096,
+            "gap_s": 2.5615986548929808,
+            "v_rel_kmh": 6.841997849765104,
+            "ttc_s": 12.578844586186793,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 19.306785447560962,
+            "clearance_s": 2.0687112343589966
+          },
+          {
+            "t": 0.4000000000000057,
+            "frame_id": 1508,
+            "follower_speed_kmh": 33.37224075913969,
+            "lead_speed_kmh": 24.140660726920053,
+            "gap_m": 23.261385845813706,
+            "gap_s": 2.509300758355433,
+            "v_rel_kmh": 9.23158003221964,
+            "ttc_s": 9.071143699416607,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 18.661385845813705,
+            "clearance_s": 2.0130799585739654
+          },
+          {
+            "t": 0.5999999999999943,
+            "frame_id": 1512,
+            "follower_speed_kmh": 35.47253987364084,
+            "lead_speed_kmh": 31.418813082950095,
+            "gap_m": 23.38237322010235,
+            "gap_s": 2.3730058206212323,
+            "v_rel_kmh": 4.053726790690746,
+            "ttc_s": 20.765223691364007,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 18.78237322010235,
+            "clearance_s": 1.906165835128524
+          },
+          {
+            "t": 0.75,
+            "frame_id": 1515,
+            "follower_speed_kmh": 38.84382641952707,
+            "lead_speed_kmh": 29.432967463936333,
+            "gap_m": 22.597539175149397,
+            "gap_s": 2.094313267491125,
+            "v_rel_kmh": 9.410858955590736,
+            "ttc_s": 8.644390635799438,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 17.9975391751494,
+            "clearance_s": 1.6679906951176897
+          },
+          {
+            "t": 0.9500000000000028,
+            "frame_id": 1519,
+            "follower_speed_kmh": 37.63933570120224,
+            "lead_speed_kmh": 28.54338497896925,
+            "gap_m": 21.21840359507749,
+            "gap_s": 2.029426171297681,
+            "v_rel_kmh": 9.095950722232992,
+            "ttc_s": 8.397830559434547,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.61840359507749,
+            "clearance_s": 1.5894609144328773
+          },
+          {
+            "t": 1.1500000000000057,
+            "frame_id": 1523,
+            "follower_speed_kmh": 36.49975166920476,
+            "lead_speed_kmh": 20.228448906295217,
+            "gap_m": 20.900892498855637,
+            "gap_s": 2.06147191569426,
+            "v_rel_kmh": 16.271302762909546,
+            "ttc_s": 4.62428940646334,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.30089249885564,
+            "clearance_s": 1.6077701987597897
+          },
+          {
+            "t": 1.2999999999999972,
+            "frame_id": 1526,
+            "follower_speed_kmh": 36.333349370795816,
+            "lead_speed_kmh": 23.938785810849517,
+            "gap_m": 20.96139916213742,
+            "gap_s": 2.076908358037289,
+            "v_rel_kmh": 12.394563559946299,
+            "ttc_s": 6.088236719165419,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.361399162137417,
+            "clearance_s": 1.6211287427037608
+          },
+          {
+            "t": 1.5,
+            "frame_id": 1530,
+            "follower_speed_kmh": 34.05079796631365,
+            "lead_speed_kmh": 22.109265674072727,
+            "gap_m": 20.004920930890126,
+            "gap_s": 2.115008154065915,
+            "v_rel_kmh": 11.941532292240925,
+            "ttc_s": 6.030860495013554,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.404920930890126,
+            "clearance_s": 1.628675938991756
+          },
+          {
+            "t": 1.7000000000000028,
+            "frame_id": 1534,
+            "follower_speed_kmh": 39.09097937438844,
+            "lead_speed_kmh": 30.684806783992837,
+            "gap_m": 19.97391785927622,
+            "gap_s": 1.839455174676583,
+            "v_rel_kmh": 8.406172590395602,
+            "ttc_s": 8.553964782444519,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.37391785927622,
+            "clearance_s": 1.415828029360041
+          },
+          {
+            "t": 1.8499999999999943,
+            "frame_id": 1537,
+            "follower_speed_kmh": 34.453039734900806,
+            "lead_speed_kmh": 38.21405220547885,
+            "gap_m": 20.98798214923671,
+            "gap_s": 2.1930353988682585,
+            "v_rel_kmh": -3.761012470578045,
+            "ttc_s": null,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.387982149236713,
+            "clearance_s": 1.712381148113578
+          },
+          {
+            "t": 2.049999999999997,
+            "frame_id": 1541,
+            "follower_speed_kmh": 31.847578455629616,
+            "lead_speed_kmh": 38.99650097490608,
+            "gap_m": 20.644479685464304,
+            "gap_s": 2.3336193981346205,
+            "v_rel_kmh": -7.148922519276461,
+            "ttc_s": null,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 16.044479685464303,
+            "clearance_s": 1.8136426588333399
+          },
+          {
+            "t": 2.200000000000003,
+            "frame_id": 1544,
+            "follower_speed_kmh": 30.147187884442317,
+            "lead_speed_kmh": 30.923890511131045,
+            "gap_m": 20.31357582998628,
+            "gap_s": 2.425727841291934,
+            "v_rel_kmh": -0.7767026266887278,
+            "ttc_s": null,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 15.713575829986281,
+            "clearance_s": 1.876422875817993
+          },
+          {
+            "t": 2.4000000000000057,
+            "frame_id": 1548,
+            "follower_speed_kmh": 27.622317522961975,
+            "lead_speed_kmh": 13.53026378412385,
+            "gap_m": 18.987806622203237,
+            "gap_s": 2.474669396697376,
+            "v_rel_kmh": 14.092053738838125,
+            "ttc_s": 4.850684301007182,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 14.387806622203238,
+            "clearance_s": 1.8751541682508868
+          },
+          {
+            "t": 2.5999999999999943,
+            "frame_id": 1552,
+            "follower_speed_kmh": 30.876693880333363,
+            "lead_speed_kmh": 13.53026378412385,
+            "gap_m": 17.192099553809978,
+            "gap_s": 2.0044749166988116,
+            "v_rel_kmh": 17.346430096209513,
+            "ttc_s": 3.5679709341024743,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 12.592099553809978,
+            "clearance_s": 1.4681480656382535
+          },
+          {
+            "t": 2.75,
+            "frame_id": 1555,
+            "follower_speed_kmh": 32.0216842726157,
+            "lead_speed_kmh": 1.4115501068490428,
+            "gap_m": 15.602592768164454,
+            "gap_s": 1.7541030473973827,
+            "v_rel_kmh": 30.61013416576666,
+            "ttc_s": 1.8349914332688526,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 11.002592768164455,
+            "clearance_s": 1.2369534852751374
+          },
+          {
+            "t": 2.950000000000003,
+            "frame_id": 1559,
+            "follower_speed_kmh": 35.40440358147272,
+            "lead_speed_kmh": 1.6223528894777788,
+            "gap_m": 14.424541072387656,
+            "gap_s": 1.4667200293629548,
+            "v_rel_kmh": 33.78205069199494,
+            "ttc_s": 1.5371579521340486,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 9.824541072387657,
+            "clearance_s": 0.9989816034947692
+          },
+          {
+            "t": 3.1500000000000057,
+            "frame_id": 1563,
+            "follower_speed_kmh": 31.91451625268704,
+            "lead_speed_kmh": 8.619045741976205,
+            "gap_m": 13.981968136351826,
+            "gap_s": 1.5771846545419161,
+            "v_rel_kmh": 23.295470510710835,
+            "ttc_s": 2.16072413165999,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 9.381968136351826,
+            "clearance_s": 1.0582985191894578
+          },
+          {
+            "t": 3.299999999999997,
+            "frame_id": 1566,
+            "follower_speed_kmh": 31.649025491803094,
+            "lead_speed_kmh": 8.619045741976205,
+            "gap_m": 12.448919497229378,
+            "gap_s": 1.4160344431974015,
+            "v_rel_kmh": 23.02997974982689,
+            "ttc_s": 1.945989995512811,
+            "follower_track_id": "trk_000002",
+            "lead_track_id": "trk_000001",
+            "perception_confidence": 0.9,
+            "gap_uncertainty_m": 0.018,
+            "clearance_m": 7.848919497229378,
+            "clearance_s": 0.8927955837801047
+          }
+        ],
+        "events": [
+          {
+            "t": 0.15000000000000568,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 7.4
+            }
+          },
+          {
+            "t": 0.4000000000000057,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 5.2
+            }
+          },
+          {
+            "t": 2.200000000000003,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 7.6
+            }
+          },
+          {
+            "t": 2.299999999999997,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 10.1
+            }
+          },
+          {
+            "t": 2.4000000000000057,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 12.9
+            }
+          },
+          {
+            "t": 2.75,
+            "type": "lead_brake",
+            "details": {
+              "lead_speed_drop_kmh": 23.0
+            }
+          },
+          {
+            "t": 0.09999999999999432,
+            "type": "follower_brake",
+            "details": {
+              "speed_drop_kmh": 7.5
+            }
+          }
+        ]
+      },
+      "frames": [
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001500.jpg",
+          "frame_id": 1500,
+          "t": 0.0,
+          "gap_m": 24.29,
+          "gap_s": 242.871
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001505.jpg",
+          "frame_id": 1505,
+          "t": 0.25,
+          "gap_m": 23.86,
+          "gap_s": 2.575
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001510.jpg",
+          "frame_id": 1510,
+          "t": 0.5,
+          "gap_m": 23.47,
+          "gap_s": 2.526
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001515.jpg",
+          "frame_id": 1515,
+          "t": 0.75,
+          "gap_m": 22.6,
+          "gap_s": 2.094
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001520.jpg",
+          "frame_id": 1520,
+          "t": 1.0,
+          "gap_m": 21.72,
+          "gap_s": 2.006
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001525.jpg",
+          "frame_id": 1525,
+          "t": 1.25,
+          "gap_m": 21.11,
+          "gap_s": 2.145
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001530.jpg",
+          "frame_id": 1530,
+          "t": 1.5,
+          "gap_m": 20.0,
+          "gap_s": 2.115
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001535.jpg",
+          "frame_id": 1535,
+          "t": 1.75,
+          "gap_m": 20.22,
+          "gap_s": 1.922
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001540.jpg",
+          "frame_id": 1540,
+          "t": 2.0,
+          "gap_m": 20.83,
+          "gap_s": 2.191
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001545.jpg",
+          "frame_id": 1545,
+          "t": 2.25,
+          "gap_m": 20.12,
+          "gap_s": 2.3
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001550.jpg",
+          "frame_id": 1550,
+          "t": 2.5,
+          "gap_m": 18.11,
+          "gap_s": 2.19
+        },
+        {
+          "file": "case_frames/ep06_seg_trk_000002_trk_000001_11015_f00001555.jpg",
+          "frame_id": 1555,
+          "t": 2.75,
+          "gap_m": 15.6,
+          "gap_s": 1.754
+        }
+      ],
+      "verdict": null
+    }
+  ]
+}

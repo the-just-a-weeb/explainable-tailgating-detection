@@ -1,0 +1,44 @@
+Negative-control build 2026-11-21T22:48:01+00:00  frames 0..2999  conf=0.4
+
+Gate outcomes (should match the thesis held-out row):
+  too_few_obs                    14
+  failed_duration_gate           173
+  failed_persistence_gate        12
+  passed                         5
+  force_flushed_end_of_stream    1
+
+NEGATIVE CANDIDATES (12)   * = suggested pick
+
+ case pair                               preset         frames        dur     v deficit  med_g  med_c   g<3   c<3   g<2   c<2 heur g/c    n
+ N1   car behind car                     CloudyNoon     250-317      3.35  29.7    0.65   2.91   2.36  0.65  3.30  0.00  0.00      N/N   46
+*N2   car behind truck_articulated       WetNoon        500-577      3.85  16.7    0.00   7.80   6.91  0.00  0.00  0.00  0.00      N/N   45
+ N3   car behind car                     WetNoon        525-649      6.20  33.1    0.75   3.58   3.35  0.75  1.20  0.00  0.20      N/N   97
+ N4   car behind car                     MidRainyNoon   1000-1060    3.00  44.7    1.95   2.23   1.85  1.95  2.50  0.10  1.60      N/N   51
+ N5   car behind truck_articulated       HardRainNoon   1251-1367    5.80  28.5    1.50   2.92   2.35  1.50  5.30  0.00  0.60      N/Y   95
+ N6   car behind car                     ClearSunset    1597-1680    4.15  27.7    0.55   3.28   2.67  0.55  2.35  0.00  0.00      N/N   61
+*N7   car behind truck_articulated       WetSunset      1750-1875    6.25  42.2    2.95   2.60   2.20  2.95  3.15  2.35  2.60      N/N  107
+ N8   car behind car                     WetSunset      1779-1878    4.95  33.8    1.70   2.50   2.04  1.70  3.95  0.00  0.80      N/N   52
+*N9   car behind car                     SoftRainSunset 2031-2095    3.20  25.1    0.00   5.00   4.42  0.00  0.00  0.00  0.00      N/N   31
+*N10  car behind car                     ClearNight     2323-2425    5.10  27.2    2.80   2.37   1.80  2.80  4.45  0.80  2.55      N/N   91
+ N11  car behind car                     CloudyNight    2500-2574    3.70  29.9    0.00   3.93   3.40  0.00  1.20  0.00  0.00      N/N   74
+ N12  car behind car                     CloudyNight    2527-2635    5.40  32.9    1.75   2.45   1.97  1.75  3.95  0.40  0.90      N/N   78
+
+deficit = longest continuous run with h_gap < 3 s (gate needs >= 3 s)
+heur g/c = prompt heuristic (>=5 s below 3 s or >=3 s below 2 s) met on gap / clearance
+Expected agent answer for a clean negative: unlikely_breach or possible_breach.
+A 'Y' under clearance means the clearance convention alone would call it - a useful
+borderline test of the convention effect.
+
+Segment IDs:
+  N1: ep01_seg_trk_000001_trk_000005_3240
+  N2: ep02_seg_trk_000003_trk_000001_4795
+  N3: ep02_seg_trk_000015_trk_000004_4920
+  N4: ep04_seg_trk_000000_trk_000004_7905
+  N5: ep05_seg_trk_000006_trk_000002_9465
+  N6: ep06_seg_trk_000032_trk_000024_11500
+  N7: ep07_seg_trk_000003_trk_000000_12570
+  N8: ep07_seg_trk_000014_trk_000003_12715
+  N9: ep08_seg_trk_000013_trk_000003_14280
+  N10: ep09_seg_trk_000020_trk_000012_16050
+  N11: ep10_seg_trk_000006_trk_000001_17240
+  N12: ep10_seg_trk_000015_trk_000006_17375

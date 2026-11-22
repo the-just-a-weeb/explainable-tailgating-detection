@@ -1,0 +1,21 @@
+Batch run 2026-10-24T05:45:58+00:00  frames 0..2999 (3000)  conf=0.4
+
+GATE COUNTS (pair episodes = follower/lead pair tracked until lost)
+  pair episodes:                 38
+  too_few_obs                    4
+  failed_duration_gate           32
+  failed_persistence_gate        1
+  passed                         1
+  force_flushed_end_of_stream    0
+  plausibility rejections:       212 observation(s) across 30 pair(s)
+  segments emitted:              1
+  convention disagreements:      1 of 1 (5 s heuristic met under one convention but not the other)
+
+CASES
+case pair                                   preset          frames        dur  v_kmh  gap<3  clr<3 5s gap/clr  verdict
+A    car behind truck_articulated           ClearNoon       57-246       9.45   26.5   4.70   8.70        N/Y  - (-)
+
+Segment IDs:
+  A: seg_trk_000024_trk_000006_285
+
+API: no API calls (dry run)

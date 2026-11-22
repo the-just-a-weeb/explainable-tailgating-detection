@@ -1,0 +1,30 @@
+Batch run 2026-10-25T04:09:34+00:00  frames 0..2999 (3000)  conf=0.4
+
+GATE COUNTS (pair episodes = follower/lead pair tracked until lost)
+  pair episodes:                 205
+  (force_flushed = pair still open when the stream or a traffic episode ended)
+  too_few_obs                    14
+  failed_duration_gate           173
+  failed_persistence_gate        12
+  passed                         5
+  force_flushed_end_of_stream    1
+  plausibility rejections:       674 observation(s) across 105 pair(s)
+  segments emitted:              6
+  convention disagreements:      0 of 5 (5 s heuristic met under one convention but not the other)
+
+CASES
+case pair                                   preset          frames        dur  v_kmh  gap<3  clr<3 5s gap/clr  verdict
+A    car behind car                         CloudyNoon      276-414      6.90   32.8   5.70   5.70        Y/Y  - (-)
+B    car behind car                         MidRainyNoon    1083-1197    5.70   28.8   5.15   5.20        Y/Y  - (-)
+C    car behind car                         WetNoon         500-578      3.90   36.0   3.30   3.65        N/N  - (-)
+D    car behind truck_articulated           HardRainNoon    1250-1324    3.70   26.9   3.65   3.65        N/N  - (-)
+E    car behind car                         ClearSunset     1500-1566    3.30   34.2   3.25   3.25        N/N  - (-)
+
+Segment IDs:
+  A: ep01_seg_trk_000012_trk_000001_3370
+  B: ep04_seg_trk_000034_trk_000023_8320
+  C: ep02_seg_trk_000004_trk_000003_4795
+  D: ep05_seg_trk_000002_trk_000004_9460
+  E: ep06_seg_trk_000002_trk_000001_11015
+
+API: no API calls (dry run)

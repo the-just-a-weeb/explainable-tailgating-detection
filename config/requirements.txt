@@ -1,0 +1,10 @@
+# Core
+numpy>=1.24
+anthropic>=0.40
+
+# Perception / training (needs GPU for training)
+ultralytics>=8.3.0          # provides YOLO26 (yolo26n/s/m/l/x)
+tqdm>=4.66
+
+# CARLA (install the wheel matching your CARLA server build, e.g. 0.9.15)
+# pip install carla==0.9.15
